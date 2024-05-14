@@ -50,7 +50,7 @@ export default function A17Page() {
     sessionStorage.setItem('userData', JSON.stringify(userData));
 
 
-    axios.post('http://134.60.156.225/api/submit-survey', userData)
+    axios.post('https://mental-health.erklaerbare-ki.de/api/submit-survey', userData)
     .then(() => {
       navigate('/end_of_survey_A_B');
     })

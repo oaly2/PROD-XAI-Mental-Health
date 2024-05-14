@@ -59,6 +59,9 @@ export default function B14Page() {
     <div className={styles.container}>
       <form>
         <div className={styles.question}>
+        <h1 style={{fontSize: '18px', fontWeight:'bold'}}>Jetzt bitten wir Sie, noch einige allgemeine Fragen zum Thema mentale Gesundheit zu beantworten</h1>
+        <br />
+        <br />
           <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Psychische Probleme lösen sich, wie viele andere Dinge auch, in der Regel von selbst</h2> {/* Change this question to whatever you wish */}
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (

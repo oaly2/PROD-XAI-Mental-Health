@@ -34,7 +34,7 @@ export default function QuizPage() {
 
       const initialAnswers = selectedFeatures.reduce((acc, feature) => ({
         ...acc,
-        [feature]: 'Durchschnittlich' // default value to match the middle option
+        [feature]: '' // default value to match the middle option
       }), {});
 
       setAnswers(initialAnswers);
