@@ -47,6 +47,8 @@ export default function A6Page() {
       userData.intention_to_act_item_1 = likertScale[answers.question1];
       userData.intention_to_act_item_2 = likertScale[answers.question2];
       userData.intention_to_act_item_3 = likertScale[answers.question3]; 
+
+      console.log(userData);
       
       sessionStorage.setItem('userData', JSON.stringify(userData));
 

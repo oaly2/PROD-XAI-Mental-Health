@@ -42,6 +42,8 @@ export default function A11Page() {
     userData.social_influence_item_1 = likertScale[answers.question1];
     userData.social_influence_item_2 = likertScale[answers.question2];
     userData.social_influence_item_3 = likertScale[answers.question3];
+
+    console.log(userData);
   
     // Save updated userData to session storage
     sessionStorage.setItem('userData', JSON.stringify(userData));
