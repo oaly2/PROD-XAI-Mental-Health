@@ -20,8 +20,10 @@ export default function PersonaPage({ showProceedButton = true }) {
     // Filter explanationsData to only include entries where prediction is "depression"
     const depressedExplanations = explanationsData.filter(exp => exp.prediction === "depression");
 
+    const counterFactualExplanations = explanationsData.filter(exp => exp.type === "Counterfactual");
+
     const isHealthy = Math.random() < 0.5; // 50% chance for each
-    const selectedCategory = isHealthy ? healthyExplanations : depressedExplanations;
+    const selectedCategory = counterFactualExplanations;
 
     // Select explanation and add to userData
     let savedExplanation = sessionStorage.getItem('selectedExplanation');
