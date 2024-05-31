@@ -62,7 +62,7 @@ export default function PersonaPage({ showProceedButton = true }) {
   }
 
   const onComplete = () => {
-    navigate('/quiz', { state: { explanation } })
+    navigate('/home', { state: { explanation } })
     window.scrollTo(0, 0);
   };
 
