@@ -43,7 +43,7 @@ export default function PersonaPage({ showProceedButton = true }) {
   }, []);
 
   const handleProceed = () => {
-    navigate('/quiz');
+    navigate('/home');
   };
 
   const valueMapping = {

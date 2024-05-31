@@ -83,7 +83,7 @@ export default function A14Page() {
         <br />
         
         <div className={styles.question}>
-          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Es gibt bestimmte psychische Probleme, die nicht außerhalb von meinen engen Bezugspersonen besprochen werden sollten </h2>
+          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Bestimmte psychische Probleme sollten grundsätzlich nur mit den engsten Bezugspersonen besprochen werden </h2>
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>
