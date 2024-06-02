@@ -4,7 +4,7 @@ import { Text, Heading } from "../../components";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import styles from "../../styles/introductory.module.css";
-import PersonaPage from "./Persona";
+import PersonaPage from "../Persona";
 
 
 
