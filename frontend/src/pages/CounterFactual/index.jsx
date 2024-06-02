@@ -65,7 +65,13 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
 
     const formattedFeatures = features.map((f, index) => (
       <span key={index} style={{ color: "#15b1e2", fontWeight: "bold" }}>
-        {f.feature} ({f.value}){' '}
+        {f.feature} ({f.value})
+      </span>
+    ));
+
+    const featureDescriptions = features.map((f, index) => (
+      <span key={index} style={{ color: "#15b1e2", fontWeight: "bold" }}>
+        {f.feature} um {Math.round(f.percentage)}% {f.percentage >= 0 ? 'höher' : 'geringer'}
       </span>
     ));
 
@@ -79,9 +85,19 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
       }
     }, []);
 
+    const joinedFeatureDescriptions = featureDescriptions.reduce((acc, curr, index) => {
+      if (index === 0) {
+        return [curr];
+      } else if (index === features.length - 1) {
+        return [...acc, ' und ', curr];
+      } else {
+        return [...acc, ', ', curr];
+      }
+    }, []);
+
     return (
       <Text as="p" className="text-center text-base md:text-xl mx-2 my-4" style={{ fontSize: '1.25em', lineHeight: '1.75em' }}>
-        {joinedFeatures} sind besonders relevant für die Prognose der KI.<br /> Die KI würde {explanation.prediction === "depression" ? "ein niedriges Depressionsrisiko" : "ein erhöhtes Depressionsrisiko"} prognostizieren, wenn {joinedFeatures}.
+        {joinedFeatures} sind besonders relevant für die Prognose der KI. Die KI würde {explanation.prediction === "depression" ? "ein niedriges Depressionsrisiko" : "ein erhöhtes Depressionsrisiko"} prognostizieren, wenn {joinedFeatureDescriptions} wäre.
       </Text>
     );
   };
