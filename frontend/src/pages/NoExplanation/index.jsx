@@ -41,15 +41,15 @@ export default function SurveyScreenDepressionPage( { explanation }) {
           einen Arztbesuch. Wenn du dich deprimiert fühlst, wende dich an einen Arzt.
         </Text>
         </div>
-        <div className={styles.container} style={{padding:'5px 5px'}}>
-          <PersonaPage showProceedButton={false} />
-        </div>
+        
+        <PersonaPage showProceedButton={false} />
+        
 
 
         <Button
           variant="contained"
           onClick={handleProceed}
-          style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px', width: '20%'}}
+          style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px', width: '10%', marginLeft: '45%', marginBottom: '30px'}}
         > 
           Weiter &#x279C;
         </Button>

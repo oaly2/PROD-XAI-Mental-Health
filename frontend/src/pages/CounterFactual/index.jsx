@@ -114,7 +114,7 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
             Die KI prognostiziert auf Basis<br />deiner Smartphone-Daten<br /><br />   
           </Text>
           <Heading as="h2" className={`${explanation.prediction === "depression" ? "text-red-A700" : "text-green-600"} text-3xl md:text-5xl text-center`} style={{ fontSize: '2.5em' }}  >
-            {explanation.prediction === "depression" ? "Erhöhtes Depressionsrisiko" : "Niedriges Depressionsrisiko"}
+            {explanation.prediction === "depression" ? "Niedriges Depressionsrisiko" : "Niedriges Depressionsrisiko"}
           </Heading>
         </div>
         <Text as="p" style={{ fontSize: '1.25em', marginTop: '20px' }}>
@@ -132,7 +132,7 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
         <Button
           variant="contained"
           onClick={handleProceed}
-          style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px', width: '10%', marginLeft: '45%', marginBottom: '10px'}}
+          style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px', width: '10%', marginLeft: '45%', marginBottom: '30px'}}
         > 
           Weiter &#x279C;
         </Button>
