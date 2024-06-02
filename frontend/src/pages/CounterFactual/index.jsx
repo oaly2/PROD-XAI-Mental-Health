@@ -82,9 +82,6 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
         <meta name="description" content="Web site created using create-react-app" />
       </Helmet>
       <div className={styles.container} style={{padding:'15px 15px'}}>  
-        <Text as="p" className="text-center text-2xl md:text-4xl mb-8">
-          Deine KI-Vorhersage
-        </Text>
         <div className="bg-blue-50 rounded-lg mx-auto px-20 py-6">
           <Text className="text-center text-xl md:text-2xl font-semibold mt-4" style={{ fontSize: '2.0em' }} >
             Die KI prognostiziert auf Basis<br />deiner Smartphone-Daten<br /><br />   
@@ -93,6 +90,9 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
             {explanation.prediction === "depression" ? "Erhöhtes Depressionsrisiko" : "Niedriges Depressionsrisiko"}
           </Heading>
         </div>
+        <Text as="p" className="text-center text-base md:text-xl mx-2 my-4">
+          Die KI-Prognose basiert auf den folgenden Informationen:
+        </Text>
         {formatCounterfactualText()}
         <Text as="p" className="text-blue_gray-400 text-sm md:text-base text-center mt-auto" style={{marginTop: '20px'}}>
           Alle angezeigten Ergebnisse sind lediglich Vorhersagen einer KI. Als solche können sie nur Hinweise auf
@@ -102,6 +102,9 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
 
         
       </div>
+
+        <PersonaPage showProceedButton={false} />
+        
         <Button
           variant="contained"
           onClick={handleProceed}

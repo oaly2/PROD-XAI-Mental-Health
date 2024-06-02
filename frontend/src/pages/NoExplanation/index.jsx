@@ -26,9 +26,6 @@ export default function SurveyScreenDepressionPage( { explanation }) {
         <meta name="description" content="Web site created using create-react-app" />
       </Helmet>
       <div className={styles.container} style={{padding:'15px 15px'}}>
-        <Text as="p" className="text-center text-2xl md:text-4xl mb-8">
-          Deine KI-Vorhersage
-        </Text>
         <div className="bg-blue_gray-100 rounded-lg mx-auto px-20 py-6">
           <Text className="text-center text-xl md:text-2xl font-semibold mt-4" style={{ fontSize: '2.0em' }}>
             Die KI prognostiziert auf Basis<br /> deiner Smartphone-Daten<br /><br />
@@ -43,6 +40,9 @@ export default function SurveyScreenDepressionPage( { explanation }) {
           einen Arztbesuch. Wenn du dich deprimiert fühlst, wende dich an einen Arzt.
         </Text>
       </div>
+
+      <PersonaPage showProceedButton={false} />
+      
         <Button
           variant="contained"
           onClick={handleProceed}
