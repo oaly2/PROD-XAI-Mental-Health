@@ -91,7 +91,7 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
             {explanation.prediction === "depression" ? "Erhöhtes Depressionsrisiko" : "Niedriges Depressionsrisiko"}
           </Heading>
         </div>
-        <Text as="p" className="text-center text-base md:text-xl mx-2 my-4">
+        <Text as="h2" className="text-center text-base md:text-xl mx-2 my-4">
           Die KI-Prognose basiert auf den folgenden Informationen:
         </Text>
         {formatCounterfactualText()}
@@ -100,10 +100,12 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
           den Gesundheitszustand geben. Sie können keine medizinische Diagnose stellen und ersetzen keinesfalls
           einen Arztbesuch. Wenn du dich deprimiert fühlst, wende dich an einen Arzt.
         </Text>
-
-        <PersonaPage showProceedButton={false} />
         
       </div>
+
+        <div className={styles.container} style={{padding:'15px 15px'}}>
+          <PersonaPage showProceedButton={false} />
+        </div>
 
 
         <Button

@@ -74,9 +74,10 @@ export default function SurveyScreenDepressionFIPage({ explanation }) {
           den Gesundheitszustand geben. Sie können keine medizinische Diagnose stellen und ersetzen keinesfalls
           einen Arztbesuch. Wenn du dich deprimiert fühlst, wende dich an einen Arzt.
         </Text>
-
-      <PersonaPage showProceedButton={false} />
       </div>
+      <div className={styles.container} style={{padding:'15px 15px'}}>
+          <PersonaPage showProceedButton={false} />
+        </div>
 
 
         <Button
