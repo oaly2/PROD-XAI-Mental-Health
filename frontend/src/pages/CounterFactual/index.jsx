@@ -127,7 +127,7 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
           einen Arztbesuch. Wenn du dich deprimiert fühlst, wende dich an einen Arzt.
         </Text>
       </div>
-      <div className={styles.container} style={{padding:'5px 5px'}}>
+      
         <PersonaPage showProceedButton={false} />
         <Button
           variant="contained"
@@ -136,7 +136,6 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
         > 
           Weiter &#x279C;
         </Button>
-      </div>
     </>
   );
 }
