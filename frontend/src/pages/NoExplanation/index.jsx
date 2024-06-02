@@ -45,7 +45,7 @@ export default function SurveyScreenDepressionPage( { explanation }) {
         <PersonaPage showProceedButton={false} />
         
 
-
+        <div style={{ marginBottom: '50px' }}>
         <Button
           variant="contained"
           onClick={handleProceed}
@@ -53,6 +53,7 @@ export default function SurveyScreenDepressionPage( { explanation }) {
         > 
           Weiter &#x279C;
         </Button>
+        </div>
     </>
   );
 }

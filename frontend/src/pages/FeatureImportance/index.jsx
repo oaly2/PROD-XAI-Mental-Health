@@ -79,7 +79,7 @@ export default function SurveyScreenDepressionFIPage({ explanation }) {
       <PersonaPage showProceedButton={false} />
         
 
-
+      <div style={{ marginBottom: '50px' }}>
         <Button
           variant="contained"
           onClick={handleProceed}
@@ -87,6 +87,7 @@ export default function SurveyScreenDepressionFIPage({ explanation }) {
         > 
           Weiter &#x279C;
         </Button>
+      </div>
     </>
   );
 }

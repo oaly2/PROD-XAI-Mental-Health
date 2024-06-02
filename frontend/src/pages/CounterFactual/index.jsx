@@ -129,6 +129,8 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
       </div>
       
         <PersonaPage showProceedButton={false} />
+
+        <div style={{ marginBottom: '50px' }}>
         <Button
           variant="contained"
           onClick={handleProceed}
@@ -136,6 +138,7 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
         > 
           Weiter &#x279C;
         </Button>
+      </div>
     </>
   );
 }
