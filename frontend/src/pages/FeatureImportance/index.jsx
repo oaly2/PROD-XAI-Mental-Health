@@ -63,7 +63,7 @@ export default function SurveyScreenDepressionFIPage({ explanation }) {
             {explanation.prediction === "depression" ? "Erhöhtes Depressionsrisiko" : "Niedriges Depressionsrisiko"}
           </Heading>
         </div>
-        <Text as="p" style={{ fontSize: '1.25em', marginTop: '10px' }}>
+        <Text as="p" style={{ fontSize: '1.25em', marginTop: '20px' }}>
           Die KI-Prognose basiert auf den folgenden Informationen:
         </Text>
         <Text as="p" className="text-center text-base md:text-xl mx-2 my-4">
@@ -75,7 +75,7 @@ export default function SurveyScreenDepressionFIPage({ explanation }) {
           einen Arztbesuch. Wenn du dich deprimiert fühlst, wende dich an einen Arzt.
         </Text>
       </div>
-      <div className={styles.container} style={{padding:'-10px -10px'}}>
+      <div className={styles.container}>
           <PersonaPage showProceedButton={false} />
         </div>
 
