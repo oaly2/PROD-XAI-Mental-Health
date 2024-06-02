@@ -6,8 +6,6 @@ import { useNavigate } from "react-router-dom";
 import styles from "../../styles/introductory.module.css";
 import PersonaPage from "../Persona";
 
-
-
 export default function SurveyScreenDepressionCFPage({ explanation }) {
   const replaceUmlauts = (text) => {
     return text
@@ -33,7 +31,7 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
 
   const formatCounterfactualText = () => {
     const features = [];
-  
+
     if (explanation.feature_1 && explanation.percentages_feature_1 !== undefined) {
       features.push({
         feature: replaceUmlauts(explanation.feature_1),
@@ -62,9 +60,9 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
         percentage: explanation.percentages_feature_4_num
       });
     }
-  
+
     if (features.length === 0) return null;
-  
+
     const formattedFeatures = features.map((f, index) => (
       <span key={index} style={{ color: "#15b1e2", fontWeight: "bold" }}>
         {f.feature} ({f.value}){' '}
@@ -73,7 +71,7 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
         </span>
       </span>
     ));
-  
+
     const joinedFeatures = formattedFeatures.reduce((acc, curr, index) => {
       if (index === 0) {
         return [curr];
@@ -83,15 +81,13 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
         return [...acc, ', ', curr];
       }
     }, []);
-  
+
     return (
-      <Text as="p" className="text-center text-base md:text-xl mx-2 my-4" style={{ fontSize: '1.25em' }}>
-        {joinedFeatures} sind besonders relevant für die Prognose der KI. Die KI würde {explanation.prediction === "depression" ? "ein niedriges Depressionsrisiko" : "ein erhöhtes Depressionsrisiko"} prognostizieren, wenn {joinedFeatures}.
+      <Text as="p" className="text-center text-base md:text-xl mx-2 my-4" style={{ fontSize: '1.25em', lineHeight: '1.75em' }}>
+        {joinedFeatures} sind besonders relevant für die Prognose der KI.<br /> Die KI würde {explanation.prediction === "depression" ? "ein niedriges Depressionsrisiko" : "ein erhöhtes Depressionsrisiko"} prognostizieren, wenn {joinedFeatures}.
       </Text>
     );
   };
-  
-  
 
   return (
     <>
@@ -117,23 +113,17 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
           den Gesundheitszustand geben. Sie können keine medizinische Diagnose stellen und ersetzen keinesfalls
           einen Arztbesuch. Wenn du dich deprimiert fühlst, wende dich an einen Arzt.
         </Text>
-        
       </div>
-
-        <div className={styles.container} style={{padding:'5px 5px'}}>
-          <PersonaPage showProceedButton={false} />
-
-          <Button
-            variant="contained"
-            onClick={handleProceed}
-            style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px', width: '20%'}}
-          > 
-            Weiter &#x279C;
-          </Button>
-
-        </div>
-
-
+      <div className={styles.container} style={{padding:'5px 5px'}}>
+        <PersonaPage showProceedButton={false} />
+        <Button
+          variant="contained"
+          onClick={handleProceed}
+          style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px', width: '20%'}}
+        > 
+          Weiter &#x279C;
+        </Button>
+      </div>
     </>
   );
 }
