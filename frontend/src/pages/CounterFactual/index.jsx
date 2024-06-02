@@ -85,7 +85,7 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
     }, []);
   
     return (
-      <Text as="p" className="text-center text-base md:text-xl mx-2 my-4" style={{ fontSize: '1.5em' }}>
+      <Text as="p" className="text-center text-base md:text-xl mx-2 my-4" style={{ fontSize: '1.25em' }}>
         {joinedFeatures} sind besonders relevant für die Prognose der KI. Die KI würde {explanation.prediction === "depression" ? "ein niedriges Depressionsrisiko" : "ein erhöhtes Depressionsrisiko"} prognostizieren, wenn {joinedFeatures}.
       </Text>
     );
