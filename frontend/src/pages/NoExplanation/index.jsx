@@ -4,6 +4,7 @@ import { Text, Heading } from "../../components";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
 import styles from "../../styles/introductory.module.css";
+import PersonaPage from "./Persona";
 
 
 export default function SurveyScreenDepressionPage( { explanation }) {
@@ -39,10 +40,11 @@ export default function SurveyScreenDepressionPage( { explanation }) {
           den Gesundheitszustand geben. Sie können keine medizinische Diagnose stellen und ersetzen keinesfalls
           einen Arztbesuch. Wenn du dich deprimiert fühlst, wende dich an einen Arzt.
         </Text>
+        
+      <PersonaPage showProceedButton={false} />
       </div>
 
-      <PersonaPage showProceedButton={false} />
-      
+
         <Button
           variant="contained"
           onClick={handleProceed}

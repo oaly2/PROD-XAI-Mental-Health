@@ -4,6 +4,7 @@ import { Text, Heading } from "../../components";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import styles from "../../styles/introductory.module.css";
+import PersonaPage from "./Persona";
 
 
 
@@ -100,11 +101,11 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
           einen Arztbesuch. Wenn du dich deprimiert fühlst, wende dich an einen Arzt.
         </Text>
 
+        <PersonaPage showProceedButton={false} />
         
       </div>
 
-        <PersonaPage showProceedButton={false} />
-        
+
         <Button
           variant="contained"
           onClick={handleProceed}
