@@ -41,7 +41,7 @@ export default function SurveyScreenDepressionPage( { explanation }) {
           einen Arztbesuch. Wenn du dich deprimiert fühlst, wende dich an einen Arzt.
         </Text>
         </div>
-        <div className={styles.container} style={{padding:'1px 1px'}}>
+        <div className={styles.container} style={{padding:'5px 5px'}}>
           <PersonaPage showProceedButton={false} />
         </div>
 

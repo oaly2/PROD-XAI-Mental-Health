@@ -33,47 +33,45 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
 
   const formatCounterfactualText = () => {
     const entries = [];
-    if (explanation.feature_1 && explanation.percentages_feature_1 !== undefined)
-      entries.push(
-        <span key="feature1" style={{ color: "#15b1e2", fontWeight: "bold" }}>
-          {replaceUmlauts(explanation.feature_1) + ':'} <span style={{color:'black'}}> {'Um'} {explanation.percentages_feature_1_num >= 0 ? '+' : ''}{Math.round(explanation.percentages_feature_1_num)}% {explanation.percentages_feature_1_num >= 0 ? 'steigern' : 'verringern'}</span>
+  
+    const createEntry = (feature, originalValue, percentage, num) => (
+      <span style={{ color: "#15b1e2", fontWeight: "bold" }}>
+        {replaceUmlauts(feature)}{' ('}{originalValue}{') und '}
+        <span style={{ color: 'black' }}>
+          {'um '}{Math.round(num)}% {num >= 0 ? 'höher' : 'geringer'}
         </span>
-      );
-    if (explanation.feature_2 && explanation.percentages_feature_2 !== undefined)
-      entries.push(
-        <span key="feature2" style={{ color: "#15b1e2", fontWeight: "bold" }}>
-          {replaceUmlauts(explanation.feature_2) + ':'} <span style={{color:'black'}}> {'Um'} {explanation.percentages_feature_2_num >= 0 ? '+' : ''}{Math.round(explanation.percentages_feature_2_num)}% {explanation.percentages_feature_2_num >= 0 ? 'steigern' : 'verringern'}</span>
-        </span>
-      );
-    if (explanation.feature_3 && explanation.percentages_feature_3 !== undefined)
-      entries.push(
-        <span key="feature3" style={{ color: "#15b1e2", fontWeight: "bold" }}>
-          {replaceUmlauts(explanation.feature_3) + ':'} <span style={{color:'black'}}> {'Um'} {explanation.percentages_feature_3_num >= 0 ? '+' : ''}{Math.round(explanation.percentages_feature_3_num)}% {explanation.percentages_feature_3_num >= 0 ? 'steigern' : 'verringern'}</span>
-        </span>
-      );
-      if (explanation.feature_4 && explanation.percentages_feature_4 !== undefined)
-      entries.push(
-        <span key="feature4" style={{ color: "#15b1e2", fontWeight: "bold" }}>
-          {replaceUmlauts(explanation.feature_4) + ':'} <span style={{color:'black'}}> {'Um'} {explanation.percentages_feature_4_num >= 0 ? '+' : ''}{Math.round(explanation.percentages_feature_4_num)}% {explanation.percentages_feature_4_num >= 0 ? 'steigern' : 'verringern'}</span>
-        </span>
-      );  
-
+      </span>
+    );
+  
+    if (explanation.feature_1 && explanation.percentages_feature_1 !== undefined) {
+      entries.push(createEntry(explanation.feature_1, explanation.original_value_1, explanation.percentages_feature_1, explanation.percentages_feature_1_num));
+    }
+    if (explanation.feature_2 && explanation.percentages_feature_2 !== undefined) {
+      entries.push(createEntry(explanation.feature_2, explanation.original_value_2, explanation.percentages_feature_2, explanation.percentages_feature_2_num));
+    }
+    if (explanation.feature_3 && explanation.percentages_feature_3 !== undefined) {
+      entries.push(createEntry(explanation.feature_3, explanation.original_value_3, explanation.percentages_feature_3, explanation.percentages_feature_3_num));
+    }
+    if (explanation.feature_4 && explanation.percentages_feature_4 !== undefined) {
+      entries.push(createEntry(explanation.feature_4, explanation.original_value_4, explanation.percentages_feature_4, explanation.percentages_feature_4_num));
+    }
+  
     return entries.length > 0 ? (
       <Text as="p" className="text-center text-base md:text-xl mx-2 my-4" style={{ fontSize: '1.5em' }}>
         {explanation.prediction === "depression" ? 
-          "Die folgenden Veränderungen hätten zur Vorhersage eines niedrigen Depressionsrisikos durch die KI geführt:" : 
-          "Die folgenden Veränderungen hätten zur Vorhersage eines erhöhten Depressionsrisikos durch die KI geführt:"}
+          "Feature X (value, e.g. „durchschnittlich“) und Feature Y (value, e.g. „durchschnittlich“) sind besonders relevant für die Prognose AI prognosis. Die KI würde ein niedriges Depressionsrisiko prognostizieren, wenn:" : 
+          "Feature X (value, e.g. „durchschnittlich“) und Feature Y (value, e.g. „durchschnittlich“) sind besonders relevant für die Prognose AI prognosis. Die KI würde ein erhöhtes Depressionsrisiko prognostizieren, wenn:"}
         {entries.map((entry, index) => (
           <React.Fragment key={index}>
             <br />
             <br />
-
             {entry}
           </React.Fragment>
         ))}
       </Text>
     ) : null;
   };
+  
 
 
   return (
@@ -103,7 +101,7 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
         
       </div>
 
-        <div className={styles.container} style={{padding:'1px 1px'}}>
+        <div className={styles.container} style={{padding:'5px 5px'}}>
           <PersonaPage showProceedButton={false} />
 
           <Button
