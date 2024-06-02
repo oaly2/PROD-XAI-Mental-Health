@@ -66,9 +66,6 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
     const formattedFeatures = features.map((f, index) => (
       <span key={index} style={{ color: "#15b1e2", fontWeight: "bold" }}>
         {f.feature} ({f.value}){' '}
-        <span style={{ color: 'black' }}>
-          {f.percentage >= 0 ? `um ${Math.round(f.percentage)}% höher` : `um ${Math.round(Math.abs(f.percentage))}% geringer`}
-        </span>
       </span>
     ));
 
