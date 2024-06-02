@@ -41,7 +41,7 @@ export default function SurveyScreenDepressionPage( { explanation }) {
           einen Arztbesuch. Wenn du dich deprimiert fühlst, wende dich an einen Arzt.
         </Text>
         </div>
-        <div className={styles.container} style={{padding:'15px 15px'}}>
+        <div className={styles.container} style={{padding:'0px 0px'}}>
           <PersonaPage showProceedButton={false} />
         </div>
 
@@ -49,7 +49,7 @@ export default function SurveyScreenDepressionPage( { explanation }) {
         <Button
           variant="contained"
           onClick={handleProceed}
-          style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px', width: '10%'}}
+          style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px', width: '20%'}}
         > 
           Weiter &#x279C;
         </Button>

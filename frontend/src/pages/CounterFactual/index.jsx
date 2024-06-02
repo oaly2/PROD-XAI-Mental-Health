@@ -103,7 +103,7 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
         
       </div>
 
-        <div className={styles.container} style={{padding:'15px 15px'}}>
+        <div className={styles.container} style={{padding:'0px 0px'}}>
           <PersonaPage showProceedButton={false} />
 
           <Button
