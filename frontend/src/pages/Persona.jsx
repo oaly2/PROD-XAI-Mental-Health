@@ -79,11 +79,9 @@ export default function PersonaPage({ showProceedButton = true }) {
         <br/> <br/>
         Bitte merken Sie sich die folgenden Informationen, damit Sie die Studie erfolgreich fortsetzen können.
         <br/> <br/> <br/>
-        </h1>
-        )}
-        <h1 className={styles.subTitle}>
         Stellen Sie sich vor, die App hätte folgende Informationen über Sie gesammelt.  
         </h1>
+        )}
         <br/>
         <ul className={styles.list}>
           {[

@@ -91,7 +91,7 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
             {explanation.prediction === "depression" ? "Erhöhtes Depressionsrisiko" : "Niedriges Depressionsrisiko"}
           </Heading>
         </div>
-        <Text as="h2" className="text-center text-base md:text-xl mx-2 my-4">
+        <Text as="p" style={{ fontSize: '1.25em' }}>
           Die KI-Prognose basiert auf den folgenden Informationen:
         </Text>
         {formatCounterfactualText()}
@@ -105,16 +105,18 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
 
         <div className={styles.container} style={{padding:'15px 15px'}}>
           <PersonaPage showProceedButton={false} />
+
+          <Button
+            variant="contained"
+            onClick={handleProceed}
+            style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px', width: '10%', marginLeft: '45%'}}
+          > 
+            Weiter &#x279C;
+          </Button>
+          
         </div>
 
 
-        <Button
-          variant="contained"
-          onClick={handleProceed}
-          style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px', width: '10%', marginLeft: '45%'}}
-        > 
-          Weiter &#x279C;
-        </Button>
     </>
   );
 }
