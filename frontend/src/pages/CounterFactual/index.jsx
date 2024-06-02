@@ -36,28 +36,28 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
   
     if (explanation.feature_1 && explanation.percentages_feature_1 !== undefined) {
       features.push({
-        feature: explanation.feature_1,
+        feature: replaceUmlauts(explanation.feature_1),
         value: explanation.original_value_1,
         percentage: explanation.percentages_feature_1_num
       });
     }
     if (explanation.feature_2 && explanation.percentages_feature_2 !== undefined) {
       features.push({
-        feature: explanation.feature_2,
+        feature: replaceUmlauts(explanation.feature_2),
         value: explanation.original_value_2,
         percentage: explanation.percentages_feature_2_num
       });
     }
     if (explanation.feature_3 && explanation.percentages_feature_3 !== undefined) {
       features.push({
-        feature: explanation.feature_3,
+        feature: replaceUmlauts(explanation.feature_3),
         value: explanation.original_value_3,
         percentage: explanation.percentages_feature_3_num
       });
     }
     if (explanation.feature_4 && explanation.percentages_feature_4 !== undefined) {
       features.push({
-        feature: explanation.feature_4,
+        feature: replaceUmlauts(explanation.feature_4),
         value: explanation.original_value_4,
         percentage: explanation.percentages_feature_4_num
       });
@@ -67,7 +67,7 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
   
     const formattedFeatures = features.map((f, index) => (
       <span key={index} style={{ color: "#15b1e2", fontWeight: "bold" }}>
-        {replaceUmlauts(f.feature)} ({f.value}){' '}
+        {f.feature} ({f.value}){' '}
         <span style={{ color: 'black' }}>
           {f.percentage >= 0 ? `um ${Math.round(f.percentage)}% höher` : `um ${Math.round(Math.abs(f.percentage))}% geringer`}
         </span>
@@ -86,15 +86,12 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
   
     return (
       <Text as="p" className="text-center text-base md:text-xl mx-2 my-4" style={{ fontSize: '1.5em' }}>
-        {features.length > 1 
-          ? `Feature ${joinedFeatures} sind besonders relevant für die Prognose AI prognosis. Die KI würde ${explanation.prediction === "depression" ? "ein niedriges Depressionsrisiko" : "ein erhöhtes Depressionsrisiko"} prognostizieren, wenn ${joinedFeatures.map((f, index) => <React.Fragment key={index}>{index > 0 ? ',' : ''} {f}</React.Fragment>)}.` 
-          : `Feature ${joinedFeatures} ist besonders relevant für die Prognose AI prognosis. Die KI würde ${explanation.prediction === "depression" ? "ein niedriges Depressionsrisiko" : "ein erhöhtes Depressionsrisiko"} prognostizieren, wenn ${joinedFeatures[0]}.`}
+        {joinedFeatures} sind besonders relevant für die Prognose der KI. Die KI würde {explanation.prediction === "depression" ? "ein niedriges Depressionsrisiko" : "ein erhöhtes Depressionsrisiko"} prognostizieren, wenn {joinedFeatures}.
       </Text>
     );
   };
   
   
-
 
   return (
     <>
