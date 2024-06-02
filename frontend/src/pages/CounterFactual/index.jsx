@@ -103,13 +103,13 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
         
       </div>
 
-        <div className={styles.container} style={{padding:'0px 0px'}}>
+        <div className={styles.container} style={{padding:'-10px -10px'}}>
           <PersonaPage showProceedButton={false} />
 
           <Button
             variant="contained"
             onClick={handleProceed}
-            style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px', width: '10%'}}
+            style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px', width: '20%'}}
           > 
             Weiter &#x279C;
           </Button>
