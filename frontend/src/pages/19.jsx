@@ -1,9 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet"; // To control the page head elements such as title
 import styles from '../styles/introductory.module.css';
-
-
-
+import Button from "@mui/material/Button";
 
 
 export default function IntroductoryPage() {
