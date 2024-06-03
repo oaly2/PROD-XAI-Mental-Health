@@ -147,7 +147,7 @@ export default function SurveyScreenDepressionCFPage() {
         <title>Smart-Sensing-Apps für mentale Gesundheit</title>
         <meta name="description" content="Web site created using create-react-app" />
       </Helmet>
-      <div className={styles.container} style={{padding:'15px 15px'}}>
+
       <div className={styles.container} style={{padding:'15px 15px'}}>  
         <h1 className={styles.subTitle} style={{color: 'black', fontWeight: 'normal'}}>
         Stellen Sie sich weiterhin vor, Sie nutzen eine
@@ -194,10 +194,6 @@ export default function SurveyScreenDepressionCFPage() {
           Weiter &#x279C;
         </Button>
       </div>
-      </div>
-      
-            
     </>
-    
   );
 }

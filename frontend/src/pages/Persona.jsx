@@ -77,6 +77,7 @@ export default function PersonaPage({ showProceedButton = true }) {
         Informationen zu Ihrer mentalen Gesundheit zu
         liefern. Die App wird auf folgende Art beworben -
         bitte sehen Sie sich die Informationen genau an.
+  
         </h1>
         <br/>
         <br/>
