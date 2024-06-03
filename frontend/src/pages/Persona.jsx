@@ -90,6 +90,11 @@ export default function PersonaPage({ showProceedButton = true }) {
             Stellen Sie sich vor, die App hätte folgende Informationen über Sie gesammelt.  
           </h1>
         )}
+        {!showProceedButton && (
+          <h1 className={styles.subTitle}>
+           Zur Erinnerung: Die App hat folgende Informationen über Sie
+          </h1>  
+        )}
         <br/>
         <ul className={styles.list}>
           {[
