@@ -13,70 +13,67 @@
   background-color: #f4f4f4;
   transition: box-shadow 0.3s ease-in-out; /* Smooth transition for the shadow effect */
 }
-    
-  .container:hover {
-    box-shadow:
-      0 4px 8px rgba(0, 0, 0, 0.1),
-      0 4px 8px rgba(0, 0, 0, 0.1),
-      0 4px 8px rgba(0, 0, 0, 0.1),
-      0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  
-  .page-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f7f7f7; /* Or any color you want for the background */
-    padding: 20px;
-  }
-  
-    
-    .title {
-      font-size: 24px;
-      font-weight: bold;
-      color: black;
-      margin-bottom: 20px;
-    }
 
-    .title2 {
-      font-size: 9px;
-      color: black;
-      margin-bottom: 20px;
-    }
+.container:hover {
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-    .title3 {
-      font-size: 30px;
-      color: black;
-      text-align: center;
-    }
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f7f7f7; /* Or any color you want for the background */
+  padding: 20px;
+}
 
-    h2 {
-      font-size: 60px;
-      color: black;
-    }
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 20px;
+}
 
-    .banner {
-      font-size: 45px;
-      margin-bottom: 20px;
-      text-align: center;
-    }
+.title2 {
+  font-size: 9px;
+  color: black;
+  margin-bottom: 20px;
+}
 
-    .subTitle {
-      font-size: 20px;
-      font-weight: bold;
-      color: #19b394;
-    }
-    
-    .list {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-    }
+.title3 {
+  font-size: 30px;
+  color: black;
+  text-align: center;
+}
 
-    /* Add this to your CSS module file */
+h2 {
+  font-size: 60px;
+  color: black;
+}
+
+.banner {
+  font-size: 45px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.subTitle {
+  font-size: 20px;
+  font-weight: bold;
+  color: #19b394;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
 .text-center {
   text-align: center;
 }
@@ -105,39 +102,38 @@
   padding: 0;
 }
 
-    
-    .listItem {
-      font-size: 16px;
-      color: black;
-      line-height: 1.6;
-      padding: 8px 0; /* Padding to space out items */
-    }
+.listItem {
+  font-size: 16px;
+  color: black;
+  line-height: 1.6;
+  padding: 8px 0; /* Padding to space out items */
+}
 
-    .listItem2 {
-      font-size: 16px;
-      color: #666;
-      line-height: 1.6;
-      padding: 8px 0; /* Padding to space out items */
-      text-align: center;
-    }
-    
-    .button {
-      background-color: #15b1e2;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      border: none;
-      font-weight: bold;
-      transition: background-color 0.3s;
-      margin-top: 20px;
-    }
-    
-    .button:hover {
-      background-color: #139bcf;
-    }
+.listItem2 {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+  padding: 8px 0; /* Padding to space out items */
+  text-align: center;
+}
 
-    /* Media Queries for further adjustments */
+.button {
+  background-color: #15b1e2;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+.button:hover {
+  background-color: #139bcf;
+}
+
+/* Media Queries for further adjustments */
 @media (max-width: 768px) { /* For tablets and below */
   .title, .styledText {
     font-size: calc(15px + 1vw); /* Slightly larger scaling factor for smaller devices */
@@ -158,8 +154,6 @@
   .title3 {
     font-size: calc(14px + 1vw); /* Adjust font size for readability */
   }
-
-
 }
 
 @media (max-width: 480px) { /* For mobile phones */
@@ -186,11 +180,8 @@
   .title3 {
     font-size: calc(12px + 1.5vw); /* Larger scaling factor for readability on phones */
   }
-
-
 }
 
-/* Media Queries */
 @media (max-width: 768px) { /* For tablets and below */
   .container {
     padding: 5%;  /* Increase padding */
