@@ -39,6 +39,18 @@ export default function SurveyScreenDepressionPage({ explanation }) {
         <title>Smart-Sensing-Apps für mentale Gesundheit</title>
         <meta name="description" content="Web site created using create-react-app" />
       </Helmet>
+
+      <div className={styles.container} style={{padding:'15px 15px'}}>  
+        <h1 className={styles.subTitle} style={{color: 'black', fontWeight: 'normal'}}>
+          Stellen Sie sich weiterhin vor, Sie
+          nutzen eine Smart Sensing App für mentale Gesundheit also eine App,
+          die Sensordaten von Ihrem Smartphone und anderen Geräten nutzt, um
+          Informationen zu Ihrer mentalen Gesundheit zu liefern. Sie öffnen die App
+          und zeigt Ihnen Folgendes an. Bitte nehmen Sie sich einen Moment, den
+          Bildschirm genau anzuschauen.  
+        </h1>
+      </div>
+
       <div className={styles.container} style={{padding:'15px 15px'}}>
         <div className="bg-blue_gray-100 rounded-lg mx-auto px-20 py-6">
           <Text className="text-center text-xl md:text-2xl font-semibold mt-4" style={{ fontSize: '2.0em' }}>
@@ -55,20 +67,22 @@ export default function SurveyScreenDepressionPage({ explanation }) {
         </Text>
         </div>
         
-        <PersonaPage showProceedButton={false} />
-        
         <div style={{ marginBottom: '50px' }}>
           <br/>
-          {message && <p className= {styles.list} style={{ color: 'red', marginLeft: '14%' }}>{message}</p>}
+          {message && (
+            <div className={styles.messageContainer}>
+              <p className={styles.messageText}>{message}</p>
+            </div>
+          )}
           <br/>
-          <Button
-            variant="contained"
-            onClick={handleProceed}
-            style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px', width: '10%', marginLeft: '45%', marginBottom: '30px'}}
-          > 
-            Weiter &#x279C;
-          </Button>
-        </div>
+        <Button
+          variant="contained"
+          onClick={handleProceed}
+          style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px', width: '10%', marginLeft: '45%', marginBottom: '30px'}}
+        > 
+          Weiter &#x279C;
+        </Button>
+      </div>
     </>
   );
 }
