@@ -16,16 +16,13 @@ export default function PersonaPage({ showProceedButton = true }) {
     // Get userData from sessionStorage
     let userData = JSON.parse(sessionStorage.getItem('userData')) || {};
 
-    // Filter explanationsData to only include entries where prediction is "healthy"
-    const healthyExplanations = explanationsData.filter(exp => exp.prediction === "healthy");
+    // Filter explanationsData to only include entries where prediction is "healthy" or "depression"
+    const healthyExplanations = explanationsData.filter(exp => exp.prediction === "healthy" && (exp.type === "Counterfactual" || exp.type === "Simple"));
+    const depressedExplanations = explanationsData.filter(exp => exp.prediction === "depression" && (exp.type === "Counterfactual" || exp.type === "Simple"));
 
-    // Filter explanationsData to only include entries where prediction is "depression"
-    const depressedExplanations = explanationsData.filter(exp => exp.prediction === "depression");
-
-    const counterFactualExplanations = explanationsData.filter(exp => exp.type === "Counterfactual");
-
+    // Randomly select a category: healthy or depression
     const isHealthy = Math.random() < 0.5; // 50% chance for each
-    const selectedCategory = counterFactualExplanations;
+    const selectedCategory = isHealthy ? healthyExplanations : depressedExplanations;
 
     // Select explanation and add to userData
     let savedExplanation = sessionStorage.getItem('selectedExplanation');
@@ -83,11 +80,11 @@ export default function PersonaPage({ showProceedButton = true }) {
       <div className={styles.container}>
         {showProceedButton && (
           <h1 className={styles.subTitle}>
-            Versetzen Sie sich nun in das hypothetische Szenario. Stellen Sie sich vor, Sie nutzen eine Smart-Sensing-App für mentale Gesundheit – also eine App, die Sensordaten von Ihrem Smartphone nutzt, um Informationen zu Ihrer mentalen Gesundheit zu liefern.  
+            Versetzen Sie sich nun in das hypothetische Szenario. Stellen Sie sich vor, Sie nutzen eine Smart-Sensing-App für mentale Gesundheit – also eine App, die Sensordaten von Ihrem Smartphone nutzt, um Informationen zu Ihrer mentalen Gesundheit zu liefern  
             <br/> <br/>
-            Bitte merken Sie sich die folgenden Informationen, damit Sie die Studie erfolgreich fortsetzen können.
+            Bitte merken Sie sich die folgenden Informationen, damit Sie die Studie erfolgreich fortsetzen können
             <br/> <br/> <br/>
-            Stellen Sie sich vor, die App hätte folgende Informationen über Sie gesammelt.  
+            Stellen Sie sich vor, die App hätte folgende Informationen über Sie gesammelt 
           </h1>
         )}
         {!showProceedButton && (
