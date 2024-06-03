@@ -146,7 +146,7 @@ export default function SurveyScreenDepressionCFPage() {
         <meta name="description" content="Web site created using create-react-app" />
       </Helmet>
 
-      <div className={styles.container} style={{padding: '2vw'}}>  
+      <div className={styles.container} style={{padding: '0.5vw'}}>  
         <h1 className={styles.subTitle} style={{color: 'black', fontWeight: 'normal', marginBottom: '1vw'}}>
           Stellen Sie sich weiterhin vor, Sie
           nutzen eine Smart Sensing App für mentale Gesundheit also eine App,
@@ -157,7 +157,7 @@ export default function SurveyScreenDepressionCFPage() {
         </h1>
       </div>
 
-      <div className={styles.container} style={{padding: '2vw'}}>
+      <div className={styles.container} style={{padding: '0.5vw'}}>
         <div className="bg-blue_gray-100 rounded-lg mx-auto px-5 py-4">
           <Text className="text-center text-xl md:text-2xl font-semibold mt-4" style={{ fontSize: '2.0em', marginBottom: '1vw' }}>
             Die KI prognostiziert auf Basis<br /> deiner Smartphone-Daten<br /><br />
@@ -174,7 +174,7 @@ export default function SurveyScreenDepressionCFPage() {
         </Text>
       </div>
 
-      <div style={{ marginBottom: '2vw', marginTop: '2vw' }}>
+      <div style={{ marginBottom: '0.5vw', marginTop: '0.5vw' }}>
         {message && (
           <div className={styles.messageContainer}>
             <p className={styles.messageText}>{message}</p>
