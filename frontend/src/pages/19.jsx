@@ -48,15 +48,22 @@ export default function IntroductoryPage() {
         Kontakt: maximilian.foerster@uni-ulm.de
         <br/>
  
+
         </p>
+
+
+
         <br/>
+        <p className="mb-4 text text-xl md:text-2xl">
+          Bitte kehren Sie zu Prolific zurück
+        </p>
         <br/>
         <Button
               variant="contained"
               onClick={handleProceed}
               style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px'}}
             >
-              Back to Prolific 
+              Zurück zu Prolific 
         </Button>
 
       </div>
