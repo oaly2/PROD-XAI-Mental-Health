@@ -45,33 +45,47 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
     }
   };
 
+  const valueMapping = {
+    "feature_1": "Dein Stresslevel",
+    "feature_2": "Deine Schlafqualität",
+    "feature_3": "Deine Anzahl sozialer Kontakte",
+    "feature_4": "Deine Qualität sozialer Kontakte",
+    "feature_5": "Deine Qualität der Ernährung",
+    "feature_6": "Deine sportliche Aktivität",
+    "feature_7": "Deine Zeit am Handy",
+    "feature_8": "Deine Länge der Telefonate",
+    "feature_9": "Deine Mobilität"
+  };
+
+  const mappedValue = (value) => valueMapping[value] || value;
+
   const formatCounterfactualText = () => {
     const features = [];
 
     if (explanation.feature_1 && explanation.percentages_feature_1 !== undefined) {
       features.push({
-        feature: replaceUmlauts(explanation.feature_1),
+        feature: replaceUmlauts(mappedValue("feature_1")),
         value: explanation.original_value_1,
         percentage: explanation.percentages_feature_1_num
       });
     }
     if (explanation.feature_2 && explanation.percentages_feature_2 !== undefined) {
       features.push({
-        feature: replaceUmlauts(explanation.feature_2),
+        feature: replaceUmlauts(mappedValue("feature_2")),
         value: explanation.original_value_2,
         percentage: explanation.percentages_feature_2_num
       });
     }
     if (explanation.feature_3 && explanation.percentages_feature_3 !== undefined) {
       features.push({
-        feature: replaceUmlauts(explanation.feature_3),
+        feature: replaceUmlauts(mappedValue("feature_3")),
         value: explanation.original_value_3,
         percentage: explanation.percentages_feature_3_num
       });
     }
     if (explanation.feature_4 && explanation.percentages_feature_4 !== undefined) {
       features.push({
-        feature: replaceUmlauts(explanation.feature_4),
+        feature: replaceUmlauts(mappedValue("feature_4")),
         value: explanation.original_value_4,
         percentage: explanation.percentages_feature_4_num
       });
@@ -148,7 +162,7 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
 
       <div style={{ marginBottom: '50px' }}>
           <br/>
-          {message && <p className= {styles.list} style={{ color: 'red', marginLeft: '15%' }}>{message}</p>}
+          {message && <p className= {styles.list} style={{ color: 'red', marginLeft: '14%' }}>{message}</p>}
           <br/>
         <Button
           variant="contained"
