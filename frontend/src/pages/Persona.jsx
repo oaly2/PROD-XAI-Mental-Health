@@ -4,6 +4,7 @@ import explanationsData from '../240424_xaimh_output-finalized.json';
 import { useNavigate } from "react-router-dom";
 import styles from '../styles/PersonaPage.module.css';
 import Button from "@mui/material/Button";
+import explanationImage from '../assets/images/Explanation.png';
 
 export default function PersonaPage({ showProceedButton = true }) {
   const [explanation, setExplanation] = useState(null);
@@ -71,7 +72,7 @@ export default function PersonaPage({ showProceedButton = true }) {
           Versetzen Sie sich nun in das hypothetische Szenario. Stellen Sie sich vor, Sie nutzen eine Smart-Sensing-App für mentale Gesundheit – also eine App, die Sensordaten von Ihrem Smartphone nutzt, um Informationen zu Ihrer mentalen Gesundheit zu liefern  
         </h1>
         <br/>
-        <img src="../assets/images/Explanation.png" alt="Explanation" />
+        <img src={explanationImage} alt="Explanation" className={styles.image}/>
         <br/>
         {showProceedButton && (
           <>
