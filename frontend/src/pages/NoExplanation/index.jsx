@@ -42,16 +42,18 @@ export default function SurveyScreenDepressionPage({ explanation }) {
 
       <div className={styles.container} style={{padding:'15px 15px'}}>  
         <h1 className={styles.subTitle} style={{color: 'black', fontWeight: 'normal'}}>
-          Stellen Sie sich weiterhin vor, Sie
-          nutzen eine Smart Sensing App für mentale Gesundheit also eine App,
-          die Sensordaten von Ihrem Smartphone und anderen Geräten nutzt, um
-          Informationen zu Ihrer mentalen Gesundheit zu liefern. Sie öffnen die App
-          und zeigt Ihnen Folgendes an. Bitte nehmen Sie sich einen Moment, den
-          Bildschirm genau anzuschauen.  
+        Stellen Sie sich weiterhin vor, Sie nutzen eine
+        Smart-Sensing-App für mentale Gesundheit –
+        also eine App, die Sensordaten von Ihrem
+        Smartphone und anderen Geräten nutzt, um
+        Informationen zu Ihrer mentalen Gesundheit zu
+        liefern. Sie öffnen die App und diese zeigt Ihnen
+        Folgendes an. Bitte nehmen Sie sich einen
+        Moment, den Bildschirm genau anzuschauen.  
         </h1>
       </div>
 
-      <div className={styles.container} style={{padding:'15px 15px'}}>
+      <div className={styles.container} style={{padding:'15px 15px', marginTop: '-20%'}}>
         <div className="bg-blue_gray-100 rounded-lg mx-auto px-20 py-6">
           <Text className="text-center text-xl md:text-2xl font-semibold mt-4" style={{ fontSize: '2.0em' }}>
             Die KI prognostiziert auf Basis<br /> deiner Smartphone-Daten<br /><br />
@@ -67,7 +69,7 @@ export default function SurveyScreenDepressionPage({ explanation }) {
         </Text>
         </div>
         
-        <div style={{ marginBottom: '50px' }}>
+        <div style={{ marginBottom: '50px', marginTop: '-20%'}}>
           <br/>
           {message && (
             <div className={styles.messageContainer}>

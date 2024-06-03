@@ -161,7 +161,7 @@ export default function SurveyScreenDepressionCFPage() {
         </h1>
       </div>
 
-      <div className={styles.container} style={{padding:'15px 15px', marginTop: '-50%'}}>  
+      <div className={styles.container} style={{padding:'15px 15px', marginTop: '-20%'}}>  
         <div className="bg-blue-50 rounded-lg mx-auto px-20 py-6">
           <Text className="text-center text-xl md:text-2xl font-semibold mt-4" style={{ fontSize: '2.0em' }} >
             Die KI prognostiziert auf Basis<br />deiner Smartphone-Daten<br /><br />   
@@ -178,7 +178,7 @@ export default function SurveyScreenDepressionCFPage() {
         </Text>
       </div>
 
-      <div style={{ marginBottom: '50px', marginTop: '-50%' }}>
+      <div style={{ marginBottom: '50px', marginTop: '-20%' }}>
           <br/>
           {message && (
             <div className={styles.messageContainer}>
