@@ -147,7 +147,7 @@ export default function SurveyScreenDepressionCFPage() {
       </Helmet>
       <div className={styles.container} style={{padding: '0.5vw'}}>
       <div className={styles.container} style={{padding: '0.5vw'}}>  
-        <h1 className={styles.subTitle} style={{color: 'black', fontWeight: 'normal', marginBottom: '1vw'}}>
+        <h1 className={styles.subTitle} style={{color: 'black', fontWeight: 'normal'}}>
           Stellen Sie sich weiterhin vor, Sie
           nutzen eine Smart Sensing App für mentale Gesundheit also eine App,
           die Sensordaten von Ihrem Smartphone und anderen Geräten nutzt, um
@@ -183,7 +183,7 @@ export default function SurveyScreenDepressionCFPage() {
         <Button
           variant="contained"
           onClick={handleProceed}
-          style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px', width: '10%', margin: '2vw auto 0 auto'}}
+          style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px', width: '30%', margin: '2vw auto 0 auto'}}
         > 
           Weiter &#x279C;
         </Button>
