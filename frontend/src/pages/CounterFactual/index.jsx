@@ -8,7 +8,6 @@ import PersonaPage from "../Persona";
 
 export default function SurveyScreenDepressionCFPage({ explanation }) {
   const [timer, setTimer] = useState(10);
-  const [buttonEnabled, setButtonEnabled] = useState(false);
   const [message, setMessage] = useState("");
   
   let navigate = useNavigate();
@@ -19,8 +18,6 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
         setTimer(timer - 1);
       }, 1000);
       return () => clearInterval(interval);
-    } else {
-      setButtonEnabled(true);
     }
   }, [timer]);
 
@@ -36,15 +33,15 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
   };
 
   const handleProceed = () => {
-    if (buttonEnabled) {
+    if (timer > 0) {
+      setMessage("Bitte nehmen Sie sich noch etwas mehr Zeit um die Informationen anzusehen. Sie sollten diese für die kommenden Fragen verinnerlicht haben");
+    } else {
       // Navigate based on the prediction value
       if (explanation.prediction === "depression") {
         navigate("/intention_to_act_A");
       } else {
         navigate("/intention_to_act_B");
       }
-    } else {
-      setMessage("Bitte nehmen Sie sich noch etwas mehr Zeit um die Informationen anzusehen. Sie sollten diese für die kommenden Fragen verinnerlicht haben");
     }
   };
 
@@ -153,7 +150,6 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
         <Button
           variant="contained"
           onClick={handleProceed}
-          disabled={!buttonEnabled}
           style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px', width: '10%', marginLeft: '45%', marginBottom: '30px'}}
         > 
           Weiter &#x279C;

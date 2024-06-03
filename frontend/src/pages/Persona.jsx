@@ -9,7 +9,6 @@ import TextField from "@mui/material/TextField";
 export default function PersonaPage({ showProceedButton = true }) {
   const [explanation, setExplanation] = useState(null);
   const [timer, setTimer] = useState(10);
-  const [buttonEnabled, setButtonEnabled] = useState(false);
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
@@ -50,16 +49,14 @@ export default function PersonaPage({ showProceedButton = true }) {
         setTimer(timer - 1);
       }, 1000);
       return () => clearInterval(interval);
-    } else {
-      setButtonEnabled(true);
     }
   }, [timer]);
 
   const handleProceed = () => {
-    if (buttonEnabled) {
-      navigate('/home');
-    } else {
+    if (timer > 0) {
       setMessage("Bitte nehmen Sie sich noch etwas mehr Zeit um die Informationen anzusehen. Sie sollten diese für die kommenden Fragen verinnerlicht haben");
+    } else {
+      navigate('/home');
     }
   };
 
@@ -139,7 +136,6 @@ export default function PersonaPage({ showProceedButton = true }) {
             <Button
               variant="contained"
               onClick={handleProceed}
-              disabled={!buttonEnabled}
               style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px'}}
             >
               Weiter &#x279C;
