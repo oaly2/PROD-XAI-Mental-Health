@@ -5,6 +5,7 @@ import styles from '../styles/introductory.module.css';
 
 
 
+
 export default function IntroductoryPage() {
 
   const userData = JSON.parse(sessionStorage.getItem('userData')) || {};
@@ -12,6 +13,10 @@ export default function IntroductoryPage() {
   userData.submitted = true;
 
   sessionStorage.setItem('userData', JSON.stringify(userData));
+
+  const handleProceed = () => {
+    window.location.href("https://app.prolific.com/submissions/complete?cc=C14XKNBM")
+  };
   
   return (
     <>
@@ -46,6 +51,15 @@ export default function IntroductoryPage() {
         <br/>
  
         </p>
+
+        <Button
+              variant="contained"
+              onClick={handleProceed}
+              style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px'}}
+            >
+              Back to Prolific 
+        </Button>
+
       </div>
     </>
   );
