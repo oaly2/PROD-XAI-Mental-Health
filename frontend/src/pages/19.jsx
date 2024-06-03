@@ -54,10 +54,11 @@ export default function IntroductoryPage() {
 
 
         <br/>
-        <p className="mb-4 text text-xl md:text-2xl">
+        <br/>
+        <p className="mb-4 text text-xl md:text-2xl" style={{color: 'red'}}>
           Bitte kehren Sie zu Prolific zurück
         </p>
-        <br/>
+        
         <Button
               variant="contained"
               onClick={handleProceed}
