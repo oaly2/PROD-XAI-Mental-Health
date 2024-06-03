@@ -183,7 +183,7 @@ export default function SurveyScreenDepressionCFPage() {
         <Button
           variant="contained"
           onClick={handleProceed}
-          style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px', width: '30%', margin: '2vw auto 0 auto'}}
+          style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px', width: '60%'}}
         > 
           Weiter &#x279C;
         </Button>
