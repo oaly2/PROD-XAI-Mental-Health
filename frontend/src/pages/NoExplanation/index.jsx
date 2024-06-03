@@ -68,8 +68,7 @@ export default function SurveyScreenDepressionPage({ explanation }) {
           einen Arztbesuch. Wenn du dich deprimiert fühlst, wende dich an einen Arzt.
         </Text>
         </div>
-        
-        <div style={{ marginBottom: '50px'}}>
+      
           <br/>
           {message && (
             <div className={styles.messageContainer}>
@@ -77,7 +76,6 @@ export default function SurveyScreenDepressionPage({ explanation }) {
             </div>
           )}
           <br/>
-        </div>
         <Button
           variant="contained"
           onClick={handleProceed}

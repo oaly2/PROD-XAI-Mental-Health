@@ -174,13 +174,12 @@ export default function SurveyScreenDepressionCFPage() {
         </Text>
       </div>
 
-      <div style={{ marginBottom: '0.5vw', marginTop: '0.5vw' }}>
         {message && (
           <div className={styles.messageContainer}>
             <p className={styles.messageText}>{message}</p>
           </div>
         )}
-      </div>
+      
         <Button
           variant="contained"
           onClick={handleProceed}
