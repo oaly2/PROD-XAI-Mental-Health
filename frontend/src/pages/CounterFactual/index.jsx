@@ -118,42 +118,21 @@ export default function SurveyScreenDepressionCFPage() {
 
     if (features.length === 0) return null;
 
-    const formattedFeatures = features.map((f, index) => (
-      <span key={index} style={{ color: "#15b1e2", fontWeight: "bold" }}>
-        {f.feature} ({f.value})
-      </span>
-    ));
-
-    const featureDescriptions = features.map((f, index) => (
-      <span key={index} style={{ color: "#15b1e2", fontWeight: "bold" }}>
-        {f.feature} um {Math.abs(Math.round(f.percentage))}% {f.percentage >= 0 ? 'höher' : 'geringer'}
-      </span>
-    ));
-
-    const joinedFeatures = formattedFeatures.reduce((acc, curr, index) => {
-      if (index === 0) {
-        return [curr];
-      } else if (index === features.length - 1) {
-        return [...acc, ' und ', curr];
-      } else {
-        return [...acc, ', ', curr];
-      }
-    }, []);
-
-    const joinedFeatureDescriptions = featureDescriptions.reduce((acc, curr, index) => {
-      if (index === 0) {
-        return [curr];
-      } else if (index === features.length - 1) {
-        return [...acc, ' und ', curr];
-      } else {
-        return [...acc, ', ', curr];
-      }
-    }, []);
+    const oppositePrediction = explanation.prediction === "depression" ? "niedriges Depressionsrisiko" : "erhöhtes Depressionsrisiko";
 
     return (
-      <Text as="p" className="text-center text-base md:text-xl mx-2 my-4" style={{ fontSize: '1.25em', lineHeight: '1.75em' }}>
-        {joinedFeatures} sind besonders relevant für die Prognose der KI. Die KI würde {explanation.prediction === "depression" ? "ein erhöhtes Depressionsrisiko" : "ein niedriges Depressionsrisiko"} prognostizieren, wenn {joinedFeatureDescriptions} wäre.
-      </Text>
+      <div>
+        <Text as="p" className="text-center text-base md:text-xl mx-2 my-4" style={{ fontSize: '1.25em', lineHeight: '1.75em' }}>
+          Unter folgenden Umständen würde die KI ein {oppositePrediction} prognostizieren:
+        </Text>
+        <ul style={{ fontSize: '1.25em', lineHeight: '1.75em' }}>
+          {features.map((f, index) => (
+            <li key={index} style={{ color: "#15b1e2", fontWeight: "bold" }}>
+              {f.feature} (aktuell {f.value}) müsste um {Math.abs(Math.round(f.percentage))}% {f.percentage >= 0 ? 'höher' : 'geringer'} sein
+            </li>
+          ))}
+        </ul>
+      </div>
     );
   };
 
@@ -169,7 +148,7 @@ export default function SurveyScreenDepressionCFPage() {
       </Helmet>
 
       <div className={styles.container} style={{padding:'15px 15px'}}>  
-        <h1 className={styles.subTitle}>
+        <h1 className={styles.subTitle} style={{color: 'black', fontWeight: 'normal'}}>
           Stellen Sie sich weiterhin vor, Sie
           nutzen eine Smart Sensing App für mentale Gesundheit also eine App,
           die Sensordaten von Ihrem Smartphone und anderen Geräten nutzt, um
