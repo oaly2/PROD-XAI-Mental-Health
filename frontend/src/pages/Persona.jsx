@@ -84,7 +84,7 @@ export default function PersonaPage({ showProceedButton = true }) {
             <br/> <br/>
             Bitte merken Sie sich die folgenden Informationen, damit Sie die Studie erfolgreich fortsetzen können
             <br/> <br/> <br/>
-            Stellen Sie sich vor, die App hätte folgende Informationen über Sie gesammelt 
+            Stellen Sie sich vor, die App hätte folgende Informationen über Sie gesammelt:
           </h1>
         )}
         {!showProceedButton && (
@@ -97,13 +97,13 @@ export default function PersonaPage({ showProceedButton = true }) {
           {[
             { label: 'Dein Stresslevel', value: mappedValue(explanation.Dein_Stresslevel) },
             { label: 'Deine Schlafqualität', value: mappedValue(explanation.Deine_Schlafqualitaet) },
-            { label: 'Deine Anzahl sozialer Kontakte'+ '\u00A0'+ '\u00A0'+ '\u00A0'+ '\u00A0', value:  mappedValue(explanation.Anzahl_deiner_sozialen_Kontakte) },
-            { label: 'Deine Qualität sozialer Kontakte' + '\u00A0'+ '\u00A0'+ '\u00A0'+ '\u00A0'+ '\u00A0'+ '\u00A0', value: mappedValue(explanation.Qualitaet_deiner_sozialen_Kontakte) },
-            { label: 'Deine Qualität der Ernährung'+ '\u00A0'+ '\u00A0'+ '\u00A0'+ '\u00A0', value: mappedValue(explanation.Qualitaet_deiner_Ernaehrung) },
-            { label: 'Deine sportliche Aktivität'+ '\u00A0'+ '\u00A0', value: mappedValue(explanation.Deine_sportliche_Aktivitaet) },
+            { label: 'Deine Anzahl sozialer Kontakte'+ '\u00A0' .repeat(5), value:  mappedValue(explanation.Anzahl_deiner_sozialen_Kontakte) },
+            { label: 'Deine Qualität sozialer Kontakte' + '\u00A0' .repeat(7), value: mappedValue(explanation.Qualitaet_deiner_sozialen_Kontakte) },
+            { label: 'Deine Qualität der Ernährung'+ '\u00A0' .repeat(5), value: mappedValue(explanation.Qualitaet_deiner_Ernaehrung) },
+            { label: 'Deine sportliche Aktivität'+ '\u00A0' .repeat(3), value: mappedValue(explanation.Deine_sportliche_Aktivitaet) },
             { label: 'Deine Zeit am Handy', value: mappedValue(explanation.Zeit_am_Handy) },
             { label: 'Deine Länge der Telefonate'+ '\u00A0'+ '\u00A0'+ '\u00A0'+ '\u00A0', value: mappedValue(explanation.Laenge_deiner_Telefonate) },
-            { label: 'Deine Mobilität'+ '\u00A0'+ '\u00A0'+ '\u00A0'+ '\u00A0', value: mappedValue(explanation.Deine_Mobilitaet) }
+            { label: 'Deine Mobilität'+ '\u00A0', value: mappedValue(explanation.Deine_Mobilitaet) }
           ].map((item, index) => (
             <TextField 
               key={index}
