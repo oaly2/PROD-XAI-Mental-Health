@@ -58,6 +58,14 @@ export default function SurveyScreenDepressionCFPage() {
   };
 
   const valueMapping = {
+    "Stark unterdurchschnittlich": "Sehr gering",
+    "Leicht unterdurchschnittlich": "Gering",
+    "Durchschnittlich": "Durchschnittlich",
+    "Leicht überdurchschnittlich": "Hoch",
+    "Stark überdurchschnittlich": "Sehr hoch"
+  };
+
+  const featureMapping = {
     "Dein_Stresslevel": "Dein Stresslevel",
     "Deine_Schlafqualitaet": "Deine Schlafqualität",
     "Anzahl_deiner_sozialen_Kontakte": "Deine Anzahl sozialer Kontakte",
@@ -70,6 +78,7 @@ export default function SurveyScreenDepressionCFPage() {
   };
 
   const mappedValue = (value) => valueMapping[value] || value;
+  const mappedFeature = (feature) => featureMapping[feature] || feature;
 
   const formatCounterfactualText = () => {
     if (!explanation) {
@@ -80,29 +89,29 @@ export default function SurveyScreenDepressionCFPage() {
 
     if (explanation.feature_1 && explanation.percentages_feature_1 !== undefined) {
       features.push({
-        feature: replaceUmlauts(mappedValue(explanation.feature_1)),
-        value: explanation.original_value_1,
+        feature: replaceUmlauts(mappedFeature(explanation.feature_1)),
+        value: mappedValue(explanation.original_value_1),
         percentage: explanation.percentages_feature_1_num
       });
     }
     if (explanation.feature_2 && explanation.percentages_feature_2 !== undefined) {
       features.push({
-        feature: replaceUmlauts(mappedValue(explanation.feature_2)),
-        value: explanation.original_value_2,
+        feature: replaceUmlauts(mappedFeature(explanation.feature_2)),
+        value: mappedValue(explanation.original_value_2),
         percentage: explanation.percentages_feature_2_num
       });
     }
     if (explanation.feature_3 && explanation.percentages_feature_3 !== undefined) {
       features.push({
-        feature: replaceUmlauts(mappedValue(explanation.feature_3)),
-        value: explanation.original_value_3,
+        feature: replaceUmlauts(mappedFeature(explanation.feature_3)),
+        value: mappedValue(explanation.original_value_3),
         percentage: explanation.percentages_feature_3_num
       });
     }
     if (explanation.feature_4 && explanation.percentages_feature_4 !== undefined) {
       features.push({
-        feature: replaceUmlauts(mappedValue(explanation.feature_4)),
-        value: explanation.original_value_4,
+        feature: replaceUmlauts(mappedFeature(explanation.feature_4)),
+        value: mappedValue(explanation.original_value_4),
         percentage: explanation.percentages_feature_4_num
       });
     }
