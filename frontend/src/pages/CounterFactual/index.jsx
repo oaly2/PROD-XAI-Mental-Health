@@ -180,6 +180,7 @@ export default function SurveyScreenDepressionCFPage() {
             <p className={styles.messageText}>{message}</p>
           </div>
         )}
+      </div>
         <Button
           variant="contained"
           onClick={handleProceed}
@@ -187,7 +188,6 @@ export default function SurveyScreenDepressionCFPage() {
         > 
           Weiter &#x279C;
         </Button>
-      </div>
       </div>
     </>
   );
