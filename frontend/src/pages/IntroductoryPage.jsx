@@ -35,18 +35,19 @@ export default function IntroductoryPage() {
         <br/>
 
         <span className={styles.subTitle}>Worum geht es? <br/></span>
-        So genannte Smart-Sensing-Apps nutzen Künstliche Intelligenz (KI), um ihren Usern auf Basis von Sensordaten von Smartphones und anderen Geräten Informationen und Ratschläge zu liefern. Zu den Daten gehören u.a. die Schlafdauer und -qualität, die sportliche Aktivität, die Zeit am Bildschirm oder wieviel man unterwegs ist (Mobilität). In unserem Fall geht es um eine App, die mithilfe von Künstlicher Intelligenz (KI) auswertet, ob die Sensordaten auf ein erhöhtes Depressionsrisiko hindeuten. 
+        So genannte Smart-Sensing-Apps nutzen Künstliche Intelligenz (KI), um ihren Usern auf Basis von Sensordaten von Smartphones und anderen Geräten Informationen und Ratschläge zu liefern. Zu den Daten gehören u.a. die Schlafdauer und -qualität, die sportliche Aktivität, die Zeit am Bildschirm oder wieviel man unterwegs ist (Mobilität). In unserem Fall geht es um eine App, die mithilfe von Künstlicher Intelligenz (KI) auswertet, ob die Informationen aus den Sensordaten auf ein erhöhtes Depressionsrisiko hindeuten. 
         <br/>
         <br/>
 
 
         <span className={styles.subTitle}>Was muss ich tun? <br/></span>
-        Sie werden gleich gebeten, sich in ein hypothetisches Szenario hineinzuversetzen. Zunächst werden Ihnen beispielhafte Informationen auf Basis von Sensordaten präsentiert. Dann sehen Sie eine KI-Auswertung auf Basis dieser Daten. Schauen Sie sich die beispielhaften Informationen und die KI-Auswertung bitte genau an. Anschließend bitten wir Sie, dazu Fragen zu beantworten.
+        Sie werden gleich gebeten, sich in ein hypothetisches Szenario hineinzuversetzen. Zunächst werden Ihnen beispielhafte Informationen auf Basis von Sensordaten präsentiert. Dann sehen Sie die zugehörige KI Auswertung. Schauen Sie sich beides bitte genau an. Anschließend stellen wir Ihnen einige Fragen.
         <br/>
         <br/>
         <br/>
         <br/>
 
+        <span style={{fontSize: '9px'}}>
         <span className={styles.list} style={{fontWeight: 'bold'}}>Hinweis:</span> Im Laufe der Befragung werden Sie zu verschiedenen emotionalen Zuständen, einschließlich negativer Gefühle und Gedanken befragt. Falls Sie während der Beantwortung der Fragen eine Belastung empfinden, haben Sie jederzeit die Möglichkeit, Ihre Teilnahme an der Studie ohne Angabe von Gründen abzubrechen. Zusätzlich stehen Ihnen bei akuten psychischen Belastungen oder Suizidgedanken rund um die Uhr folgende Hilfsangebote zur Verfügung:
         <br/>
         <br/>
@@ -55,6 +56,7 @@ export default function IntroductoryPage() {
         •	Ärztlicher (psychiatrischer) Bereitschaftsdienst: 116 117
         <br/><br/>
         <span className={styles.list} style={{fontWeight: 'bold'}}>Datenschutz:</span> Alle Daten werden anonym erhoben und ausschließlich für wissenschaftliche Zwecke ausgewertet.
+        </span>
         <br/><br/>
           <br/>
           <input
