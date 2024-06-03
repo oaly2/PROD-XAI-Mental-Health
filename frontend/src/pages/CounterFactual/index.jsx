@@ -147,6 +147,9 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
       <PersonaPage showProceedButton={false} />
 
       <div style={{ marginBottom: '50px' }}>
+          <br/>
+          {message && <p className= {styles.list} style={{ color: 'red' }}>{message}</p>}
+          <br/>
         <Button
           variant="contained"
           onClick={handleProceed}
@@ -154,7 +157,6 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
         > 
           Weiter &#x279C;
         </Button>
-        {message && <p style={{ color: 'red', textAlign: 'center' }}>{message}</p>}
       </div>
     </>
   );

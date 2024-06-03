@@ -133,6 +133,9 @@ export default function PersonaPage({ showProceedButton = true }) {
         <br/>
         {showProceedButton&& (
           <>
+          <br/>
+          {message && <p className= {styles.list} style={{ color: 'red' }}>{message}</p>}
+          <br/>
             <Button
               variant="contained"
               onClick={handleProceed}
@@ -140,7 +143,7 @@ export default function PersonaPage({ showProceedButton = true }) {
             >
               Weiter &#x279C;
             </Button>
-            {message && <p style={{ color: 'red' }}>{message}</p>}
+
           </>
         )}
       </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Text, Heading } from "../../components";
 import Button from "@mui/material/Button";
@@ -6,17 +6,30 @@ import { useNavigate } from "react-router-dom";
 import styles from "../../styles/introductory.module.css";
 import PersonaPage from "../Persona";
 
+export default function SurveyScreenDepressionPage({ explanation }) {
+  const [timer, setTimer] = useState(10);
+  const [message, setMessage] = useState("");
+  const navigate = useNavigate();
 
-export default function SurveyScreenDepressionPage( { explanation }) {
-
-  let navigate = useNavigate();
+  useEffect(() => {
+    if (timer > 0) {
+      const interval = setInterval(() => {
+        setTimer(timer - 1);
+      }, 1000);
+      return () => clearInterval(interval);
+    }
+  }, [timer]);
 
   const handleProceed = () => {
-    // Navigate based on the prediction value
-    if (explanation.prediction === "depression") {
-      navigate("/intention_to_act_A");
+    if (timer > 0) {
+      setMessage("Bitte nehmen Sie sich noch etwas mehr Zeit um die Informationen anzusehen. Sie sollten diese für die kommenden Fragen verinnerlicht haben");
     } else {
-      navigate("/intention_to_act_B");
+      // Navigate based on the prediction value
+      if (explanation.prediction === "depression") {
+        navigate("/intention_to_act_A");
+      } else {
+        navigate("/intention_to_act_B");
+      }
     }
   };
 
@@ -44,15 +57,17 @@ export default function SurveyScreenDepressionPage( { explanation }) {
         
         <PersonaPage showProceedButton={false} />
         
-
         <div style={{ marginBottom: '50px' }}>
-        <Button
-          variant="contained"
-          onClick={handleProceed}
-          style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px', width: '10%', marginLeft: '45%', marginBottom: '30px'}}
-        > 
-          Weiter &#x279C;
-        </Button>
+          <br/>
+          {message && <p className= {styles.list} style={{ color: 'red' }}>{message}</p>}
+          <br/>
+          <Button
+            variant="contained"
+            onClick={handleProceed}
+            style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px', width: '10%', marginLeft: '45%', marginBottom: '30px'}}
+          > 
+            Weiter &#x279C;
+          </Button>
         </div>
     </>
   );
