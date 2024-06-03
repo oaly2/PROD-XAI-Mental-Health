@@ -49,7 +49,8 @@ export default function IntroductoryPage() {
         <br/>
  
         </p>
-
+        <br/>
+        <br/>
         <Button
               variant="contained"
               onClick={handleProceed}
