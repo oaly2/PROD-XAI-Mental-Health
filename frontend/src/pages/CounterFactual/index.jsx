@@ -148,7 +148,7 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
 
       <div style={{ marginBottom: '50px' }}>
           <br/>
-          {message && <p className= {styles.list} style={{ color: 'red' }}>{message}</p>}
+          {message && <p className= {styles.list} style={{ color: 'red', marginLeft: '45%' }}>{message}</p>}
           <br/>
         <Button
           variant="contained"
