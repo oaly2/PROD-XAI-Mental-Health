@@ -39,8 +39,8 @@ export default function SurveyScreenDepressionPage({ explanation }) {
         <title>Smart-Sensing-Apps für mentale Gesundheit</title>
         <meta name="description" content="Web site created using create-react-app" />
       </Helmet>
-
-      <div className={styles.container} style={{padding:'15px 15px'}}>  
+      <div className={styles.container} style={{padding: '0.5vw'}}>
+      <div className={styles.container} style={{padding: '0.5vw'}}>  
         <h1 className={styles.subTitle} style={{color: 'black', fontWeight: 'normal'}}>
         Stellen Sie sich weiterhin vor, Sie nutzen eine
         Smart-Sensing-App für mentale Gesundheit –
@@ -53,7 +53,7 @@ export default function SurveyScreenDepressionPage({ explanation }) {
         </h1>
       </div>
 
-      <div className={styles.container} style={{padding:'15px 15px', marginTop: '-20%'}}>
+      <div className={styles.container} style={{padding: '0.5vw'}}>
         <div className="bg-blue_gray-100 rounded-lg mx-auto px-20 py-6">
           <Text className="text-center text-xl md:text-2xl font-semibold mt-4" style={{ fontSize: '2.0em' }}>
             Die KI prognostiziert auf Basis<br /> deiner Smartphone-Daten<br /><br />
@@ -69,7 +69,7 @@ export default function SurveyScreenDepressionPage({ explanation }) {
         </Text>
         </div>
         
-        <div style={{ marginBottom: '50px', marginTop: '-20%'}}>
+        <div style={{ marginBottom: '50px'}}>
           <br/>
           {message && (
             <div className={styles.messageContainer}>
@@ -84,6 +84,7 @@ export default function SurveyScreenDepressionPage({ explanation }) {
         > 
           Weiter &#x279C;
         </Button>
+      </div>
       </div>
     </>
   );

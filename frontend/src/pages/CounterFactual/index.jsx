@@ -145,7 +145,7 @@ export default function SurveyScreenDepressionCFPage() {
         <title>Smart-Sensing-Apps für mentale Gesundheit</title>
         <meta name="description" content="Web site created using create-react-app" />
       </Helmet>
-      <div className={styles.container} style={{padding: '0.5vw'}}>
+      <div className={styles.container} style={{padding: '0.5vw', marginBottom: '0.5vw'}}>
       <div className={styles.container} style={{padding: '0.5vw'}}>  
         <h1 className={styles.subTitle} style={{color: 'black', fontWeight: 'normal'}}>
           Stellen Sie sich weiterhin vor, Sie
