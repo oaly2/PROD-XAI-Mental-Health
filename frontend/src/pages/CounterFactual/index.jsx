@@ -121,11 +121,11 @@ export default function SurveyScreenDepressionCFPage() {
     const oppositePrediction = explanation.prediction === "depression" ? "niedriges Depressionsrisiko" : "erhöhtes Depressionsrisiko";
 
     return (
-      <div>
+      <div style={{ textAlign: 'center' }}>
         <Text as="p" className="text-center text-base md:text-xl mx-2 my-4" style={{ fontSize: '1.25em', lineHeight: '1.75em' }}>
           Unter folgenden Umständen würde die KI ein {oppositePrediction} prognostizieren:
         </Text>
-        <ul style={{ fontSize: '1.25em', lineHeight: '1.75em' }}>
+        <ul className={styles.listCenter}>
           {features.map((f, index) => (
             <li key={index} style={{ color: "#15b1e2", fontWeight: "bold" }}>
               {f.feature} (aktuell {f.value}) müsste um {Math.abs(Math.round(f.percentage))}% {f.percentage >= 0 ? 'höher' : 'geringer'} sein
@@ -167,9 +167,6 @@ export default function SurveyScreenDepressionCFPage() {
             {explanation.prediction === "depression" ? "Erhöhtes Depressionsrisiko" : "Niedriges Depressionsrisiko"}
           </Heading>
         </div>
-        <Text as="p" style={{ fontSize: '1.25em', marginTop: '20px' }}>
-          Die KI-Prognose basiert auf den folgenden Informationen:
-        </Text>
         {formatCounterfactualText()}
         <Text as="p" className="text-blue_gray-400 text-sm md:text-base text-center mt-auto" style={{marginTop: '20px'}}>
           Alle angezeigten Ergebnisse sind lediglich Vorhersagen einer KI. Als solche können sie nur Hinweise auf
@@ -180,7 +177,9 @@ export default function SurveyScreenDepressionCFPage() {
 
       <div style={{ marginBottom: '50px' }}>
           <br/>
+          <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
           {message && <p className= {styles.list} style={{ color: 'red', marginLeft: '14%' }}>{message}</p>}
+          </div>
           <br/>
         <Button
           variant="contained"
