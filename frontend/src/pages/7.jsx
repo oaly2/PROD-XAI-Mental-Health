@@ -59,7 +59,7 @@ export default function A7Page() {
 
   return (
     <div className={styles.container}>
-      <h1 style={{fontSize: '18px'}}>Sie haben in dieser Studie Auszüge aus einer <span style={{fontWeight: 'bold'}}>Smart-Sensing-App für mentale Gesundheit</span> kennengelernt: Auf Basis von <span style={{fontStyle: 'italic'}}>Sensordaten von Smartphones ermittelt eine Künstlicher Intelligenz (KI)</span> das Depressionsrisiko. Jetzt bitten wir Sie, einige Aussagen zu dieser App zu bewerten</h1>
+      <h1 style={{fontSize: '18px'}}>Sie haben in dieser Studie Auszüge aus einer <span style={{fontWeight: 'bold'}}>Smart-Sensing-App für mentale Gesundheit</span> kennengelernt: Auf Basis von <span style={{fontStyle: 'italic'}}>Sensordaten von Smartphones und anderen Geräten ermittelt eine Künstlicher Intelligenz (KI)</span> das Depressionsrisiko. Jetzt bitten wir Sie, einige Aussagen zu dieser App zu bewerten</h1>
       <br />
       <br />
       <form>
