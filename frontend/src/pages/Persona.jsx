@@ -69,7 +69,14 @@ export default function PersonaPage({ showProceedButton = true }) {
       <br/>
       <div className={styles.container}>
         <h1 className={styles.subTitle}>
-          Versetzen Sie sich nun in das hypothetische Szenario. Stellen Sie sich vor, Sie nutzen eine Smart-Sensing-App für mentale Gesundheit – also eine App, die Sensordaten von Ihrem Smartphone und anderen Geräten. Die App wird auf folgende Art beworben - bitte sehen Sie sich die Informationen genau an nutzt, um Informationen zu Ihrer mentalen Gesundheit zu liefern  
+        Versetzen Sie sich nun in das hypothetische
+        Szenario. Stellen Sie sich vor, Sie nutzen eine
+        Smart-Sensing-App für mentale Gesundheit –
+        also eine App, die Sensordaten von Ihrem
+        Smartphone und anderen Geräten nutzt, um
+        Informationen zu Ihrer mentalen Gesundheit zu
+        liefern. Die App wird auf folgende Art beworben -
+        bitte sehen Sie sich die Informationen genau an.
         </h1>
         <br/>
         <br/>

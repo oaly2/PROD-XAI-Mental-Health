@@ -83,7 +83,7 @@
 
 .listCenter {
   text-align: left;
-  display: flex;
+  display: inline-block;
   list-style-type: disc;
   padding-left: 20px;
   margin-left: 0;

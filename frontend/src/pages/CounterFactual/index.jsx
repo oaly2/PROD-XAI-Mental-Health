@@ -57,11 +57,11 @@ export default function SurveyScreenDepressionCFPage() {
   };
 
   const valueMapping = {
-    "Stark unterdurchschnittlich": "Sehr gering",
-    "Leicht unterdurchschnittlich": "Gering",
-    "Durchschnittlich": "Durchschnittlich",
-    "Leicht überdurchschnittlich": "Hoch",
-    "Stark überdurchschnittlich": "Sehr hoch"
+    "Stark unterdurchschnittlich": "sehr gering",
+    "Leicht unterdurchschnittlich": "gering",
+    "Durchschnittlich": "durchschnittlich",
+    "Leicht überdurchschnittlich": "hoch",
+    "Stark überdurchschnittlich": "sehr hoch"
   };
 
   const featureMapping = {
@@ -121,15 +121,13 @@ export default function SurveyScreenDepressionCFPage() {
 
     return (
       <div style={{ textAlign: 'center' }}>
-        <Text as="p" className="text-center text-base md:text-xl mx-2 my-4" style={{ fontSize: '1.25em', lineHeight: '1.75em' }}>
+        <Text as="p" className="text-center text-base md:text-xl mx-2 my-4" style={{ fontSize: '1.25em', lineHeight: '1.5em' }}>
           Unter folgenden Umständen würde die KI ein {oppositePrediction} prognostizieren:
         </Text>
         <ul className={styles.listCenter}>
           {features.map((f, index) => (
-            <li key={index} style={{ color: "#15b1e2", fontWeight: "bold", fontSize: '18px' }}>
+            <li key={index} style={{ color: "#15b1e2", fontWeight: "bold", fontSize: '18px', marginBottom: '10px' }}>
               {f.feature} (aktuell {f.value}) müsste um {Math.abs(Math.round(f.percentage))}% {f.percentage >= 0 ? 'höher' : 'geringer'} sein
-              <br />
-              <br />
             </li>
           ))}
         </ul>
@@ -148,20 +146,22 @@ export default function SurveyScreenDepressionCFPage() {
         <meta name="description" content="Web site created using create-react-app" />
       </Helmet>
 
-      <div className={styles.container} style={{padding:'15px 15px'}}>  
-        <h1 className={styles.subTitle} style={{color: 'black', fontWeight: 'normal'}}>
-          Stellen Sie sich weiterhin vor, Sie
-          nutzen eine Smart Sensing App für mentale Gesundheit also eine App,
-          die Sensordaten von Ihrem Smartphone und anderen Geräten nutzt, um
-          Informationen zu Ihrer mentalen Gesundheit zu liefern. Sie öffnen die App
-          und zeigt Ihnen Folgendes an. Bitte nehmen Sie sich einen Moment, den
-          Bildschirm genau anzuschauen.  
+      <div className={styles.container} style={{padding: '10px'}}>  
+        <h1 className={styles.subTitle} style={{color: 'black', fontWeight: 'normal', marginBottom: '20px'}}>
+        Stellen Sie sich weiterhin vor, Sie nutzen eine
+        Smart-Sensing-App für mentale Gesundheit –
+        also eine App, die Sensordaten von Ihrem
+        Smartphone und anderen Geräten nutzt, um
+        Informationen zu Ihrer mentalen Gesundheit zu
+        liefern. Sie öffnen die App und diese zeigt Ihnen
+        Folgendes an. Bitte nehmen Sie sich einen
+        Moment, den Bildschirm genau anzuschauen.
         </h1>
       </div>
 
-      <div className={styles.container} style={{padding:'15px 15px'}}>  
-        <div className="bg-blue-50 rounded-lg mx-auto px-20 py-6">
-          <Text className="text-center text-xl md:text-2xl font-semibold mt-4" style={{ fontSize: '2.0em' }} >
+      <div className={styles.container} style={{padding: '10px'}}>  
+        <div className="bg-blue-50 rounded-lg mx-auto px-10 py-4">
+          <Text className="text-center text-xl md:text-2xl font-semibold mt-4" style={{ fontSize: '2.0em', marginBottom: '10px' }} >
             Die KI prognostiziert auf Basis<br />deiner Smartphone-Daten<br /><br />   
           </Text>
           <Heading as="h2" className={`${explanation.prediction === "depression" ? "text-red-A700" : "text-green-600"} text-3xl md:text-5xl text-center`} style={{ fontSize: '2.5em' }}  >
@@ -176,18 +176,16 @@ export default function SurveyScreenDepressionCFPage() {
         </Text>
       </div>
 
-      <div style={{ marginBottom: '50px' }}>
-          <br/>
+      <div style={{ marginBottom: '20px', marginTop: '20px' }}>
           {message && (
             <div className={styles.messageContainer}>
               <p className={styles.messageText}>{message}</p>
             </div>
           )}
-          <br/>
         <Button
           variant="contained"
           onClick={handleProceed}
-          style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px', width: '10%', marginLeft: '45%', marginBottom: '30px'}}
+          style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px', marginTop: '20px'}}
         > 
           Weiter &#x279C;
         </Button>

@@ -41,7 +41,7 @@ export default function IntroductoryPage() {
 
 
         <span className={styles.subTitle}>Was muss ich tun? <br/></span>
-        Sie werden gleich gebeten, sich in ein hypothetisches Szenario hineinzuversetzen. Zunächst werden Ihnen beispielhafte Informationen auf Basis von Sensordaten präsentiert. Dann sehen Sie die zugehörige KI Auswertung. Schauen Sie sich beides bitte genau an. Anschließend stellen wir Ihnen einige Fragen.
+        Sie werden gleich gebeten, sich in ein hypothetisches Szenario hineinzuversetzen. Zunächst werden Ihnen beispielhafte Informationen auf Basis von Sensordaten präsentiert. Dann sehen Sie die zugehörige KI-Auswertung. Schauen Sie sich beides bitte genau an. Anschließend stellen wir Ihnen einige Fragen.
         <br/>
         <br/>
         <br/>
