@@ -4,10 +4,13 @@ import explanationsData from '../240424_xaimh_output-finalized.json';
 import { useNavigate } from "react-router-dom";
 import styles from '../styles/PersonaPage.module.css';
 import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";    
+import TextField from "@mui/material/TextField";
 
 export default function PersonaPage({ showProceedButton = true }) {
   const [explanation, setExplanation] = useState(null);
+  const [timer, setTimer] = useState(10);
+  const [buttonEnabled, setButtonEnabled] = useState(false);
+  const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -27,11 +30,10 @@ export default function PersonaPage({ showProceedButton = true }) {
 
     // Select explanation and add to userData
     let savedExplanation = sessionStorage.getItem('selectedExplanation');
-    
 
     if (savedExplanation) {
       savedExplanation = JSON.parse(savedExplanation);
-      userData.explanation_id = savedExplanation.obj_id; 
+      userData.explanation_id = savedExplanation.obj_id;
     } else {
       const randomIndex = Math.floor(Math.random() * selectedCategory.length);
       savedExplanation = selectedCategory[randomIndex];
@@ -42,8 +44,23 @@ export default function PersonaPage({ showProceedButton = true }) {
     sessionStorage.setItem('userData', JSON.stringify(userData));
   }, []);
 
+  useEffect(() => {
+    if (timer > 0) {
+      const interval = setInterval(() => {
+        setTimer(timer - 1);
+      }, 1000);
+      return () => clearInterval(interval);
+    } else {
+      setButtonEnabled(true);
+    }
+  }, [timer]);
+
   const handleProceed = () => {
-    navigate('/home');
+    if (buttonEnabled) {
+      navigate('/home');
+    } else {
+      setMessage("Bitte nehmen Sie sich noch etwas mehr Zeit um die Informationen anzusehen. Sie sollten diese für die kommenden Fragen verinnerlicht haben");
+    }
   };
 
   const valueMapping = {
@@ -56,15 +73,9 @@ export default function PersonaPage({ showProceedButton = true }) {
 
   const mappedValue = (value) => valueMapping[value] || value;
 
-
   if (!explanation) {
     return <div>Loading...</div>;
   }
-
-  const onComplete = () => {
-    navigate('/home', { state: { explanation } })
-    window.scrollTo(0, 0);
-  };
 
   return (
     <>
@@ -73,14 +84,14 @@ export default function PersonaPage({ showProceedButton = true }) {
       </Helmet>
       <br/>
       <div className={styles.container}>
-      {showProceedButton && (
-        <h1 className={styles.subTitle}>
-        Versetzen Sie sich nun in das hypothetische Szenario. Stellen Sie sich vor, Sie nutzen eine Smart-Sensing-App für mentale Gesundheit – also eine App, die Sensordaten von Ihrem Smartphone nutzt, um Informationen zu Ihrer mentalen Gesundheit zu liefern.  
-        <br/> <br/>
-        Bitte merken Sie sich die folgenden Informationen, damit Sie die Studie erfolgreich fortsetzen können.
-        <br/> <br/> <br/>
-        Stellen Sie sich vor, die App hätte folgende Informationen über Sie gesammelt.  
-        </h1>
+        {showProceedButton && (
+          <h1 className={styles.subTitle}>
+            Versetzen Sie sich nun in das hypothetische Szenario. Stellen Sie sich vor, Sie nutzen eine Smart-Sensing-App für mentale Gesundheit – also eine App, die Sensordaten von Ihrem Smartphone nutzt, um Informationen zu Ihrer mentalen Gesundheit zu liefern.  
+            <br/> <br/>
+            Bitte merken Sie sich die folgenden Informationen, damit Sie die Studie erfolgreich fortsetzen können.
+            <br/> <br/> <br/>
+            Stellen Sie sich vor, die App hätte folgende Informationen über Sie gesammelt.  
+          </h1>
         )}
         <br/>
         <ul className={styles.list}>
@@ -124,13 +135,17 @@ export default function PersonaPage({ showProceedButton = true }) {
         </ul>
         <br/>
         {showProceedButton&& (
-          <Button
-          variant="contained"
-          onClick={onComplete}
-          style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px'}}
-        >
-          Weiter &#x279C;
-        </Button>
+          <>
+            <Button
+              variant="contained"
+              onClick={handleProceed}
+              disabled={!buttonEnabled}
+              style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px'}}
+            >
+              Weiter &#x279C;
+            </Button>
+            {message && <p style={{ color: 'red' }}>{message}</p>}
+          </>
         )}
       </div>
     </>

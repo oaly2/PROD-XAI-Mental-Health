@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Text, Heading } from "../../components";
 import { Button } from "@mui/material";
@@ -7,6 +7,23 @@ import styles from "../../styles/introductory.module.css";
 import PersonaPage from "../Persona";
 
 export default function SurveyScreenDepressionCFPage({ explanation }) {
+  const [timer, setTimer] = useState(10);
+  const [buttonEnabled, setButtonEnabled] = useState(false);
+  const [message, setMessage] = useState("");
+  
+  let navigate = useNavigate();
+
+  useEffect(() => {
+    if (timer > 0) {
+      const interval = setInterval(() => {
+        setTimer(timer - 1);
+      }, 1000);
+      return () => clearInterval(interval);
+    } else {
+      setButtonEnabled(true);
+    }
+  }, [timer]);
+
   const replaceUmlauts = (text) => {
     return text
       .replace(/ae/g, 'ä')
@@ -18,14 +35,16 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
       .replace(/_/g, ' ');
   };
 
-  let navigate = useNavigate();
-
   const handleProceed = () => {
-    // Navigate based on the prediction value
-    if (explanation.prediction === "depression") {
-      navigate("/intention_to_act_A");
+    if (buttonEnabled) {
+      // Navigate based on the prediction value
+      if (explanation.prediction === "depression") {
+        navigate("/intention_to_act_A");
+      } else {
+        navigate("/intention_to_act_B");
+      }
     } else {
-      navigate("/intention_to_act_B");
+      setMessage("Bitte nehmen Sie sich noch etwas mehr Zeit um die Informationen anzusehen. Sie sollten diese für die kommenden Fragen verinnerlicht haben");
     }
   };
 
@@ -114,7 +133,7 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
             Die KI prognostiziert auf Basis<br />deiner Smartphone-Daten<br /><br />   
           </Text>
           <Heading as="h2" className={`${explanation.prediction === "depression" ? "text-red-A700" : "text-green-600"} text-3xl md:text-5xl text-center`} style={{ fontSize: '2.5em' }}  >
-            {explanation.prediction === "depression" ? "Niedriges Depressionsrisiko" : "Niedriges Depressionsrisiko"}
+            {explanation.prediction === "depression" ? "Erhöhtes Depressionsrisiko" : "Niedriges Depressionsrisiko"}
           </Heading>
         </div>
         <Text as="p" style={{ fontSize: '1.25em', marginTop: '20px' }}>
@@ -128,16 +147,18 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
         </Text>
       </div>
       
-        <PersonaPage showProceedButton={false} />
+      <PersonaPage showProceedButton={false} />
 
-        <div style={{ marginBottom: '50px' }}>
+      <div style={{ marginBottom: '50px' }}>
         <Button
           variant="contained"
           onClick={handleProceed}
+          disabled={!buttonEnabled}
           style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px', width: '10%', marginLeft: '45%', marginBottom: '30px'}}
         > 
           Weiter &#x279C;
         </Button>
+        {message && <p style={{ color: 'red', textAlign: 'center' }}>{message}</p>}
       </div>
     </>
   );
