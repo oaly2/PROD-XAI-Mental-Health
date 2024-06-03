@@ -13,7 +13,7 @@ export default function IntroductoryPage() {
   sessionStorage.setItem('userData', JSON.stringify(userData));
 
   const handleProceed = () => {
-    window.location.href("https://app.prolific.com/submissions/complete?cc=C14XKNBM")
+    window.location.href = "https://app.prolific.com/submissions/complete?cc=C14XKNBM";
   };
   
   return (
