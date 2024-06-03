@@ -167,6 +167,18 @@ export default function SurveyScreenDepressionCFPage() {
         <title>Smart-Sensing-Apps für mentale Gesundheit</title>
         <meta name="description" content="Web site created using create-react-app" />
       </Helmet>
+
+      <div className={styles.container} style={{padding:'15px 15px'}}>  
+        <h1 className={styles.subTitle}>
+          Stellen Sie sich weiterhin vor, Sie
+          nutzen eine Smart Sensing App für mentale Gesundheit also eine App,
+          die Sensordaten von Ihrem Smartphone und anderen Geräten nutzt, um
+          Informationen zu Ihrer mentalen Gesundheit zu liefern. Sie öffnen die App
+          und zeigt Ihnen Folgendes an. Bitte nehmen Sie sich einen Moment, den
+          Bildschirm genau anzuschauen.  
+        </h1>
+      </div>
+
       <div className={styles.container} style={{padding:'15px 15px'}}>  
         <div className="bg-blue-50 rounded-lg mx-auto px-20 py-6">
           <Text className="text-center text-xl md:text-2xl font-semibold mt-4" style={{ fontSize: '2.0em' }} >
@@ -186,8 +198,6 @@ export default function SurveyScreenDepressionCFPage() {
           einen Arztbesuch. Wenn du dich deprimiert fühlst, wende dich an einen Arzt.
         </Text>
       </div>
-      
-      <PersonaPage showProceedButton={false} />
 
       <div style={{ marginBottom: '50px' }}>
           <br/>
