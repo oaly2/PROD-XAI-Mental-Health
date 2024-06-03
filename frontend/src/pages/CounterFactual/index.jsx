@@ -146,8 +146,8 @@ export default function SurveyScreenDepressionCFPage() {
         <meta name="description" content="Web site created using create-react-app" />
       </Helmet>
 
-      <div className={styles.container} style={{padding: '10px'}}>  
-        <h1 className={styles.subTitle} style={{color: 'black', fontWeight: 'normal', marginBottom: '20px'}}>
+      <div className={styles.container} style={{padding: '2vw'}}>  
+        <h1 className={styles.subTitle} style={{color: 'black', fontWeight: 'normal', marginBottom: '1vw'}}>
           Stellen Sie sich weiterhin vor, Sie
           nutzen eine Smart Sensing App für mentale Gesundheit also eine App,
           die Sensordaten von Ihrem Smartphone und anderen Geräten nutzt, um
@@ -157,9 +157,9 @@ export default function SurveyScreenDepressionCFPage() {
         </h1>
       </div>
 
-      <div className={styles.container} style={{padding: '10px'}}>
-        <div className="bg-blue_gray-100 rounded-lg mx-auto px-10 py-4">
-          <Text className="text-center text-xl md:text-2xl font-semibold mt-4" style={{ fontSize: '2.0em', marginBottom: '10px' }}>
+      <div className={styles.container} style={{padding: '2vw'}}>
+        <div className="bg-blue_gray-100 rounded-lg mx-auto px-5 py-4">
+          <Text className="text-center text-xl md:text-2xl font-semibold mt-4" style={{ fontSize: '2.0em', marginBottom: '1vw' }}>
             Die KI prognostiziert auf Basis<br /> deiner Smartphone-Daten<br /><br />
           </Text>
           <Heading as="h2" className={`${explanation.prediction === "depression" ? "text-red-A700" : "text-green-600"} text-3xl md:text-5xl text-center`} style={{ fontSize: '2.5em' }}>
@@ -167,14 +167,14 @@ export default function SurveyScreenDepressionCFPage() {
           </Heading>
         </div>
         {formatCounterfactualText()}
-        <Text as="p" className="text-blue_gray-400 text-sm md:text-base text-center mt-auto" style={{marginTop: '10px'}}>
+        <Text as="p" className="text-blue_gray-400 text-sm md:text-base text-center mt-auto" style={{marginTop: '1vw'}}>
           Alle angezeigten Ergebnisse sind lediglich Vorhersagen einer KI. Als solche können sie nur Hinweise auf
           den Gesundheitszustand geben. Sie können keine medizinische Diagnose stellen und ersetzen keinesfalls
           einen Arztbesuch. Wenn du dich deprimiert fühlst, wende dich an einen Arzt.
         </Text>
       </div>
 
-      <div style={{ marginBottom: '20px', marginTop: '20px' }}>
+      <div style={{ marginBottom: '2vw', marginTop: '2vw' }}>
         {message && (
           <div className={styles.messageContainer}>
             <p className={styles.messageText}>{message}</p>
@@ -183,7 +183,7 @@ export default function SurveyScreenDepressionCFPage() {
         <Button
           variant="contained"
           onClick={handleProceed}
-          style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px', width: '10%', margin: '20px auto 0 auto'}}
+          style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px', width: '10%', margin: '2vw auto 0 auto'}}
         > 
           Weiter &#x279C;
         </Button>
