@@ -75,6 +75,36 @@
       padding: 0;
       margin: 0;
     }
+
+    /* Add this to your CSS module file */
+.text-center {
+  text-align: center;
+}
+
+.listCenter {
+  text-align: left;
+  display: inline-block;
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-left: 0;
+}
+
+.messageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+}
+
+.messageText {
+  color: red;
+  text-align: center;
+  font-size: 1em; /* Adjust as needed for responsiveness */
+  margin: 0;
+  padding: 0;
+}
+
     
     .listItem {
       font-size: 16px;

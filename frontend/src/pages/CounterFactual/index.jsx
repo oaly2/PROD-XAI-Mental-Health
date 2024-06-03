@@ -4,7 +4,6 @@ import { Text, Heading } from "../../components";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import styles from "../../styles/introductory.module.css";
-import PersonaPage from "../Persona";
 
 export default function SurveyScreenDepressionCFPage() {
   const [explanation, setExplanation] = useState(null);
@@ -177,9 +176,11 @@ export default function SurveyScreenDepressionCFPage() {
 
       <div style={{ marginBottom: '50px' }}>
           <br/>
-          <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-          {message && <p className= {styles.list} style={{ color: 'red', marginLeft: '14%' }}>{message}</p>}
-          </div>
+          {message && (
+            <div className={styles.messageContainer}>
+              <p className={styles.messageText}>{message}</p>
+            </div>
+          )}
           <br/>
         <Button
           variant="contained"
