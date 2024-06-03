@@ -126,7 +126,7 @@ export default function SurveyScreenDepressionCFPage() {
         </Text>
         <ul className={styles.listCenter}>
           {features.map((f, index) => (
-            <li key={index} style={{ color: "#15b1e2", fontWeight: "bold", fontSize: '20px' }}>
+            <li key={index} style={{ color: "#15b1e2", fontWeight: "bold", fontSize: '18px' }}>
               {f.feature} (aktuell {f.value}) müsste um {Math.abs(Math.round(f.percentage))}% {f.percentage >= 0 ? 'höher' : 'geringer'} sein
               <br />
               <br />
