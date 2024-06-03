@@ -6,7 +6,8 @@ import { useNavigate } from "react-router-dom";
 import styles from "../../styles/introductory.module.css";
 import PersonaPage from "../Persona";
 
-export default function SurveyScreenDepressionCFPage({ explanation }) {
+export default function SurveyScreenDepressionCFPage() {
+  const [explanation, setExplanation] = useState(null);
   const [timer, setTimer] = useState(10);
   const [message, setMessage] = useState("");
   
@@ -20,6 +21,16 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
       return () => clearInterval(interval);
     }
   }, [timer]);
+
+  useEffect(() => {
+    // Retrieve the saved explanation from session storage
+    const savedExplanation = JSON.parse(sessionStorage.getItem('selectedExplanation'));
+    if (savedExplanation) {
+      setExplanation(savedExplanation);
+    } else {
+      setMessage("No explanation found in session storage.");
+    }
+  }, []);
 
   const replaceUmlauts = (text) => {
     return text
@@ -131,6 +142,10 @@ export default function SurveyScreenDepressionCFPage({ explanation }) {
       </Text>
     );
   };
+
+  if (!explanation) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <>
