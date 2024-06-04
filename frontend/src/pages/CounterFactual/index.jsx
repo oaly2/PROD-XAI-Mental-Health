@@ -151,6 +151,8 @@ export default function SurveyScreenDepressionCFPage() {
         Versetzen Sie sich weiterhin in die Lage von Alex. Alex öffnet die App und bekommt folgende Nachricht angezeigt.
 
         <br/>
+        <br/>
+
 
         Bitte sehen Sie sich den Bildschirm genau an.  
         </h1>

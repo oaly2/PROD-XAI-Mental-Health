@@ -80,7 +80,7 @@ export default function A17Page() {
 
 
   return (
-    <div className={styles.container}>
+    <div className={styles.containerS}>
       <h1 style={{fontSize: '18px', fontWeight:'bold'}}>In dieser Befragung haben Sie eine App kennengelernt, die Usern mit ihrer mentalen Gesundheit hilft. Bitte bewerten Sie die folgenden Aussagen zu Apps für mentale Gesundheit</h1>
       <br />
       <br />

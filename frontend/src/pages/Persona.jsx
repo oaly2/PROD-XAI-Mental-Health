@@ -72,10 +72,14 @@ export default function PersonaPage({ showProceedButton = true }) {
         Versetzen Sie sich nun in das hypothetische Szenario.
 
         <br/>
+        <br/>
+
 
         Sie sind Alex. Alex nutzt eine Smart-Sensing-App für mentale Gesundheit – also eine App, die Sensordaten vom Smartphone und anderen Geräten nutzt, um Prognosen zur mentalen Gesundheit von Alex zu liefern. Alex erhält folgende Informationen zu der App.
 
         <br/>
+        <br/>
+
 
         Bitte sehen Sie sich die Informationen genau an.
   
