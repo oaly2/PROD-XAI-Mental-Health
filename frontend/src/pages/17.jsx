@@ -3,8 +3,6 @@ import styles from '../styles/PersonaPage.module.css'; // Ensure this path is co
 import Button from "@mui/material/Button";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { alignProperty } from '@mui/material/styles/cssUtils';
-import { content } from '../../tailwind.config';
 
 export default function A17Page() {
   const [answers, setAnswers] = useState({
