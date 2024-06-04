@@ -17,7 +17,7 @@ export default function A17Page() {
     'Ich stimme weder zu noch lehne ich ab': 3,
     'Ich stimme eher zu': 4,
     'Ich stimme voll und ganz zu': 5
-  };S
+  };
 
   const handleOptionChange = (e) => {
     const { name, value } = e.target;
