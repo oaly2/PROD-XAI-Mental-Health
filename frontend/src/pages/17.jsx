@@ -3,6 +3,8 @@ import styles from '../styles/PersonaPage.module.css'; // Ensure this path is co
 import Button from "@mui/material/Button";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { alignProperty } from '@mui/material/styles/cssUtils';
+import { content } from '../../tailwind.config';
 
 export default function A17Page() {
   const [answers, setAnswers] = useState({
@@ -17,7 +19,7 @@ export default function A17Page() {
     'Ich stimme weder zu noch lehne ich ab': 3,
     'Ich stimme eher zu': 4,
     'Ich stimme voll und ganz zu': 5
-  };
+  };S
 
   const handleOptionChange = (e) => {
     const { name, value } = e.target;
@@ -85,7 +87,7 @@ export default function A17Page() {
       <br />
       <br />
       <form>
-        <div className={styles.question}>
+        <div className={styles.question} style={{textAlign: 'left'}}>
           <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Mir war schon vor heute bekannt, dass es Apps für mentale Gesundheit gibt</h2> {/* Change this question to whatever you wish */}
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
@@ -105,7 +107,7 @@ export default function A17Page() {
         </div>
         <br />
         
-        <div className={styles.question}>
+        <div className={styles.question} style={{textAlign: 'left'}}>
           <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Ich habe bereits Apps für mentale Gesundheit ausprobiert</h2>
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
@@ -125,7 +127,7 @@ export default function A17Page() {
         </div>
         <br />  
         
-        <div className={styles.question}>
+        <div className={styles.question} style={{textAlign: 'left'}}>
           <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Ich nutze regelmäßig Apps für mentale Gesundheit</h2>
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (

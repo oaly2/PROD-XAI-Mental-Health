@@ -63,7 +63,7 @@ export default function A6Page() {
 
   return (
     <div className={styles.container}>
-      <h1 style={{fontSize: '18px', fontWeight:'bold'}}>Wie würden Sie in dem hypothetischen Szenario auf das Ergebnis der KI-Auswertung reagieren?</h1>
+      <h1 style={{fontSize: '18px', fontWeight:'bold'}}>Wenn Sie an der Stelle von Alex wären: Wie würden Sie auf das Ergebnis der KI-Auswertung reagieren?</h1>
       <br />
       <br />
       <form>

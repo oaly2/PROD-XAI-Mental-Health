@@ -35,7 +35,7 @@ export default function IntroductoryPage() {
         <br/>
 
         <span className={styles.subTitle}>Worum geht es? <br/></span>
-        So genannte Smart-Sensing-Apps nutzen Künstliche Intelligenz (KI), um ihren Usern auf Basis von Sensordaten von Smartphones und anderen Geräten Informationen und Ratschläge zu liefern. Zu den Daten gehören u.a. die Schlafdauer und -qualität, die sportliche Aktivität, die Zeit am Bildschirm oder wieviel man unterwegs ist (Mobilität). In unserem Fall geht es um eine App, die mithilfe von Künstlicher Intelligenz (KI) auswertet, ob die Informationen aus den Sensordaten auf ein erhöhtes Depressionsrisiko hindeuten. 
+        So genannte Smart-Sensing-Apps nutzen <b>Künstliche Intelligenz (KI)</b>, um ihren Usern auf Basis von Sensordaten von Smartphones und anderen Geräten <b>Prognosen zu ihrer mentalen Gesundheit</b> zu liefern. 
         <br/>
         <br/>
 

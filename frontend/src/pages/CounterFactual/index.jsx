@@ -148,19 +148,18 @@ export default function SurveyScreenDepressionCFPage() {
       <div className={styles.container} style={{padding: '0.5vw', marginBottom: '0.5vw'}}>
       <div className={styles.container} style={{padding: '0.5vw'}}>  
         <h1 className={styles.subTitle} style={{color: 'black', fontWeight: 'normal'}}>
-          Stellen Sie sich weiterhin vor, Sie
-          nutzen eine Smart Sensing App für mentale Gesundheit also eine App,
-          die Sensordaten von Ihrem Smartphone und anderen Geräten nutzt, um
-          Informationen zu Ihrer mentalen Gesundheit zu liefern. Sie öffnen die App
-          und zeigt Ihnen Folgendes an. Bitte nehmen Sie sich einen Moment, den
-          Bildschirm genau anzuschauen.  
+        Versetzen Sie sich weiterhin in die Lage von Alex. Alex öffnet die App und bekommt folgende Nachricht angezeigt.
+
+        <br/>
+
+        Bitte sehen Sie sich den Bildschirm genau an.  
         </h1>
       </div>
 
       <div className={styles.container} style={{padding: '0.5vw'}}>
         <div className="bg-blue_gray-100 rounded-lg mx-auto px-5 py-4">
           <Text className="text-center text-xl md:text-2xl font-semibold mt-4" style={{ fontSize: '2.0em' }}>
-            Die KI prognostiziert auf Basis<br /> deiner Smartphone-Daten<br /><br />
+            Die KI prognostiziert auf Basis Deiner Sensordaten von Smartphone und anderen Geräten<br /><br />
           </Text>
           <Heading as="h2" className={`${explanation.prediction === "depression" ? "text-red-A700" : "text-green-600"} text-3xl md:text-5xl text-center`} style={{ fontSize: '2.5em' }}>
             {explanation.prediction === "depression" ? "Erhöhtes Depressionsrisiko" : "Niedriges Depressionsrisiko"}
