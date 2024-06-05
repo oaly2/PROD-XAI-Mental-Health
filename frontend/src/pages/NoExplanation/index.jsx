@@ -42,18 +42,14 @@ export default function SurveyScreenDepressionPage({ explanation }) {
       <div className={styles.container} style={{padding: '0.5vw'}}>
       <div className={styles.container} style={{padding: '0.5vw'}}>  
         <h1 className={styles.subTitle} style={{color: 'black', fontWeight: 'normal'}}>
-        Versetzen Sie sich weiterhin in die Lage von Alex. Alex öffnet die App und bekommt folgende Nachricht angezeigt.
-
-        <br/>
-
-        Bitte sehen Sie sich den Bildschirm genau an.  
+        Versetzen Sie sich weiterhin in die Lage von Alex. Alex öffnet die App und bekommt folgende Nachricht angezeigt. Bitte sehen Sie sich den Bildschirm genau an.  
         </h1>
       </div>
 
       <div className={styles.container} style={{padding: '0.5vw'}}>
         <div className="bg-blue_gray-100 rounded-lg mx-auto px-20 py-6">
           <Text className="text-center text-xl md:text-2xl font-semibold mt-4" style={{ fontSize: '2.0em' }}>
-            Die KI prognostiziert auf Basis Deiner Sensordaten von Smartphone und anderen Geräten<br /><br />
+            Die KI prognostiziert auf Basis Deiner Sensordaten von Smartphone und anderen Geräten ein<br /><br />
           </Text>
           <Heading as="h2" className={`${explanation.prediction === "depression" ? "text-red-A700" : "text-green-600"} text-3xl md:text-5xl text-center`} style={{ fontSize: '2.5em' }}>
             {explanation.prediction === "depression" ? "Erhöhtes Depressionsrisiko" : "Niedriges Depressionsrisiko"}
@@ -62,7 +58,7 @@ export default function SurveyScreenDepressionPage({ explanation }) {
         <Text as="p" className="text-blue_gray-400 text-sm md:text-base text-center mt-auto" style={{marginTop: '20px'}}>
           Alle angezeigten Ergebnisse sind lediglich Vorhersagen einer KI. Als solche können sie nur Hinweise auf
           den Gesundheitszustand geben. Sie können keine medizinische Diagnose stellen und ersetzen keinesfalls
-          einen Arztbesuch. Wenn du dich deprimiert fühlst, wende dich an einen Arzt.
+          einen Arztbesuch. Wenn du dich  depressiv fühlst, wende dich an einen Arzt.
         </Text>
         </div>
       

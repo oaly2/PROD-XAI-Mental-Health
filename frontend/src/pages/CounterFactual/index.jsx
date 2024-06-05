@@ -118,16 +118,21 @@ export default function SurveyScreenDepressionCFPage() {
     if (features.length === 0) return null;
 
     const oppositePrediction = explanation.prediction === "depression" ? "niedriges Depressionsrisiko" : "erhöhtes Depressionsrisiko";
+    const word = explanation.prediction === "depression" ? "verbessern" : "erhalten";
 
     return (
       <div style={{ textAlign: 'center' }}>
         <Text as="p" className="text-center text-base md:text-xl mx-2 my-4" style={{ fontSize: '1.25em', lineHeight: '1.5em' }}>
-          Unter folgenden Umständen würde die KI ein {oppositePrediction} prognostizieren:
+          Damit Du Deine mentale Gesundheit {word} kannst,
+          zeigt Dir die KI auf, welche Veränderungen zu der
+          Prognose {oppositePrediction} führen würden.
+          Folgende Veränderungen würden zu der Prognose
+          {oppositePrediction} von der KI führen:
         </Text>
         <ul className={styles.listCenter}>
           {features.map((f, index) => (
             <li key={index} style={{ color: "#15b1e2", fontWeight: "bold", fontSize: '18px', marginBottom: '10px' }}>
-              {f.feature} (aktuell {f.value}) müsste um {Math.abs(Math.round(f.percentage))}% {f.percentage >= 0 ? 'höher' : 'geringer'} sein
+              {f.feature} müsste um {f.percentage >= 0 ? 'höher' : 'geringer'} sein
             </li>
           ))}
         </ul>
@@ -148,20 +153,14 @@ export default function SurveyScreenDepressionCFPage() {
       <div className={styles.container} style={{padding: '0.5vw', marginBottom: '0.5vw'}}>
       <div className={styles.container} style={{padding: '0.5vw'}}>  
         <h1 className={styles.subTitle} style={{color: 'black', fontWeight: 'normal'}}>
-        Versetzen Sie sich weiterhin in die Lage von Alex. Alex öffnet die App und bekommt folgende Nachricht angezeigt.
-
-        <br/>
-        <br/>
-
-
-        Bitte sehen Sie sich den Bildschirm genau an.  
+        Versetzen Sie sich weiterhin in die Lage von Alex. Alex öffnet die App und bekommt folgende Nachricht angezeigt. Bitte sehen Sie sich den Bildschirm genau an.  
         </h1>
       </div>
 
       <div className={styles.container} style={{padding: '0.5vw'}}>
         <div className="bg-blue_gray-100 rounded-lg mx-auto px-5 py-4">
           <Text className="text-center text-xl md:text-2xl font-semibold mt-4" style={{ fontSize: '2.0em' }}>
-            Die KI prognostiziert auf Basis Deiner Sensordaten von Smartphone und anderen Geräten<br /><br />
+            Die KI prognostiziert auf Basis Deiner Sensordaten von Smartphone und anderen Geräten ein<br /><br />
           </Text>
           <Heading as="h2" className={`${explanation.prediction === "depression" ? "text-red-A700" : "text-green-600"} text-3xl md:text-5xl text-center`} style={{ fontSize: '2.5em' }}>
             {explanation.prediction === "depression" ? "Erhöhtes Depressionsrisiko" : "Niedriges Depressionsrisiko"}
@@ -171,7 +170,7 @@ export default function SurveyScreenDepressionCFPage() {
         <Text as="p" className="text-blue_gray-400 text-sm md:text-base text-center mt-auto" style={{marginTop: '1vw'}}>
           Alle angezeigten Ergebnisse sind lediglich Vorhersagen einer KI. Als solche können sie nur Hinweise auf
           den Gesundheitszustand geben. Sie können keine medizinische Diagnose stellen und ersetzen keinesfalls
-          einen Arztbesuch. Wenn du dich deprimiert fühlst, wende dich an einen Arzt.
+          einen Arztbesuch. Wenn du dich depressiv fühlst, wende dich an einen Arzt.
         </Text>
       </div>
 
