@@ -28,7 +28,7 @@ export default function FeatureImportancePage() {
     if (savedExplanation) {
       setExplanation(savedExplanation);
     } else {
-      setMessage("No explanation found in session storage.");
+      console.log("No explanation found in session storage.");
     }
   }, []);
 
@@ -79,46 +79,36 @@ export default function FeatureImportancePage() {
   const mappedValue = (value) => valueMapping[value] || value;
   const mappedFeature = (feature) => featureMapping[feature] || feature;
 
-  const formatCounterfactualText = () => {
+  const formatText = () => {
     if (!explanation) {
       return null;
     }
 
     const features = [];
 
-    if (explanation.feature_1 && explanation.percentages_feature_1 !== undefined) {
+    if (explanation.feature_1 !== undefined) {
       features.push({
         feature: replaceUmlauts(mappedFeature(explanation.feature_1)),
-        value: mappedValue(explanation.original_value_1),
-        percentage: explanation.percentages_feature_1_num
       });
     }
-    if (explanation.feature_2 && explanation.percentages_feature_2 !== undefined) {
+    if (explanation.feature_2 !== undefined) {
       features.push({
         feature: replaceUmlauts(mappedFeature(explanation.feature_2)),
-        value: mappedValue(explanation.original_value_2),
-        percentage: explanation.percentages_feature_2_num
       });
     }
-    if (explanation.feature_3 && explanation.percentages_feature_3 !== undefined) {
+    if (explanation.feature_3 !== undefined) {
       features.push({
         feature: replaceUmlauts(mappedFeature(explanation.feature_3)),
-        value: mappedValue(explanation.original_value_3),
-        percentage: explanation.percentages_feature_3_num
       });
     }
-    if (explanation.feature_4 && explanation.percentages_feature_4 !== undefined) {
+    if (explanation.feature_4 !== undefined) {
       features.push({
         feature: replaceUmlauts(mappedFeature(explanation.feature_4)),
-        value: mappedValue(explanation.original_value_4),
-        percentage: explanation.percentages_feature_4_num
       });
     }
 
     if (features.length === 0) return null;
 
-    const oppositePrediction = explanation.prediction === "depression" ? "niedriges Depressionsrisiko" : "erhöhtes Depressionsrisiko";
-    const word = explanation.prediction === "depression" ? "verbessern" : "erhalten";
 
     return (
       <div style={{ textAlign: 'center' }}>
@@ -156,13 +146,13 @@ export default function FeatureImportancePage() {
       <div className={styles.container} style={{padding: '0.5vw'}}>
         <div className="bg-blue_gray-100 rounded-lg mx-auto px-5 py-4">
           <Text className="text-center text-xl md:text-2xl font-semibold mt-4" style={{ fontSize: '2.0em' }}>
-            Die KI prognostiziert auf Basis Deiner Sensordaten von Smartphone und anderen Geräten ein<br /><br />
+          Die KI prognostiziert auf Basis Deiner Sensordaten von Smartphone und anderen Geräten ein<br /><br />
           </Text>
           <Heading as="h2" className={`${explanation.prediction === "depression" ? "text-red-A700" : "text-green-600"} text-3xl md:text-5xl text-center`} style={{ fontSize: '2.5em' }}>
             {explanation.prediction === "depression" ? "Erhöhtes Depressionsrisiko" : "Niedriges Depressionsrisiko"}
           </Heading>
         </div>
-        {formatCounterfactualText()}
+        {formatText()}
         <Text as="p" className="text-blue_gray-400 text-sm md:text-base text-center mt-auto" style={{marginTop: '1vw'}}>
           Alle angezeigten Ergebnisse sind lediglich Vorhersagen einer KI. Als solche können sie nur Hinweise auf
           den Gesundheitszustand geben. Sie können keine medizinische Diagnose stellen und ersetzen keinesfalls
