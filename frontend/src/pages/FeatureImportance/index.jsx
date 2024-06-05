@@ -5,7 +5,7 @@ import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import styles from "../../styles/introductory.module.css";
 
-export default function SurveyScreenDepressionCFPage() {
+export default function FeatureImportancePage() {
   const [explanation, setExplanation] = useState(null);
   const [timer, setTimer] = useState(10);
   const [message, setMessage] = useState("");
@@ -149,7 +149,7 @@ export default function SurveyScreenDepressionCFPage() {
       <div className={styles.container} style={{padding: '0.5vw', marginBottom: '0.5vw'}}>
       <div className={styles.container} style={{padding: '0.5vw'}}>  
         <h1 className={styles.subTitle} style={{color: 'black', fontWeight: 'normal'}}>
-        Versetzen Sie sich weiterhin in die Lage von Alex. Alex öffnet die App und bekommt folgende Nachricht angezeigt. Bitte sehen Sie sich den Bildschirm genau an.  
+        XXVersetzen Sie sich weiterhin in die Lage von Alex. Alex öffnet die App und bekommt folgende Nachricht angezeigt. Bitte sehen Sie sich den Bildschirm genau an.  
         </h1>
       </div>
 
