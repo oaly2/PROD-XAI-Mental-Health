@@ -139,7 +139,7 @@ export default function FeatureImportancePage() {
       <div className={styles.container} style={{padding: '0.5vw', marginBottom: '0.5vw'}}>
       <div className={styles.container} style={{padding: '0.5vw'}}>  
         <h1 className={styles.subTitle} style={{color: 'black', fontWeight: 'normal'}}>
-        XXVersetzen Sie sich weiterhin in die Lage von Alex. Alex öffnet die App und bekommt folgende Nachricht angezeigt. Bitte sehen Sie sich den Bildschirm genau an.  
+        Versetzen Sie sich weiterhin in die Lage von Alex. Alex öffnet die App und bekommt folgende Nachricht angezeigt. Bitte sehen Sie sich den Bildschirm genau an.  
         </h1>
       </div>
 
