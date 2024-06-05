@@ -126,6 +126,8 @@ export default function SurveyScreenDepressionCFPage() {
           Damit Du Deine mentale Gesundheit {word} kannst,
           zeigt Dir die KI auf, welche Veränderungen zu der
           Prognose {oppositePrediction} führen würden.
+          <br />
+          <br />
           Folgende Veränderungen würden zu der Prognose
           {oppositePrediction} von der KI führen:
         </Text>

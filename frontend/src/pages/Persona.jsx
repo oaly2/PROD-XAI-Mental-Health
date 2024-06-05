@@ -17,8 +17,8 @@ export default function PersonaPage({ showProceedButton = true }) {
     let userData = JSON.parse(sessionStorage.getItem('userData')) || {};
 
     // Filter explanationsData to only include entries where prediction is "healthy" or "depression"
-    const healthyExplanations = explanationsData.filter(exp => exp.prediction === "healthy" && (exp.type === "Counterfactual" || exp.type === "Simple"));
-    const depressedExplanations = explanationsData.filter(exp => exp.prediction === "depression" && (exp.type === "Counterfactual" || exp.type === "Simple"));
+    const healthyExplanations = explanationsData.filter(exp => exp.prediction === "healthy");
+    const depressedExplanations = explanationsData.filter(exp => exp.prediction === "depression");
 
     // Randomly select a category: healthy or depression
     const isHealthy = Math.random() < 0.5; // 50% chance for each
