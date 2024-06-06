@@ -86,32 +86,24 @@ export default function FeatureImportancePage() {
 
     const features = [];
 
-    if (explanation.feature_1 && explanation.percentages_feature_1 !== undefined) {
+    if (explanation.feature_1) {
       features.push({
-        feature: replaceUmlauts(mappedFeature(explanation.feature_1)),
-        value: mappedValue(explanation.original_value_1),
-        percentage: explanation.percentages_feature_1_num
+        feature: replaceUmlauts(mappedFeature(explanation.feature_1))
       });
     }
-    if (explanation.feature_2 && explanation.percentages_feature_2 !== undefined) {
+    if (explanation.feature_2) {
       features.push({
-        feature: replaceUmlauts(mappedFeature(explanation.feature_2)),
-        value: mappedValue(explanation.original_value_2),
-        percentage: explanation.percentages_feature_2_num
+        feature: replaceUmlauts(mappedFeature(explanation.feature_2))
       });
     }
-    if (explanation.feature_3 && explanation.percentages_feature_3 !== undefined) {
+    if (explanation.feature_3) {
       features.push({
-        feature: replaceUmlauts(mappedFeature(explanation.feature_3)),
-        value: mappedValue(explanation.original_value_3),
-        percentage: explanation.percentages_feature_3_num
+        feature: replaceUmlauts(mappedFeature(explanation.feature_3))
       });
     }
-    if (explanation.feature_4 && explanation.percentages_feature_4 !== undefined) {
+    if (explanation.feature_4) {
       features.push({
-        feature: replaceUmlauts(mappedFeature(explanation.feature_4)),
-        value: mappedValue(explanation.original_value_4),
-        percentage: explanation.percentages_feature_4_num
+        feature: replaceUmlauts(mappedFeature(explanation.feature_4))
       });
     }
 
@@ -126,7 +118,7 @@ export default function FeatureImportancePage() {
         <ul className={styles.listCenter}>
           {features.map((f, index) => (
             <li key={index} style={{ color: "#15b1e2", fontWeight: "bold", fontSize: '18px', marginBottom: '10px' }}>
-            {f.feature} müsste {f.percentage >= 0 ? 'höher' : 'geringer'} sein
+            {f.feature} 
             </li>
           ))}
         </ul>
