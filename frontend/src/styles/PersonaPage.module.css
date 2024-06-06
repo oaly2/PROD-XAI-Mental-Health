@@ -137,20 +137,18 @@
 .optionsContainer {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; /* Adjust the gap as needed */
-  align-items: center; /* Ensures vertical alignment of items */
+  gap: 10px; /* Adjust the gap as needed */
 }
 
 .optionLabel {
   display: flex;
   align-items: center;
-  margin-right: 20px; /* Adjust the margin as needed */
+  margin-right: 15px; /* Adjust the margin as needed */
 }
 
 .optionLabel input {
-  margin-right: 8px; /* Adjust the spacing between the radio button and text as needed */
+  margin-right: 5px; /* Adjust the spacing between the radio button and text as needed */
 }
-
 
 
 

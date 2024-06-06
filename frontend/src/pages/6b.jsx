@@ -7,8 +7,7 @@ export default function B6Page() {
   const [answers, setAnswers] = useState({
     question1: '',
     question2: '',
-    question3: '',
-    question4: ''
+    question3: ''
   });
 
   const likertScale = {
@@ -46,7 +45,6 @@ export default function B6Page() {
       userData.intention_to_act_item_1 = likertScale[answers.question1];
       userData.intention_to_act_item_2 = likertScale[answers.question2];
       userData.intention_to_act_item_3 = likertScale[answers.question3];  
-      userData.intention_to_act_item_4 = likertScale[answers.question4];
 
       userData.quality_check_intention_to_act = qualityCheckIntentionToAct;
 
@@ -140,7 +138,7 @@ export default function B6Page() {
             <label key={option} className={styles.optionLabel}>
               <input
                 type="radio"
-                name="question4"
+                name="question1"
                 value={option}
                 checked={answers.question1 === option}
                 onChange={handleOptionChange}
