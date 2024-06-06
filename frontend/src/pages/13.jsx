@@ -57,7 +57,7 @@ export default function A13Page() {
             navigate('/psychological_openness_A');
         }
         else {
-            navigate('/psychological_openness_B');
+            navigate('/psychological_openness_A');
         }
     }
     window.scrollTo(0, 0);

@@ -60,7 +60,9 @@ export default function A12Page() {
     <div className={styles.container}>
       <form>
         <div className={styles.question}>
-          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Ich habe Vertrauen in eine Smart-Sensing-App für mentale Gesundheit. Ich habe das Gefühl, dass sie mir helfen würde eine Depression zu erkennen</h2> {/* Change this question to whatever you wish */}
+          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
+          Ich würde darauf vertrauen, dass die App mir helfen würde, meine mentale Gesundheit zu erhalten oder zu verbessern
+          </h2>
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>
@@ -80,7 +82,9 @@ export default function A12Page() {
         <br />
         
         <div className={styles.question}>
-          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Eine Smart-Sensing-App für mentale Gesundheit wäre sehr zuverlässig. Ich könnte mich darauf verlassen, dass ihre Ergebnisse immer richtig sind </h2>
+          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
+          Die App wäre sehr zuverlässig. Ich könnte mich auf die Prognose des Depressionsrisikos duch die KI verlassen
+          </h2>
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>
@@ -100,7 +104,10 @@ export default function A12Page() {
         <br />  
         
         <div className={styles.question}>
-          <h2 style={{fontSize: '18px', fontWeight:'bold', color: '#19b394'}} >Ich würde mich sicher fühlen, wenn ich eine Smart-Sensing-App nutzen würde. Ich würde die richtigen Antworten erhalten</h2>
+          <h2 style={{fontSize: '18px', fontWeight:'bold', color: '#19b394'}} >
+          Ich habe Vertrauen in das Zustandekommen der Prognose des Depressionsrisikos durch die KI
+
+          </h2>
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>

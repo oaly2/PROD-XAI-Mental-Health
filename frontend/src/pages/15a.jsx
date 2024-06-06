@@ -60,7 +60,9 @@ export default function A15Page() {
     <div className={styles.container}>
       <form>
         <div className={styles.question}>
-          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Psychisch krank zu sein, ist mit einer gewissen Scham verbunden</h2> {/* Change this question to whatever you wish */}
+          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
+          Fragen zum Erhalt oder zur Verbesserung der mentalen Gesundheit sind mit einer gewissen Scham verbunden
+          </h2> 
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>
@@ -80,7 +82,9 @@ export default function A15Page() {
         <br />
         
         <div className={styles.question}>
-          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Wichtige Menschen in meinem Leben würden weniger von mir halten, wenn sie herausfinden würden, dass ich psychische Probleme habe </h2>
+          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
+          Wichtige Menschen in meinem Leben würden weniger von mir halten, wenn sie herausfinden würden, dass ich mich um Erhalt oder Verbesserung meiner mentalen Gesundheit kümmere 
+          </h2>
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>
@@ -100,7 +104,9 @@ export default function A15Page() {
         <br />  
         
         <div className={styles.question}>
-          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Ich würde mich unwohl fühlen, wenn ich zu einer Fachkraft für psychische Probleme gehen würde, aufgrund dessen, was andere Leute darüber denken könnten</h2>
+          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
+          Ich würde mich unwohl dabei fühlen, mich um Erhalt oder Verbesserung meiner mentalen Gesundheit zu kümmern, aufgrund dessen, was andere Leute darüber denken könnten
+          </h2>
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>

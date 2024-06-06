@@ -59,12 +59,14 @@ export default function A7Page() {
 
   return (
     <div className={styles.container}>
-      <h1 style={{fontSize: '18px', fontWeight:'bold'}}>Ab jetzt geht es um Ihre persönliche Ansicht. Denken Sie an das Beispiel einer Smart-Sensing-App, das Sie eben gesehen haben. Bitte bewerten Sie auf Basis dessen folgende Aussagen.</h1>
+      <h1 style={{fontSize: '18px', fontWeight:'bold'}}>Ab jetzt geht es um Ihre persönliche Ansicht. Denken Sie an die App, die sie eben gesehen haben. Bitte bewerten Sie auf Basis dessen folgende Aussagen.</h1>
       <br />
       <br />
       <form>
         <div className={styles.question}>
-          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Ich könnte mir vorstellen, eine Smart-Sensing-App für mentale Gesundheit generell zu nutzen</h2> {/* Change this question to whatever you wish */}
+          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
+          Ich könnte mir vorstellen, diese App generell zu nutzen 
+          </h2>
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>
@@ -84,7 +86,9 @@ export default function A7Page() {
         <br />
         
         <div className={styles.question}>
-          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Ich beabsichtige, eine Smart Sensing App für mentale Gesundheit in der Zukunft zu nutzen </h2>
+          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
+          Ich beabsichtige, diese App in der Zukunft zu nutzen, sobald sie verfügbar ist 
+          </h2>
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>
@@ -104,7 +108,9 @@ export default function A7Page() {
         <br />  
         
         <div className={styles.question}>
-          <h2 style={{fontSize: '18px', fontWeight:'bold', color: '#19b394'}} >Ich habe vor, eine Smart-Sensing App für mentale Gesundheit zu nutzen</h2>
+          <h2 style={{fontSize: '18px', fontWeight:'bold', color: '#19b394'}} >
+          Wenn die App mir angeboten würde, würde ich sie auf jeden Fall nutzen
+          </h2>
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>

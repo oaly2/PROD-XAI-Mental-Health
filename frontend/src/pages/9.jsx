@@ -58,12 +58,14 @@ export default function A9Page() {
 
   return (
     <div className={styles.container}>
-      <h1 style={{fontSize: '18px', fontWeight:'bold'}}>Ab jetzt geht es um Ihre persönliche Ansicht. Denken Sie an das Beispiel einer Smart-Sensing-App, das Sie eben gesehen haben. Bitte bewerten Sie auf Basis dessen folgende Aussagen.</h1>
+      <h1 style={{fontSize: '18px', fontWeight:'bold'}}>Ab jetzt geht es um Ihre persönliche Ansicht. Denken Sie an die App, die sie eben gesehen haben. Bitte bewerten Sie auf Basis dessen folgende Aussagen.</h1>
       <br />
       <br />
       <form>
         <div className={styles.question}>
-          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Die Verwendung einer Smart-Sensing-App für mentale Gesundheit könnte positive Auswirkungen auf meine Gesundheit haben</h2> {/* Change this question to whatever you wish */}
+          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
+          Die Verwendung der App könnte positive Auswirkungen auf meine mentale Gesundheit haben
+          </h2> 
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>
@@ -83,7 +85,10 @@ export default function A9Page() {
         <br />
         
         <div className={styles.question}>
-          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Die Verwendung einer Smart-Sensing-App für mentale Gesundheit könnten mir helfen Anzeichen von Depressionsrisiko zu erkennen </h2>
+          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
+          Die Verwendung der App könnte mir helfen, meine mentale Gesundheit besser zu verstehen
+
+          </h2>
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>
@@ -103,7 +108,9 @@ export default function A9Page() {
         <br />  
         
         <div className={styles.question}>
-          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Insgesamt könnte eine Smart-Sensing-App für mentale Gesundheit helfen, meine Gesundheit zu managen</h2>
+          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
+          Insgesamt könnte die App mir helfen, meine mentale Gesundheit zu erhalten oder zu verbessern
+          </h2>
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>

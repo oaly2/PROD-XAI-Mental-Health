@@ -60,7 +60,9 @@ export default function A16Page() {
     <div className={styles.container}>
       <form>
         <div className={styles.question}>
-          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Es würde mir relativ leicht fallen, Zeit zu finden, um eine Fachkraft für psychologische Probleme aufzusuchen</h2> {/* Change this question to whatever you wish */}
+          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
+          Ich könnte relativ leicht Zeit finden, um Unterstützung zum Erhalt oder zur Verbesserung meiner mentalen Gesundheit zu suchen
+          </h2> 
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>
@@ -80,7 +82,10 @@ export default function A16Page() {
         <br />
         
         <div className={styles.question}>
-          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Ich weiß, an wen oder an welche Stellen ich mich wenden müsste, wenn ich psychologische Hilfe in Anspruch nehmen wollen würde</h2>
+          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
+          Ich weiß, wo ich Rat zum Erhalt oder zur Verbesserung meiner mentalen Gesundheit finden könnte
+
+          </h2>
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>
@@ -100,7 +105,9 @@ export default function A16Page() {
         <br />  
         
         <div className={styles.question}>
-          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Wenn ich psychische Probleme hätte, könnte ich professionelle Hilfe in Anspruch nehmen, wenn ich es wollen würde</h2>
+          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
+          Ich wäre in der Lage, Hilfestellung zu suchen, um meine mentale Gesundheit zu erhalten oder zu verbessern
+          </h2>
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>

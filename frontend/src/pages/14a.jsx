@@ -63,7 +63,9 @@ export default function A14Page() {
       <br />
       <form>
         <div className={styles.question}>
-          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Psychische Probleme lösen sich, wie viele andere Dinge auch, in der Regel von selbst</h2> {/* Change this question to whatever you wish */}
+          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
+          Die mentale Gesundheit zu erhalten oder zu verbessern regelt sich – wie viele andere Dinge – meist von selbst
+          </h2> 
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>
@@ -83,7 +85,9 @@ export default function A14Page() {
         <br />
         
         <div className={styles.question}>
-          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Bestimmte psychische Probleme sollten grundsätzlich nur mit den engsten Bezugspersonen besprochen werden </h2>
+          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
+          Fragen zum Erhalt und zur Verbesserung der mentalen Gesundheit sollte ein Mensch nur mit sich selbst verhandeln 
+          </h2>
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>
@@ -103,7 +107,9 @@ export default function A14Page() {
         <br />  
         
         <div className={styles.question}>
-          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Menschen sollten ihre psychischen Probleme selbst lösen. Professionelle Hilfe in Anspruch zu nehmen, sollte der letzte Ausweg sein</h2>
+          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
+          Für Erhalt und Verbesserung der mentalen Gesundheit bedarf es in der Regel keiner Unterstützung oder Hilfsmittel
+          </h2>
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>

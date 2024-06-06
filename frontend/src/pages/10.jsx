@@ -60,7 +60,9 @@ export default function A10Page() {
     <div className={styles.container}>
       <form>
         <div className={styles.question}>
-          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Die Anwendung einer Smart Sensing-App für mentale Gesundheit ließe sich gut in meinen Alltag integrieren</h2> {/* Change this question to whatever you wish */}
+          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
+          Es ließe sich gut in meinen Alltag integrieren, mithilfe der App meine mentale Gesundheit zu erhalten oder zu verbessern
+          </h2>
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>
@@ -80,7 +82,10 @@ export default function A10Page() {
         <br />
         
         <div className={styles.question}>
-          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Die Verwendung einer Smart-Sensing-App für mentale Gesundheit wäre für mich eine leichte Aufgabe </h2>
+          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
+          Mithilfe der App meine mentale Gesundheit zu erhalten oder zu verbessern wäre für mich eine leichte Aufgabe
+ 
+          </h2>
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>
@@ -100,7 +105,9 @@ export default function A10Page() {
         <br />  
         
         <div className={styles.question}>
-          <h2 style={{fontSize: '18px', fontWeight:'bold', color: '#19b394'}} >Eine Smart-Sensing-App für mentale Gesundheit wäre für mich klar und einfach zu verstehen</h2>
+          <h2 style={{fontSize: '18px', fontWeight:'bold', color: '#19b394'}} >
+          Für mich wäre klar und einfach zu verstehen, wie ich mithilfe der App meine mentale Gesundheit erhalten oder verbessern könnte
+          </h2>
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>
