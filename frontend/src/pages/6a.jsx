@@ -105,6 +105,7 @@ export default function A6Page() {
                 className={styles.radio}
               />
               {option}
+              <br /><br />
             </label>
           ))}
           </div>  
@@ -126,6 +127,7 @@ export default function A6Page() {
                 className={styles.radio}
               />
               {option}
+              <br /><br />
             </label>
           ))}
             </div>
@@ -139,13 +141,14 @@ export default function A6Page() {
             <label key={option} className={styles.optionLabel}>
               <input
                 type="radio"
-                name="question4"
+                name="question3"
                 value={option}
-                checked={answers.question4 === option}
+                checked={answers.question3 === option}
                 onChange={handleOptionChange}
                 className={styles.radio}
               />
               {option}
+              <br /><br />
             </label>
           ))}
           </div>
