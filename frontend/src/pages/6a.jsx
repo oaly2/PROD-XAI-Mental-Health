@@ -8,8 +8,7 @@ export default function A6Page() {
   const [answers, setAnswers] = useState({
     question1: '',
     question2: '',
-    question3: '',
-    question4: ''
+    question3: ''
   });
 
   const likertScale = {
@@ -48,7 +47,6 @@ export default function A6Page() {
       userData.intention_to_act_item_1 = likertScale[answers.question1];
       userData.intention_to_act_item_2 = likertScale[answers.question2];
       userData.intention_to_act_item_3 = likertScale[answers.question3]; 
-      userData.intention_to_act_item_4 = likertScale[answers.question4];
 
       console.log(userData);
       
@@ -71,11 +69,12 @@ export default function A6Page() {
       <form>
       <div className={styles.question}>
         <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}}>
-        Ich würde mich in Zukunft stärker um die Verbesserung meiner mentalen Gesundheit kümmern
+          Ich könnte mir vorstellen, psychosoziale Dienste für mich in Anspruch zu nehmen
         </h2>
         <br />
+        <div className={styles.optionsContainer}>
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
-            <label key={option}>
+            <label key={option} className={styles.optionLabel}>
               <input
                 type="radio"
                 name="question1"
@@ -88,15 +87,15 @@ export default function A6Page() {
             </label>
           ))}
         </div>
+      </div>
         <br />
         
         <div className={styles.question}>
-          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
-          Ich würde versuchen, Dinge in meinem Alltag so zu verändern, dass es meine mentale Gesundheit verbessert
-          </h2>
+          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Ich würde in der Zukunft Angebote aufsuchen, die sich um meine psychische Gesundheit sorgen können. </h2>
           <br />
+          <div className={styles.optionsContainer}>
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
-            <label key={option}>
+            <label key={option} className={styles.optionLabel}>
               <input
                 type="radio"
                 name="question2"
@@ -109,15 +108,15 @@ export default function A6Page() {
             </label>
           ))}
           </div>  
+        </div>
         <br />  
         
         <div className={styles.question}>
-          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
-          Ich könnte mir vorstellen, Unterstützungsangebote für die Verbesserung meiner mentalen Gesundheit in Anspruch zu nehmen.
-          </h2>
+          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Ich würde versuchen, Einrichtungen für mich zu finden, die sich um psychische Gesundheit sorgen können</h2>
           <br />
+          <div className={styles.optionsContainer}>
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
-            <label key={option}>
+            <label key={option} className={styles.optionLabel}>
               <input
                 type="radio"
                 name="question3"
@@ -130,15 +129,14 @@ export default function A6Page() {
             </label>
           ))}
             </div>
-        <br /> 
+        </div>
 
         <div className={styles.question}>
-          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
-          Ich würde Verhaltensweisen so verändern, dass sie der Verbesserung meiner mentalen Gesundheit zuträglich sind
-          </h2>
+          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Ich würde versuchen, Einrichtungen für mich zu finden, die sich um psychische Gesundheit sorgen können</h2>
           <br />
+          <div className={styles.optionsContainer}>
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
-            <label key={option}>
+            <label key={option} className={styles.optionLabel}>
               <input
                 type="radio"
                 name="question4"
@@ -151,6 +149,7 @@ export default function A6Page() {
             </label>
           ))}
           </div>
+        </div>
         
         <br />
 
