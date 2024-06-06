@@ -120,6 +120,8 @@
     transition: background-color 0.3s;
     margin-top: 20px;
   }
+
+
   
   .button:hover {
     background-color: #139bcf;
@@ -131,6 +133,22 @@
   color: #19b394 !important;
   --tw-shadow: none !important;
 }
+
+.optionsContainer {
+  display: flex;
+  gap: 10px; /* Adjust the gap as needed */
+}
+
+.optionLabel {
+  display: flex;
+  align-items: center;
+}
+
+.optionLabel input {
+  margin-right: 5px; /* Adjust the spacing between radio button and text as needed */
+}
+
+
 
   /* Media Queries for further adjustments */
   @media (max-width: 768px) { /* For tablets and below */
