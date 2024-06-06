@@ -35,13 +35,13 @@ export default function IntroductoryPage() {
         <br/>
 
         <span className={styles.subTitle}>Worum geht es? <br/></span>
-        So genannte Smart-Sensing-Apps nutzen <b>Künstliche Intelligenz (KI)</b>, um ihren Usern auf Basis von Sensordaten von Smartphones und anderen Geräten <b>Prognosen zu ihrer mentalen Gesundheit</b> zu liefern. Ziel dieser Apps ist es, dass User ihrementale Gesundheit erhalten und verbessernkönnen. Wir stellen Ihnen in dieser Studie ein Beispiel für eine solche App vor
+        So genannte Smart-Sensing-Apps nutzen <b>Künstliche Intelligenz (KI)</b>, um ihren Usern auf Basis von Sensordaten von Smartphones und anderen Geräten <b>Prognosen zu ihrer mentalen Gesundheit</b> zu liefern. Ziel dieser Apps ist es, dass User ihre mentale Gesundheit erhalten und verbessern können. Wir stellen Ihnen in dieser Studie ein Beispiel für eine solche App vor.
         <br/>
         <br/>
 
 
         <span className={styles.subTitle}>Was muss ich tun? <br/></span>
-        Sie werden gleich gebeten, sich in ein hypothetisches Szenario hineinzuversetzen. Zunächst werden Ihnen Zunächst werden Ihnen einige Informationen zu der App gezeigt. Dann sehen sie eine konkrete KI-Auswertung in der App. Schauen Sie sich beides bitte genau an. Anschließend stellen wir Ihnen einige Fragen.
+        Sie werden gleich gebeten, sich in ein hypothetisches Szenario hineinzuversetzen. Zunächst werden Ihnen einige Informationen zu der App gezeigt. Dann sehen sie eine konkrete KI-Auswertung in der App. Schauen Sie sich beides bitte genau an. Anschließend stellen wir Ihnen einige Fragen.
         <br/>
         <br/>
         <br/>

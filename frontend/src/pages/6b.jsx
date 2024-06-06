@@ -91,7 +91,7 @@ export default function B6Page() {
         
         <div className={styles.question}>
           <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
-          Ich würde versuchen, Dinge in meinem Alltag so zu verändern, dass meine mentale Gesundheit erhalten bleibt 
+          Ich würde versuchen, bestimmte Dinge in meinem Alltag so zu verändern, dass meine mentale Gesundheit erhalten bleibt 
           </h2>
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
@@ -136,7 +136,7 @@ export default function B6Page() {
 
         <div className={styles.question}>
           <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
-          Ich würde Verhaltensweisen so verändern, dass sie dem Erhalt meiner mentalen Gesundheit zuträglich sind
+          Ich würde bestimmte Verhaltensweisen so verändern, dass sie dem Erhalt meiner mentalen Gesundheit zuträglich sind
           </h2>
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (

@@ -128,13 +128,12 @@ export default function SurveyScreenDepressionCFPage() {
           Prognose {oppositePrediction} führen würden.
           <br />
           <br />
-          Folgende Veränderungen würden zu der Prognose
-          {oppositePrediction} von der KI führen:
+          Folgende Veränderungen würden zu der Prognose {oppositePrediction} von der KI führen:
         </Text>
         <ul className={styles.listCenter}>
           {features.map((f, index) => (
             <li key={index} style={{ color: "#15b1e2", fontWeight: "bold", fontSize: '18px', marginBottom: '10px' }}>
-              {f.feature} müsste um {f.percentage >= 0 ? 'höher' : 'geringer'} sein
+              {f.feature} müsste {f.percentage >= 0 ? 'höher' : 'geringer'} sein
             </li>
           ))}
         </ul>

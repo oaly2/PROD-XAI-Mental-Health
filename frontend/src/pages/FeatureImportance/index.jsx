@@ -86,24 +86,32 @@ export default function FeatureImportancePage() {
 
     const features = [];
 
-    if (explanation.feature_1 !== undefined) {
+    if (explanation.feature_1 && explanation.percentages_feature_1 !== undefined) {
       features.push({
         feature: replaceUmlauts(mappedFeature(explanation.feature_1)),
+        value: mappedValue(explanation.original_value_1),
+        percentage: explanation.percentages_feature_1_num
       });
     }
-    if (explanation.feature_2 !== undefined) {
+    if (explanation.feature_2 && explanation.percentages_feature_2 !== undefined) {
       features.push({
         feature: replaceUmlauts(mappedFeature(explanation.feature_2)),
+        value: mappedValue(explanation.original_value_2),
+        percentage: explanation.percentages_feature_2_num
       });
     }
-    if (explanation.feature_3 !== undefined) {
+    if (explanation.feature_3 && explanation.percentages_feature_3 !== undefined) {
       features.push({
         feature: replaceUmlauts(mappedFeature(explanation.feature_3)),
+        value: mappedValue(explanation.original_value_3),
+        percentage: explanation.percentages_feature_3_num
       });
     }
-    if (explanation.feature_4 !== undefined) {
+    if (explanation.feature_4 && explanation.percentages_feature_4 !== undefined) {
       features.push({
         feature: replaceUmlauts(mappedFeature(explanation.feature_4)),
+        value: mappedValue(explanation.original_value_4),
+        percentage: explanation.percentages_feature_4_num
       });
     }
 
@@ -118,7 +126,7 @@ export default function FeatureImportancePage() {
         <ul className={styles.listCenter}>
           {features.map((f, index) => (
             <li key={index} style={{ color: "#15b1e2", fontWeight: "bold", fontSize: '18px', marginBottom: '10px' }}>
-              {f.feature}
+            {f.feature} müsste {f.percentage >= 0 ? 'höher' : 'geringer'} sein
             </li>
           ))}
         </ul>
