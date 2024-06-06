@@ -136,7 +136,6 @@
 
 .optionsContainer {
   display: flex;
-  flex-direction: row;
   gap: 10px; /* Adjust the gap as needed */
 }
 
