@@ -82,7 +82,6 @@ export default function B6Page() {
                 className={styles.radio}
               />
               {option}
-              <br /><br />
             </label>
           ))}
             </div>
@@ -104,7 +103,6 @@ export default function B6Page() {
                 className={styles.radio}  
               />
               {option}
-              <br /><br />
             </label>
           ))}
           </div>
@@ -126,7 +124,6 @@ export default function B6Page() {
                 className={styles.radio}
               />
               {option}
-              <br /><br />
             </label>
           ))}
           </div>
@@ -142,12 +139,11 @@ export default function B6Page() {
                 type="radio"
                 name="question4"
                 value={option}
-                checked={answers.question1 === option}
+                checked={answers.question4 === option}
                 onChange={handleOptionChange}
                 className={styles.radio}
               />
               {option}
-              <br /><br />
             </label>
           ))}
             </div>
