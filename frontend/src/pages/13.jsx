@@ -70,7 +70,7 @@ export default function A13Page() {
   
 
   return (
-    <div className={styles.container} style={{marginTop: '200px'}}>
+    <div className={styles.containerS} style={{marginTop: '200px'}}>
       <form>
         <div className={styles.question}>
           <h2 style={{fontSize: '18px', fontWeight:'bold', color: '#19b394'}} >Bitte bewerten Sie die folgende Aussage: Wenn man 10 und 20 addiert, erhält man 30</h2> {/* Change this question to whatever you wish */}

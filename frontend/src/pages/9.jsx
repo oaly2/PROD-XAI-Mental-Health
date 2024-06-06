@@ -57,7 +57,7 @@ export default function A9Page() {
 
 
   return (
-    <div className={styles.container}>
+    <div className={styles.containerS}>
       <h1 style={{fontSize: '18px', fontWeight:'bold'}}>Ab jetzt geht es um Ihre persönliche Ansicht. Denken Sie an die App, die sie eben gesehen haben. Bitte bewerten Sie auf Basis dessen folgende Aussagen.</h1>
       <br />
       <br />

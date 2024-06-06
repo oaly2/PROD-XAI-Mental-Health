@@ -59,7 +59,7 @@ export default function A11Page() {
 
 
   return (
-    <div className={styles.container}>
+    <div className={styles.containerS}>
       <form>
         <div className={styles.question}>
           <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >

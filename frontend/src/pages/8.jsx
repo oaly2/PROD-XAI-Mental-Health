@@ -48,7 +48,7 @@ export default function A8Page() {
 
 
   return (
-    <div className={styles.container} style={{marginTop: '200px'}}>
+    <div className={styles.containerS} style={{marginTop: '200px'}}>
       <form>
         <div className={styles.question}>
           <h2 style={{fontSize: '18px', fontWeight:'bold', color: '#19b394'}} >Worum genau geht es in der Studie, an der Sie gerade teilnehmen?</h2> {/* Change this question to whatever you wish */}

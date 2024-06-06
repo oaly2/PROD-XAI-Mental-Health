@@ -62,7 +62,7 @@ export default function B6Page() {
 
 
   return (
-    <div className={styles.container}>
+    <div className={styles.containerS}>
       <h1 style={{fontSize: '18px', fontWeight:'bold'}}>Wenn Sie an der Stelle von Alex wären: Wie würden Sie auf das Ergebnis der KI-Auswertung reagieren?</h1>
       <br />
       <br />

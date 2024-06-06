@@ -59,7 +59,7 @@ export default function A16Page() {
   return (
     <div className={styles.container}>
       <form>
-        <div className={styles.question}>
+        <div className={styles.questionS}>
           <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
           Ich könnte relativ leicht Zeit finden, um Unterstützung zum Erhalt oder zur Verbesserung meiner mentalen Gesundheit zu suchen
           </h2> 

@@ -57,7 +57,7 @@ export default function A14Page() {
 
 
   return (
-    <div className={styles.container}>
+    <div className={styles.containerS}>
       <h1 style={{fontSize: '18px', fontWeight:'bold'}}>Jetzt bitten wir Sie, noch einige Aussagen zu mentaler Gesundheit im Allgemeinen zu bewerten.</h1>
       <br />
       <br />
