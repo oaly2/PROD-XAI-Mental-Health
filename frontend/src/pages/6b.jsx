@@ -68,9 +68,9 @@ export default function B6Page() {
         <div className={styles.question}>
           <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Ich könnte mir vorstellen, Präventionsmaßnahmen für mich in Anspruch zu nehmen</h2> {/* Change this question to whatever you wish */}
           <br />
-          <div className={styles.optionsContainer}>
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
-            <label key={option} className={styles.optionLabel}>
+            <div className={styles.optionsContainer}>
+            <label key={option}>
               <input
                 type="radio"
                 name="question1"
@@ -82,17 +82,16 @@ export default function B6Page() {
               {option}
               <br /><br />
             </label>
-          ))}
             </div>
+          ))}
         </div>
         <br />
         
         <div className={styles.question}>
           <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Ich würde in der Zukunft Angebote aufsuchen, die sich um die Prävention meiner psychischen Gesundheit sorgen können </h2>
           <br />
-          <div className={styles.optionsContainer}>
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
-            <label key={option} className={styles.optionLabel}>
+            <label key={option}>
               <input
                 type="radio"
                 name="question2"
@@ -105,16 +104,14 @@ export default function B6Page() {
               <br /><br />
             </label>
           ))}
-          </div>
         </div>
         <br />  
         
         <div className={styles.question}>
           <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Ich würde versuchen, Einrichtungen für mich zu finden, die sich um die Prävention meiner psychischen Gesundheit sorgen können</h2>
           <br />
-          <div className={styles.optionsContainer}>
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
-            <label key={option} className={styles.optionLabel}>
+            <label key={option}>
               <input
                 type="radio"
                 name="question3"
@@ -127,28 +124,6 @@ export default function B6Page() {
               <br /><br />
             </label>
           ))}
-          </div>
-        </div>
-
-        <div className={styles.question}>
-          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Ich könnte mir vorstellen, Präventionsmaßnahmen für mich in Anspruch zu nehmen</h2> {/* Change this question to whatever you wish */}
-          <br />
-          <div className={styles.optionsContainer}>
-          {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
-            <label key={option} className={styles.optionLabel}>
-              <input
-                type="radio"
-                name="question1"
-                value={option}
-                checked={answers.question1 === option}
-                onChange={handleOptionChange}
-                className={styles.radio}
-              />
-              {option}
-              <br /><br />
-            </label>
-          ))}
-            </div>
         </div>
         
         <br />
