@@ -69,7 +69,6 @@ export default function B6Page() {
           <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Ich könnte mir vorstellen, Präventionsmaßnahmen für mich in Anspruch zu nehmen</h2> {/* Change this question to whatever you wish */}
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
-            <div className={styles.optionsContainer}>
             <label key={option}>
               <input
                 type="radio"
@@ -82,7 +81,6 @@ export default function B6Page() {
               {option}
               <br /><br />
             </label>
-            </div>
           ))}
         </div>
         <br />
