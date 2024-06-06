@@ -36,6 +36,7 @@ const SurveySchema = new mongoose.Schema({
   intention_to_act_item_1: Number,
   intention_to_act_item_2: Number,
   intention_to_act_item_3: Number,
+  intention_to_act_item_4: Number,
   intention_to_use_item_1:  Number,
   intention_to_use_item_2:  Number,
   intention_to_use_item_3:  Number,
