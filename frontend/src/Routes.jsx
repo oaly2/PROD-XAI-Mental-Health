@@ -39,7 +39,7 @@ const ProjectRoutes = () => {
     { path: "/intention_to_act_B", element: <B6 />},
     { path: "/intention_to_use", element: <A7 />},
     { path: "/attention_check_1", element: <A8 />},
-    { path: "/performance_expectancy", element: <A9 />},
+    { path: "/patient_outcome", element: <A9 />},
     { path: "/patient_process", element: <A10 />},
     { path: "/social_influence", element: <A11 />},
     { path: "/trust", element: <A12 />},
