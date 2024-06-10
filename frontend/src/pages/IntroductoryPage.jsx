@@ -13,7 +13,7 @@ export default function IntroductoryPage() {
 
   const handleProceed = () => {
     if (isChecked) {
-      navigate("/persona");
+      navigate("/erfahrung_mit_app_typen");
     } else {
       setShowWarning(true);
     }

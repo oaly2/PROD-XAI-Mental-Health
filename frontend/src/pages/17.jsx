@@ -49,28 +49,8 @@ export default function A17Page() {
     // Save updated userData to session storage
     sessionStorage.setItem('userData', JSON.stringify(userData));
 
-
-    axios.post('https://mental-health.erklaerbare-ki.de/api/submit-survey', userData)
-    .then(() => {
-      navigate('/end_of_survey_A_B');
-    })
-    .catch(error => {
-      if (error.response) {
-        // The request was made and the server responded with a status code
-        // that falls out of the range of 2xx
-        console.error('Error data:', error.response.data);
-        console.error('Error status:', error.response.status);
-        console.error('Error headers:', error.response.headers);
-      } else if (error.request) {
-        // The request was made but no response was received
-        console.error('Error request:', error.request);
-      } else {
-        // Something happened in setting up the request that triggered an Error
-        console.error('Error message:', error.message);
-      }
-      console.error('Error config:', error.config); 
-    });
-
+    // Navigate to the next page
+    navigate('/persona');
     window.scrollTo(0, 0);
     }
     else {
@@ -86,7 +66,7 @@ export default function A17Page() {
       <br />
       <form>
         <div className={styles.question} style={{textAlign: 'left'}}>
-          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >Mir war schon vor heute bekannt, dass es Apps für mentale Gesundheit gibt</h2> {/* Change this question to whatever you wish */}
+          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}}>Mir war schon vor heute bekannt, dass es Apps für mentale Gesundheit gibt</h2> {/* Change this question to whatever you wish */}
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>

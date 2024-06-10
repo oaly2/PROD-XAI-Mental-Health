@@ -31,6 +31,9 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 const SurveySchema = new mongoose.Schema({
   PROLIFIC_PID: String,
   prolific_id_input_user: String,
+  erfahrung_mit_app_typen_item_1: Number,
+  erfahrung_mit_app_typen_item_2: Number,
+  erfahrung_mit_app_typen_item_3: Number,
   explanation_id: String,
   quality_check_intention_to_act: String,
   intention_to_act_item_1: Number,
@@ -63,10 +66,7 @@ const SurveySchema = new mongoose.Schema({
   indifference_to_stigma_item_3: Number,
   helpSeeking_propensity_item_1: Number,
   helpSeeking_propensity_item_2: Number,
-  helpSeeking_propensity_item_3: Number,
-  erfahrung_mit_app_typen_item_1: Number,
-  erfahrung_mit_app_typen_item_2: Number,
-  erfahrung_mit_app_typen_item_3: Number 
+  helpSeeking_propensity_item_3: Number
 });
 
 const Survey = mongoose.model('Survey', SurveySchema);
