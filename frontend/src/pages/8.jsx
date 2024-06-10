@@ -38,7 +38,7 @@ export default function A8Page() {
     sessionStorage.setItem('userData', JSON.stringify(userData));
 
     // Navigate to the next page
-    navigate('/performance_expectancy');
+    navigate('/patient_process');
     window.scrollTo(0, 0);
     }
     else {

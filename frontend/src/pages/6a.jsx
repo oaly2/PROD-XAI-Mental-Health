@@ -54,7 +54,7 @@ export default function A6Page() {
       
       sessionStorage.setItem('userData', JSON.stringify(userData));
 
-      navigate('/intention_to_use');
+      navigate('/attention_check_1');
       window.scrollTo(0, 0);
     }
     else {

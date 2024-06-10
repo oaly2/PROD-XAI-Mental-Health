@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from '../styles/PersonaPage.module.css'; // Ensure this path is correct for your project
 import Button from "@mui/material/Button";
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios'; // Import axios
 
 export default function A7Page() {
   const [answers, setAnswers] = useState({
@@ -28,44 +29,60 @@ export default function A7Page() {
 
   const [showWarning, setShowWarning] = useState(false);
 
-  
   // Check if all questions are answered to enable the button
   const isEveryQuestionAnswered = Object.values(answers).every(answer => answer !== '');
-
 
   let navigate = useNavigate();
 
   const handleProceed = () => {
-    if(isEveryQuestionAnswered) {
-    const userData = JSON.parse(sessionStorage.getItem('userData')) || {};
-  
-    // Convert answer labels to numerical values and save them under specific keys
-    userData.intention_to_use_item_1 = likertScale[answers.question1];
-    userData.intention_to_use_item_2 = likertScale[answers.question2];
-    userData.intention_to_use_item_3 = likertScale[answers.question3];
-  
-    // Save updated userData to session storage
-    sessionStorage.setItem('userData', JSON.stringify(userData));
-  
-    // Navigate to the next page
-    navigate('/attention_check_1');
-    window.scrollTo(0, 0);
-    }
-    else {
+    if (isEveryQuestionAnswered) {
+      const userData = JSON.parse(sessionStorage.getItem('userData')) || {};
+    
+      // Convert answer labels to numerical values and save them under specific keys
+      userData.intention_to_use_item_1 = likertScale[answers.question1];
+      userData.intention_to_use_item_2 = likertScale[answers.question2];
+      userData.intention_to_use_item_3 = likertScale[answers.question3];
+    
+      // Save updated userData to session storage
+      sessionStorage.setItem('userData', JSON.stringify(userData));
+
+      // Post the user data
+      axios.post('https://mental-health.erklaerbare-ki.de/api/submit-survey', userData)
+        .then(() => {
+          navigate('/end_of_survey_A_B');
+        })
+        .catch(error => {
+          if (error.response) {
+            // The request was made and the server responded with a status code
+            // that falls out of the range of 2xx
+            console.error('Error data:', error.response.data);
+            console.error('Error status:', error.response.status);
+            console.error('Error headers:', error.response.headers);
+          } else if (error.request) {
+            // The request was made but no response was received
+            console.error('Error request:', error.request);
+          } else {
+            // Something happened in setting up the request that triggered an Error
+            console.error('Error message:', error.message);
+          }
+          console.error('Error config:', error.config); 
+        });
+
+      window.scrollTo(0, 0);
+    } else {
       setShowWarning(true);
     }
   };
 
-
   return (
     <div className={styles.containerS}>
-      <h1 style={{fontSize: '18px', fontWeight:'bold'}}>Ab jetzt geht es um Ihre persönliche Ansicht. Denken Sie an die App, die sie eben gesehen haben. Bitte bewerten Sie auf Basis dessen folgende Aussagen.</h1>
+      <h1 style={{fontSize: '18px', fontWeight:'bold'}}>Denken Sie an die App, die Sie eben gesehen haben. Bitte bewerten Sie auf Basis dessen folgende Aussagen.</h1>
       <br />
       <br />
       <form>
         <div className={styles.question}>
-          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
-          Ich könnte mir vorstellen, diese App generell zu nutzen 
+          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}}>
+            Ich könnte mir vorstellen, diese App generell zu nutzen
           </h2>
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
@@ -86,8 +103,8 @@ export default function A7Page() {
         <br />
         
         <div className={styles.question}>
-          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
-          Ich beabsichtige, diese App in der Zukunft zu nutzen, sobald sie verfügbar ist 
+          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}}>
+            Ich beabsichtige, diese App in der Zukunft zu nutzen, sobald sie verfügbar ist
           </h2>
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
@@ -108,8 +125,8 @@ export default function A7Page() {
         <br />  
         
         <div className={styles.question}>
-          <h2 style={{fontSize: '18px', fontWeight:'bold', color: '#19b394'}} >
-          Wenn die App mir angeboten würde, würde ich sie auf jeden Fall nutzen
+          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}}>
+            Wenn die App mir angeboten würde, würde ich sie auf jeden Fall nutzen
           </h2>
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
@@ -132,7 +149,7 @@ export default function A7Page() {
         <br />
 
         {showWarning && (
-        <p style={{ color: 'red', fontSize: '16px' }}>Bitte beantworten Sie alle Fragen, bevor Sie fortfahren.</p> // Warning message
+          <p style={{ color: 'red', fontSize: '16px' }}>Bitte beantworten Sie alle Fragen, bevor Sie fortfahren.</p> // Warning message
         )}
 
         <br />
@@ -141,7 +158,7 @@ export default function A7Page() {
           variant="contained"
           onClick={handleProceed}
           style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px'}}
-        > 
+        >
           Weiter &#x279C;
         </Button>
       </form>

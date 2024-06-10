@@ -3,11 +3,13 @@ import styles from '../styles/PersonaPage.module.css'; // Ensure this path is co
 import Button from "@mui/material/Button";
 import { useNavigate } from 'react-router-dom';
 
-export default function A9Page() {
+export default function A10Page() {
   const [answers, setAnswers] = useState({
     question1: '',
     question2: '',
-    question3: ''
+    question3: '',
+    question4: '',
+    question5: ''
   });
 
   const likertScale = {
@@ -28,7 +30,6 @@ export default function A9Page() {
 
   const [showWarning, setShowWarning] = useState(false);
 
-  
   // Check if all questions are answered to enable the button
   const isEveryQuestionAnswered = Object.values(answers).every(answer => answer !== '');
 
@@ -39,15 +40,17 @@ export default function A9Page() {
     const userData = JSON.parse(sessionStorage.getItem('userData')) || {};
   
     // Convert answer labels to numerical values and save them under specific keys
-    userData.performance_expectancy_item_1 = likertScale[answers.question1];
-    userData.performance_expectancy_item_2 = likertScale[answers.question2];
-    userData.performance_expectancy_item_3 = likertScale[answers.question3];
+    userData.patient_outcome_item_1 = likertScale[answers.question1];
+    userData.patient_outcome_item_2 = likertScale[answers.question2];
+    userData.patient_outcome_item_3 = likertScale[answers.question3];
+    userData.patient_outcome_item_4 = likertScale[answers.question4];
+    userData.patient_outcome_item_5 = likertScale[answers.question5];
   
     // Save updated userData to session storage
     sessionStorage.setItem('userData', JSON.stringify(userData));
   
     // Navigate to the next page
-    navigate('/effort_expectancy');
+    navigate('/attention_check_2');
     window.scrollTo(0, 0);
     }
     else {
@@ -55,17 +58,25 @@ export default function A9Page() {
     }
   };
 
+  const savedExplanation = JSON.parse(sessionStorage.getItem('selectedExplanation'));
+  const word = savedExplanation.prediction === "depression" ? "verbessern" : "erhalten";
+  const word1 = savedExplanation.prediction === "depression" ? "die Verbesserung" : "den Erhalt (Prävention)";
+
+
 
   return (
     <div className={styles.containerS}>
-      <h1 style={{fontSize: '18px', fontWeight:'bold'}}>Ab jetzt geht es um Ihre persönliche Ansicht. Denken Sie an die App, die sie eben gesehen haben. Bitte bewerten Sie auf Basis dessen folgende Aussagen.</h1>
+    <h1 style={{fontSize: '18px', fontWeight:'bold'}}>Denken Sie an die App, die Sie eben gesehen haben. Stellen Sie sich vor, Sie könnten diese App nutzen. Bitte bewerten Sie auf Basis dessen folgende Aussagen.</h1>
+      <br />
+      <br />
+      <h1 style={{fontSize: '18px', fontWeight:'bold'}}>Mit der Nutzung der App würde ich…</h1>
       <br />
       <br />
       <form>
         <div className={styles.question}>
           <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
-          Die Verwendung der App könnte positive Auswirkungen auf meine mentale Gesundheit haben
-          </h2> 
+          … könnte ich meine mentale Gesundheit selbst {word}
+          </h2>
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>
@@ -86,8 +97,7 @@ export default function A9Page() {
         
         <div className={styles.question}>
           <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
-          Die Verwendung der App könnte mir helfen, meine mentale Gesundheit besser zu verstehen
-
+          … wäre ich besser in der Lage, (kleinere) mentale Probleme selbst zu lösen ohne professionelle Hilfe von Ärzt:innen oder Therapeut:innen
           </h2>
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
@@ -108,8 +118,8 @@ export default function A9Page() {
         <br />  
         
         <div className={styles.question}>
-          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
-          Insgesamt könnte die App mir helfen, meine mentale Gesundheit zu erhalten oder zu verbessern
+          <h2 style={{fontSize: '18px', fontWeight:'bold', color: '#19b394'}} >
+          … könnte ich {word1} meiner mentalen Gesundheit selbst in die Hand nehmen
           </h2>
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
@@ -129,6 +139,50 @@ export default function A9Page() {
         </div>
         <br />
 
+        <div className={styles.question}>
+          <h2 style={{fontSize: '18px', fontWeight:'bold', color: '#19b394'}} >
+          … würde ich normalerweise eine Lösung finden, wenn ich mich mental nicht gut fühlen würde
+          </h2>
+          <br />
+          {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
+            <label key={option}>
+              <input
+                type="radio"
+                name="question4"
+                value={option}
+                checked={answers.question4 === option}
+                onChange={handleOptionChange}
+                className={styles.radio}
+              />
+              {option}
+              <br /><br />
+            </label>
+          ))}
+        </div>
+        <br />
+
+        <div className={styles.question}>
+          <h2 style={{fontSize: '18px', fontWeight:'bold', color: '#19b394'}} >
+          … wüsste ich mir immer zu helfen, egal, was in Bezug auf meine mentale Gesundheit passiert
+          </h2>
+          <br />
+          {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
+            <label key={option}>
+              <input
+                type="radio"
+                name="question5"
+                value={option}
+                checked={answers.question5 === option}
+                onChange={handleOptionChange}
+                className={styles.radio}
+              />
+              {option}
+              <br /><br />
+            </label>
+          ))}
+        </div>
+        <br />
+        
         <br />
         
         {showWarning && (
