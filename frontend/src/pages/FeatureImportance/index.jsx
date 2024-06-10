@@ -140,7 +140,7 @@ export default function FeatureImportancePage() {
       </Helmet>
       <div className={styles.container} style={{padding: '0.5vw', marginBottom: '0.5vw'}}>
       <div className={styles.container} style={{padding: '0.5vw'}}>  
-        <h1 className={styles.subTitle} style={{color: 'black', fontWeight: 'normal'}}>
+        <h1 className={styles.subTitle} style={{color: 'black', fontWeight: 'normal', textAlign: 'center'}}>
         Versetzen Sie sich weiterhin in die Lage von Alex. Alex öffnet die App und bekommt folgende Nachricht angezeigt. Bitte sehen Sie sich den Bildschirm genau an.  
         </h1>
       </div>
@@ -149,7 +149,7 @@ export default function FeatureImportancePage() {
 
 
       <div className={styles.container} style={{padding: '0.5vw'}}>
-      <h1 className={styles.subTitle} style={{color: 'black', fontWeight: 'normal'}}>
+      <h1 className={styles.subTitle} style={{color: 'black', fontWeight: 'normal', textAlign: 'center'}}>
         Lieber Alex, die App will dir helfen, Deine mentale Gesundheit zu erhalten oder zu verbessern. Dafür hat sie folgende Prognose für Dich ermittelt.
         </h1>
         <br />
