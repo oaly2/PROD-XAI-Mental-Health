@@ -53,12 +53,7 @@ export default function A13Page() {
         navigate('/termination');
     }
     else {
-        if(explanation.prediction === "depression") {
-            navigate('/psychological_openness_A');
-        }
-        else {
-            navigate('/psychological_openness_A');
-        }
+        navigate('/7')
     }
     window.scrollTo(0, 0);
     }
