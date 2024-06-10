@@ -14,6 +14,7 @@ export default function IntroductoryPage() {
   const handleProceed = () => {
     if (isChecked) {
       navigate("/erfahrung_mit_app_typen");
+      window.scrollTo(0, 0);
     } else {
       setShowWarning(true);
     }

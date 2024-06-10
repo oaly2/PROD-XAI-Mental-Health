@@ -124,11 +124,8 @@ export default function SurveyScreenDepressionCFPage() {
       <div style={{ textAlign: 'center' }}>
         <Text as="p" className="text-center text-base md:text-xl mx-2 my-4" style={{ fontSize: '1.25em', lineHeight: '1.5em' }}>
           Damit Du Deine mentale Gesundheit {word} kannst,
-          zeigt Dir die KI auf, welche Veränderungen zu der
+          zeigt Dir die KI, welche Veränderungen zu der
           Prognose {oppositePrediction} führen würden.
-          <br />
-          <br />
-          Folgende Veränderungen würden zu der Prognose {oppositePrediction} von der KI führen:
         </Text>
         <ul className={styles.listCenter}>
           {features.map((f, index) => (
@@ -158,7 +155,14 @@ export default function SurveyScreenDepressionCFPage() {
         </h1>
       </div>
 
+      <hr style={{ border: '1px solid #000', margin: '20px 0' }} /> {/* Horizontal Line */}
+
       <div className={styles.container} style={{padding: '0.5vw'}}>
+        <h1 className={styles.subTitle} style={{color: 'black', fontWeight: 'normal'}}>
+        Lieber Alex, die App will dir helfen, Deine mentale Gesundheit zu erhalten oder zu verbessern. Dafür hat sie folgende Prognose für Dich ermittelt.
+        </h1>
+        <br />
+        <br />
         <div className="bg-blue_gray-100 rounded-lg mx-auto px-5 py-4">
           <Text className="text-center text-xl md:text-2xl font-semibold mt-4" style={{ fontSize: '2.0em' }}>
             Die KI prognostiziert auf Basis Deiner Sensordaten von Smartphone und anderen Geräten ein<br /><br />

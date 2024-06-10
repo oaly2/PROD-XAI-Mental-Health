@@ -46,7 +46,14 @@ export default function SurveyScreenDepressionPage({ explanation }) {
         </h1>
       </div>
 
+      <hr style={{ border: '1px solid #000', margin: '20px 0' }} /> {/* Horizontal Line */}
+
       <div className={styles.container} style={{padding: '0.5vw'}}>
+        <h1 className={styles.subTitle} style={{color: 'black', fontWeight: 'normal'}}>
+          Lieber Alex, die App will dir helfen, Deine mentale Gesundheit zu erhalten oder zu verbessern. Dafür hat sie folgende Prognose für Dich ermittelt.
+        </h1>
+        <br />
+        <br />
         <div className="bg-blue_gray-100 rounded-lg mx-auto px-20 py-6">
           <Text className="text-center text-xl md:text-2xl font-semibold mt-4" style={{ fontSize: '2.0em' }}>
             Die KI prognostiziert auf Basis Deiner Sensordaten von Smartphone und anderen Geräten ein<br /><br />

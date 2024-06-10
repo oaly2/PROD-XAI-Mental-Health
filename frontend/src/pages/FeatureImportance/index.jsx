@@ -109,16 +109,18 @@ export default function FeatureImportancePage() {
 
     if (features.length === 0) return null;
 
+    const oppositePrediction = explanation.prediction === "depression" ? "erhöhtes Depressionsrisiko" : "niedriges Depressionsrisiko";
+    const word = explanation.prediction === "depression" ? "verbessern" : "erhalten";
 
     return (
       <div style={{ textAlign: 'center' }}>
         <Text as="p" className="text-center text-base md:text-xl mx-2 my-4" style={{ fontSize: '1.25em', lineHeight: '1.5em' }}>
-        Folgendes hat am meisten dazu beigetragen, dass Du diese Prognose von der KI erhältst
+          Damit Du Deine mentale Gesundheit {word} kannst, zeigt Dir die KI, was am meisten dazu beigetragen hat, dass Du die Prognose {oppositePrediction} erhalten hast:
         </Text>
         <ul className={styles.listCenter}>
           {features.map((f, index) => (
             <li key={index} style={{ color: "#15b1e2", fontWeight: "bold", fontSize: '18px', marginBottom: '10px' }}>
-            {f.feature} 
+              {f.feature} 
             </li>
           ))}
         </ul>
@@ -143,7 +145,15 @@ export default function FeatureImportancePage() {
         </h1>
       </div>
 
+      <hr style={{ border: '1px solid #000', margin: '20px 0' }} /> {/* Horizontal Line */}
+
+
       <div className={styles.container} style={{padding: '0.5vw'}}>
+      <h1 className={styles.subTitle} style={{color: 'black', fontWeight: 'normal'}}>
+        Lieber Alex, die App will dir helfen, Deine mentale Gesundheit zu erhalten oder zu verbessern. Dafür hat sie folgende Prognose für Dich ermittelt.
+        </h1>
+        <br />
+        <br />
         <div className="bg-blue_gray-100 rounded-lg mx-auto px-5 py-4">
           <Text className="text-center text-xl md:text-2xl font-semibold mt-4" style={{ fontSize: '2.0em' }}>
           Die KI prognostiziert auf Basis Deiner Sensordaten von Smartphone und anderen Geräten ein<br /><br />
