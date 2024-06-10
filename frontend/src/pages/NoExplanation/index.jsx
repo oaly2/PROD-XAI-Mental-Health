@@ -27,8 +27,10 @@ export default function SurveyScreenDepressionPage({ explanation }) {
       // Navigate based on the prediction value
       if (explanation.prediction === "depression") {
         navigate("/intention_to_act_A");
+        window.scrollTo(0, 0);
       } else {
         navigate("/intention_to_act_B");
+        window.scrollTo(0, 0);
       }
     }
   };

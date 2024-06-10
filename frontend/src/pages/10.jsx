@@ -38,8 +38,7 @@ export default function A10Page() {
   const handleProceed = () => {
     if(isEveryQuestionAnswered) {
     const userData = JSON.parse(sessionStorage.getItem('userData')) || {};
-    
-
+  
     
     // Convert answer labels to numerical values and save them under specific keys
     userData.patient_process_item_1 = likertScale[answers.question1];
@@ -52,7 +51,7 @@ export default function A10Page() {
     sessionStorage.setItem('userData', JSON.stringify(userData));
     
     // Navigate to the next page
-    navigate('/social_influence');
+    navigate('/patient_outcome');
     window.scrollTo(0, 0);
     }
     else {
