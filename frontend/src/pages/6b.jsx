@@ -69,7 +69,7 @@ export default function B6Page() {
       <form>
         <div className={styles.question}>
           <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
-          Ich würde mich in Zukunft stärker um den Erhalt meiner mentalen Gesundheit kümmern
+          Ich würde mich in Zukunft stärker um den Erhalt (Prävention) meiner mentalen Gesundheit kümmern
           </h2> 
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
@@ -91,7 +91,7 @@ export default function B6Page() {
         
         <div className={styles.question}>
           <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
-          Ich würde versuchen, bestimmte Dinge in meinem Alltag so zu verändern, dass meine mentale Gesundheit weiter erhält
+          Ich würde versuchen, bestimmte Dinge in meinem Alltag so zu verändern, dass es meine mentale Gesundheit weiter erhält
           </h2>
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
@@ -113,7 +113,7 @@ export default function B6Page() {
         
         <div className={styles.question}>
           <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
-          Ich könnte mir vorstellen, Unterstützungsangebote für den Erhalt meiner mentalen Gesundheit in Anspruch zu nehmen.
+          Ich könnte mir vorstellen, Unterstützungsangebote für den Erhalt (Prävention) meiner mentalen Gesundheit in Anspruch zu nehmen.
           </h2>
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
@@ -136,7 +136,7 @@ export default function B6Page() {
 
         <div className={styles.question}>
           <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
-          Ich würde bestimmte Verhaltensweisen so verändern, dass sie dem Erhalt meiner mentalen Gesundheit zuträglich sind
+          Ich würde bestimmte Verhaltensweisen so verändern, dass sie dem Erhalt (Prävention) meiner mentalen Gesundheit zuträglich sind
           </h2>
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (

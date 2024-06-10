@@ -69,7 +69,7 @@ export default function A10Page() {
     <h1 style={{fontSize: '18px', fontWeight:'bold'}}>Denken Sie an die App, die Sie eben gesehen haben. Stellen Sie sich vor, Sie könnten diese App nutzen. Bitte bewerten Sie auf Basis dessen folgende Aussagen.</h1>
       <br />
       <br />
-      <h1 style={{fontSize: '18px', fontWeight:'bold'}}>Mit der Nutzung der App würde ich…</h1>
+      <h1 style={{fontSize: '18px', fontWeight:'bold'}}>Mit der Nutzung der App…</h1>
       <br />
       <br />
       <form>
