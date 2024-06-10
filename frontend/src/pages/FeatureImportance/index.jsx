@@ -145,7 +145,8 @@ export default function FeatureImportancePage() {
         </h1>
       </div>
 
-      <hr style={{ border: '1px solid #000', margin: '20px 0' }} /> {/* Horizontal Line */}
+      <hr style={{ border: '1px solid #000', width: '100%', margin: '20px 0' }} /> {/* Horizontal Line */}
+
 
 
       <div className={styles.container} style={{padding: '0.5vw'}}>
