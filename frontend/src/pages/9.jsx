@@ -118,7 +118,7 @@ export default function A10Page() {
         <br />  
         
         <div className={styles.question}>
-          <h2 style={{fontSize: '18px', fontWeight:'bold', color: '#19b394'}} >
+          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
           … könnte ich {word1} meiner mentalen Gesundheit selbst in die Hand nehmen
           </h2>
           <br />
@@ -140,7 +140,7 @@ export default function A10Page() {
         <br />
 
         <div className={styles.question}>
-          <h2 style={{fontSize: '18px', fontWeight:'bold', color: '#19b394'}} >
+          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
           … würde ich normalerweise eine Lösung finden, wenn ich mich mental nicht gut fühlen würde
           </h2>
           <br />
@@ -162,7 +162,7 @@ export default function A10Page() {
         <br />
 
         <div className={styles.question}>
-          <h2 style={{fontSize: '18px', fontWeight:'bold', color: '#19b394'}} >
+          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
           … wüsste ich mir immer zu helfen, egal, was in Bezug auf meine mentale Gesundheit passiert
           </h2>
           <br />

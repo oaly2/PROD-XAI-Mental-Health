@@ -53,7 +53,7 @@ export default function A13Page() {
         navigate('/termination');
     }
     else {
-        navigate('/7')
+        navigate('/intention_to_use')
     }
     window.scrollTo(0, 0);
     }

@@ -117,7 +117,7 @@ export default function A10Page() {
         <br />  
         
         <div className={styles.question}>
-          <h2 style={{fontSize: '18px', fontWeight:'bold', color: '#19b394'}} >
+          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
           … meinen mentalen Gesundheitszustand besser verstehen
           </h2>
           <br />
@@ -139,7 +139,7 @@ export default function A10Page() {
         <br />
 
         <div className={styles.question}>
-          <h2 style={{fontSize: '18px', fontWeight:'bold', color: '#19b394'}} >
+          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
           … motiviert sein, meine mentale Gesundheit zu {word} und ein besseres Leben zu haben
           </h2>
           <br />
@@ -161,7 +161,7 @@ export default function A10Page() {
         <br />
 
         <div className={styles.question}>
-          <h2 style={{fontSize: '18px', fontWeight:'bold', color: '#19b394'}} >
+          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
           … wissen, was zu tun ist, um meinen mentalen Gesundheitszustand zu {word}
           </h2>
           <br />
