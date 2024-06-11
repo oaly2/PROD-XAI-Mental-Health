@@ -40,21 +40,8 @@ export default function PersonaPage({ showProceedButton = true }) {
     sessionStorage.setItem('userData', JSON.stringify(userData));
   }, []);
 
-  useEffect(() => {
-    if (timer > 0) {
-      const interval = setInterval(() => {
-        setTimer(timer - 1);
-      }, 1000);
-      return () => clearInterval(interval);
-    }
-  }, [timer]);
-
   const handleProceed = () => {
-    if (timer > 0) {
-      setMessage("Bitte nehmen Sie sich noch etwas mehr Zeit um die Informationen anzusehen. Sie sollten diese für die kommenden Fragen verinnerlicht haben");
-    } else {
       navigate('/home');
-    }
   };
 
   if (!explanation) {
@@ -75,24 +62,23 @@ export default function PersonaPage({ showProceedButton = true }) {
         <br/>
 
 
-        Sie sind Alex. Alex nutzt eine Smart-Sensing-App für mentale Gesundheit – also eine App, die Sensordaten vom Smartphone und anderen Geräten nutzt, um Prognosen zur mentalen Gesundheit von Alex zu liefern. Alex erhält folgende Informationen zu der App.
+        Sie sind Alex. Alex nutzt eine Smart-Sensing-App für mentale Gesundheit – also eine App, die Sensordaten vom Smartphone und anderen Geräten verwendet, um Prognosen zur mentalen Gesundheit von Alex zu liefern. Alex erhält folgende Informationen zu der App.
 
         <br/>
         <br/>
 
+        Alex öffnet die App und bekommt eine Nachricht angezeigt. Wenn Sie unten auf weiter klicken, sehen Sie gleich diese Nachricht. Schauen Sie sich diese dann bitte genau an.
+
+        <br/>
+        <br/>
 
         Bitte sehen Sie sich die Informationen genau an.
   
         </h1>
         <br/>
         <br/>
-        <img src={explanationImage} alt="Explanation" className={styles.image} style={{borderRadius: '10px'}}/>
-        <br/>
         {showProceedButton && (
           <>
-            <br/>
-            {message && <p className={styles.list} style={{ color: 'red' }}>{message}</p>}
-            <br/>
             <Button
               variant="contained"
               onClick={handleProceed}

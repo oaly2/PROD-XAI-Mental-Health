@@ -1,25 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet"; // To control the page head elements such as title
 import styles from '../styles/introductory.module.css';
-import { useState } from "react";
 
 export default function IntroductoryPage() {
   let navigate = useNavigate();
 
   const [isChecked, setIsChecked] = useState(false);
   const [showWarning, setShowWarning] = useState(false);
+  const [timer, setTimer] = useState(10);
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    if (timer > 0) {
+      const interval = setInterval(() => {
+        setTimer(timer - 1);
+      }, 1000);
+      return () => clearInterval(interval);
+    }
+  }, [timer]);
 
   const handleProceed = () => {
-    if (isChecked) {
+    if (timer > 0) {
+      setMessage("Bitte nehmen Sie sich noch etwas mehr Zeit um die Informationen anzusehen. Sie sollten diese für die kommenden Fragen verinnerlicht haben");
+    } else if (isChecked) {
       navigate("/erfahrung_mit_app_typen");
       window.scrollTo(0, 0);
     } else {
       setShowWarning(true);
     }
   };
-
 
   return (
     <>
@@ -30,35 +41,25 @@ export default function IntroductoryPage() {
       <div className={styles.container}>
         <h1 className={styles.title}>Smart-Sensing-Apps für mentale Gesundheit <br/> <br/> </h1>
         <p className={styles.list}>
-        <span className={styles.subTitle}>Herzlich Willkommen <br/></span>
-        zu diesem wissenschaftlichen Forschungsprojekt zum Thema mentale Gesundheit! Es wird durchgeführt vom Institut für Business Analytics der Universität Ulm.
-        <br/>
-        <br/>
-
-        <span className={styles.subTitle}>Worum geht es? <br/></span>
-        So genannte Smart-Sensing-Apps nutzen <b>Künstliche Intelligenz (KI)</b>, um ihren Usern auf Basis von Sensordaten von Smartphones und anderen Geräten <b>Prognosen zu ihrer mentalen Gesundheit</b> zu liefern. Ziel dieser Apps ist es, dass User ihre mentale Gesundheit erhalten und verbessern können. Wir stellen Ihnen in dieser Studie ein Beispiel für eine solche App vor.
-        <br/>
-        <br/>
-
-
-        <span className={styles.subTitle}>Was muss ich tun? <br/></span>
-        Sie werden gleich gebeten, sich in ein hypothetisches Szenario hineinzuversetzen. Zunächst werden Ihnen einige Informationen zu der App gezeigt. Dann sehen sie eine konkrete KI-Auswertung in der App. Schauen Sie sich beides bitte genau an. Anschließend stellen wir Ihnen einige Fragen.
-        <br/>
-        <br/>
-        <br/>
-
-        <span style={{fontSize: '12px'}}>
-        <span className={styles.list} style={{fontWeight: 'bold'}}>Hinweis:</span> Im Laufe der Befragung werden Sie zu verschiedenen emotionalen Zuständen, einschließlich negativer Gefühle und Gedanken befragt. Falls Sie während der Beantwortung der Fragen eine Belastung empfinden, haben Sie jederzeit die Möglichkeit, Ihre Teilnahme an der Studie ohne Angabe von Gründen abzubrechen. Zusätzlich stehen Ihnen bei akuten psychischen Belastungen oder Suizidgedanken rund um die Uhr folgende Hilfsangebote zur Verfügung:
-        <br/>
-        <br/>
-        •	Telefonseelsorge: 0800 / 11 101 11
-        <br/>
-        •	Ärztlicher (psychiatrischer) Bereitschaftsdienst: 116 117
-        <br/><br/>
-        <span className={styles.list} style={{fontWeight: 'bold'}}>Datenschutz:</span> Alle Daten werden anonym erhoben und ausschließlich für wissenschaftliche Zwecke ausgewertet.
-        </span>
-        <br/><br/>
-          <br/>
+          <span className={styles.subTitle}>Herzlich Willkommen <br/></span>
+          zu diesem wissenschaftlichen Forschungsprojekt vom Institut für Business Analytics der Universität Ulm.
+          <br/><br/>
+          <span className={styles.subTitle}>Worum geht es? <br/></span>
+          Bei so genannten Smart-Sensing-Apps erfassen Smartphones und andere Geräte wie Smartwatches oder Fitness-Armbänder automatisch Sensordaten, u.a. zu Bewegung, Herzfrequenz, Schlaf, sozialen Kontakten, Kommunikationsverhalten oder Gemütslage. Eine Künstliche Intelligenz (KI) nutzt diese Daten, um den Usern Prognosen zu ihrer mentalen Gesundheit zu liefern. Ziel ist es, dass User ihre mentale Gesundheit erhalten und verbessern können. Wir stellen Ihnen in dieser Studie ein Beispiel für eine solche App vor.
+          <br/><br/>
+          <span className={styles.subTitle}>Was muss ich tun? <br/></span>
+          Sie werden gleich gebeten, sich in ein hypothetisches Szenario hineinzuversetzen. Sie lernen eine Person kennen, die eine Smart-Sensing-App benutzt, und sehen die Informationen, die die App für diese Person anzeigt. Schauen Sie sich bitte alles genau an. Danach stellen wir Ihnen einige Fragen
+          <br/><br/><br/>
+          <span style={{fontSize: '12px'}}>
+            <span className={styles.list} style={{fontWeight: 'bold'}}>Hinweis:</span> Im Laufe der Befragung werden Sie zu verschiedenen emotionalen Zuständen, einschließlich negativer Gefühle und Gedanken befragt. Falls Sie während der Beantwortung der Fragen eine Belastung empfinden, haben Sie jederzeit die Möglichkeit, Ihre Teilnahme an der Studie ohne Angabe von Gründen abzubrechen. Zusätzlich stehen Ihnen bei akuten psychischen Belastungen oder Suizidgedanken rund um die Uhr folgende Hilfsangebote zur Verfügung:
+            <br/><br/>
+            •	Telefonseelsorge: 0800 / 11 101 11
+            <br/>
+            •	Ärztlicher (psychiatrischer) Bereitschaftsdienst: 116 117
+            <br/><br/>
+            <span className={styles.list} style={{fontWeight: 'bold'}}>Datenschutz:</span> Alle Daten werden anonym erhoben und ausschließlich für wissenschaftliche Zwecke ausgewertet.
+          </span>
+          <br/><br/><br/>
           <input
             type="checkbox"
             checked={isChecked}
@@ -68,11 +69,10 @@ export default function IntroductoryPage() {
           <span className={styles.list}>Ich habe die Informationen zur Studie sowie zum Datenschutz gelesen und stimme zu</span>
           <br/><br/>
         </p>
-
         <br/>
-        {showWarning && <p className= {styles.list} style={{ color: 'red' }}>Bitte stimmen Sie zu</p>}
+        {showWarning && <p className={styles.list} style={{ color: 'red' }}>Bitte stimmen Sie zu</p>}
+        {message && <p className={styles.list} style={{ color: 'red' }}>{message}</p>}
         <br/>
-
         <Button
           variant="contained"
           onClick={handleProceed}
