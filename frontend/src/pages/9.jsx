@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from '../styles/PersonaPage.module.css'; // Ensure this path is correct for your project
 import Button from "@mui/material/Button";
 import { useNavigate } from 'react-router-dom';
@@ -8,17 +8,30 @@ export default function A10Page() {
     question1: '',
     question2: '',
     question3: '',
-    question4: '',
-    question5: ''
+    question4: ''
   });
 
   const likertScale = {
     'Ich stimme überhaupt nicht zu': 1,
-    'Ich stimme eher nicht zu': 2,
-    'Ich stimme weder zu noch lehne ich ab': 3,
-    'Ich stimme eher zu': 4,
-    'Ich stimme voll und ganz zu': 5
+    'Ich stimme nicht zu': 2,
+    'Ich stimme eher nicht zu': 3,
+    'Ich stimme weder zu noch lehne ich ab': 4,
+    'Ich stimme eher zu': 5,
+    'Ich stimme zu': 6,
+    'Ich stimme voll und ganz zu': 7
   };
+
+  const [timer, setTimer] = useState(5);
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    if (timer > 0) {
+      const interval = setInterval(() => {
+        setTimer(timer - 1);
+      }, 1000);
+      return () => clearInterval(interval);
+    }
+  }, [timer]);
 
   const handleOptionChange = (e) => {
     const { name, value } = e.target;
@@ -36,7 +49,10 @@ export default function A10Page() {
   let navigate = useNavigate();
 
   const handleProceed = () => {
-    if(isEveryQuestionAnswered) {
+    if (timer > 0) {
+      setMessage("Bitte nehmen Sie sich ausreichend Zeit, alle Fragen gewissenhaft zu beantworten");
+    } 
+    else if(isEveryQuestionAnswered) {
     const userData = JSON.parse(sessionStorage.getItem('userData')) || {};
   
     // Convert answer labels to numerical values and save them under specific keys
@@ -66,19 +82,19 @@ export default function A10Page() {
 
   return (
     <div className={styles.containerS}>
-    <h1 style={{fontSize: '18px', fontWeight:'bold'}}>Denken Sie an die App, die Sie eben gesehen haben. Stellen Sie sich vor, Sie könnten diese App nutzen. Bitte bewerten Sie auf Basis dessen folgende Aussagen.</h1>
+    <h1 style={{fontSize: '18px', fontWeight:'bold'}}>Denken Sie an die Informationen, die die App eben für Alex angezeigt hat. Bitte bewerten Sie auf Basis dessen folgende Aussagen</h1>
       <br />
       <br />
-      <h1 style={{fontSize: '18px', fontWeight:'bold'}}>Mit der Nutzung der App…</h1>
+      <h1 style={{fontSize: '18px', fontWeight:'bold'}}>Mit den Informationen aus der App…</h1>
       <br />
       <br />
       <form>
         <div className={styles.question}>
           <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
-          … könnte ich meine mentale Gesundheit selbst {word}
+          … wäre ich besser in der Lage, (kleinere) mentale Probleme selbst zu lösen ohne weitere Hilfe
           </h2>
           <br />
-          {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
+          {['Ich stimme voll und ganz zu', 'Ich stimme zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>
               <input
                 type="radio"
@@ -93,14 +109,15 @@ export default function A10Page() {
             </label>
           ))}
         </div>
-        <br />
+        <br />  
         
         <div className={styles.question}>
           <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
-          … wäre ich besser in der Lage, (kleinere) mentale Probleme selbst zu lösen ohne professionelle Hilfe von Ärzt:innen oder Therapeut:innen
+          … könnte ich konkrete Schritte für {word1} meiner mentalen Gesundheit ergreifen
+
           </h2>
           <br />
-          {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
+          {['Ich stimme voll und ganz zu', 'Ich stimme zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>
               <input
                 type="radio"
@@ -115,14 +132,14 @@ export default function A10Page() {
             </label>
           ))}
         </div>
-        <br />  
-        
+        <br />
+
         <div className={styles.question}>
           <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
-          … könnte ich {word1} meiner mentalen Gesundheit selbst in die Hand nehmen
+          … würde ich normalerweise eine Lösung finden, wenn ich mich mental nicht gut fühlen würde
           </h2>
           <br />
-          {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
+          {['Ich stimme voll und ganz zu', 'Ich stimme zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>
               <input
                 type="radio"
@@ -141,10 +158,10 @@ export default function A10Page() {
 
         <div className={styles.question}>
           <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
-          … würde ich normalerweise eine Lösung finden, wenn ich mich mental nicht gut fühlen würde
+          … wüsste ich mir immer zu helfen, egal, was in Bezug auf meine mentale Gesundheit passiert
           </h2>
           <br />
-          {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
+          {['Ich stimme voll und ganz zu', 'Ich stimme zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>
               <input
                 type="radio"
@@ -160,34 +177,14 @@ export default function A10Page() {
           ))}
         </div>
         <br />
-
-        <div className={styles.question}>
-          <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
-          … wüsste ich mir immer zu helfen, egal, was in Bezug auf meine mentale Gesundheit passiert
-          </h2>
-          <br />
-          {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
-            <label key={option}>
-              <input
-                type="radio"
-                name="question5"
-                value={option}
-                checked={answers.question5 === option}
-                onChange={handleOptionChange}
-                className={styles.radio}
-              />
-              {option}
-              <br /><br />
-            </label>
-          ))}
-        </div>
-        <br />
         
         <br />
         
         {showWarning && (
         <p style={{ color: 'red', fontSize: '16px' }}>Bitte beantworten Sie alle Fragen, bevor Sie fortfahren.</p> // Warning message
         )}
+        <br />
+        {message && <p className={styles.list} style={{ color: 'red' }}>{message}</p>}
 
         <br />
         

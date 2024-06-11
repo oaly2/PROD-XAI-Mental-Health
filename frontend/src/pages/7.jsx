@@ -76,7 +76,7 @@ export default function A7Page() {
 
   return (
     <div className={styles.containerS}>
-      <h1 style={{fontSize: '18px', fontWeight:'bold'}}>Denken Sie an die App, die Sie eben gesehen haben. Bitte bewerten Sie auf Basis dessen folgende Aussagen.</h1>
+      <h1 style={{fontSize: '18px', fontWeight:'bold'}}>Denken Sie an die Informationen, die die App eben für Alex angezeigt hat. Bitte bewerten Sie auf Basis dessen folgende Aussagen.</h1>
       <br />
       <br />
       <form>
