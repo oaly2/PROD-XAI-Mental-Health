@@ -78,6 +78,8 @@ export default function B6Page() {
       <br />
       <br />
       <h1 style={{fontSize: '18px', fontWeight:'bold'}}>Mit den Informationen aus der App…</h1>
+      <br />
+      <br />
       <form>
         <div className={styles.question}>
           <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
