@@ -136,7 +136,6 @@ export default function A17Page() {
         
         <Button
           variant="contained"
-          disabled={userData.submitted}
           onClick={handleProceed}
           style={{ color: 'white', backgroundColor: '#19b394', fontWeight: 'bold', fontSize: '16px', padding: '10px 20px'}}
         > 

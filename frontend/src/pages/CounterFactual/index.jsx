@@ -121,7 +121,7 @@ export default function SurveyScreenDepressionCFPage() {
 
     const oppositePrediction = explanation.prediction === "depression" ? "niedriges Depressionsrisiko" : "erhöhtes Depressionsrisiko";
     const word = explanation.prediction === "depression" ? "verbessern" : "erhalten";
-    const word1 = explanation.prediction === "depression" ? "niedrigem" : "erhöhtem";
+    const word1 = explanation.prediction === "depression" ? "niedrigen" : "erhöhten";
 
     return (
       <div style={{ textAlign: 'center' }}>
