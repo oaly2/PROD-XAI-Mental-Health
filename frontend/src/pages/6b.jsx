@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/PersonaPage.module.css'; // Ensure this path is correct for your project
-import Button from "@mui/material.Button";
+import Button from "@mui/material/Button";
 import { useNavigate } from 'react-router-dom';
 
 export default function B6Page() {

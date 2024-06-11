@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import styles from '../styles/PersonaPage.module.css'; // Ensure this path is correct for your project
 import Button from "@mui/material/Button";
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 
 export default function A17Page() {
   const [answers, setAnswers] = useState({
