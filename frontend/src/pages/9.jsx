@@ -60,7 +60,6 @@ export default function A10Page() {
     userData.patient_outcome_item_2 = likertScale[answers.question2];
     userData.patient_outcome_item_3 = likertScale[answers.question3];
     userData.patient_outcome_item_4 = likertScale[answers.question4];
-    userData.patient_outcome_item_5 = likertScale[answers.question5];
   
     // Save updated userData to session storage
     sessionStorage.setItem('userData', JSON.stringify(userData));

@@ -13,10 +13,12 @@ export default function A7Page() {
 
   const likertScale = {
     'Ich stimme überhaupt nicht zu': 1,
-    'Ich stimme eher nicht zu': 2,
-    'Ich stimme weder zu noch lehne ich ab': 3,
-    'Ich stimme eher zu': 4,
-    'Ich stimme voll und ganz zu': 5
+    'Ich stimme nicht zu': 2,
+    'Ich stimme eher nicht zu': 3,
+    'Ich stimme weder zu noch lehne ich ab': 4,
+    'Ich stimme eher zu': 5,
+    'Ich stimme zu': 6,
+    'Ich stimme voll und ganz zu': 7
   };
 
   const handleOptionChange = (e) => {
@@ -85,7 +87,7 @@ export default function A7Page() {
             Ich könnte mir vorstellen, diese App generell zu nutzen
           </h2>
           <br />
-          {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
+          {['Ich stimme voll und ganz zu', 'Ich stimme zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>
               <input
                 type="radio"
@@ -107,7 +109,7 @@ export default function A7Page() {
             Ich beabsichtige, diese App in der Zukunft zu nutzen, sobald sie verfügbar ist
           </h2>
           <br />
-          {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
+          {['Ich stimme voll und ganz zu', 'Ich stimme zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>
               <input
                 type="radio"
@@ -129,7 +131,7 @@ export default function A7Page() {
             Wenn die App mir angeboten würde, würde ich sie auf jeden Fall nutzen
           </h2>
           <br />
-          {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
+          {['Ich stimme voll und ganz zu', 'Ich stimme zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>
               <input
                 type="radio"
