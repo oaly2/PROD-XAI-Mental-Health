@@ -121,11 +121,12 @@ export default function SurveyScreenDepressionCFPage() {
 
     const oppositePrediction = explanation.prediction === "depression" ? "niedriges Depressionsrisiko" : "erhöhtes Depressionsrisiko";
     const word = explanation.prediction === "depression" ? "verbessern" : "erhalten";
+    const word1 = explanation.prediction === "depression" ? "niedrigem" : "erhöhtem";
 
     return (
       <div style={{ textAlign: 'center' }}>
         <Text as="p" className="text-center text-base md:text-xl mx-2 my-4" style={{ fontSize: '1.25em', lineHeight: '1.5em' }}>
-          Zusätzlich, zeigt Dir die KI, welche Veränderungen zu der Prognose {oppositePrediction} führen würden.
+          Zusätzlich zeigt Dir die KI, welche Veränderungen bei Dir zu einem {word1} Depressionsrisiko führen würden.
         </Text>
         <ul className={styles.listCenter}>
           {features.map((f, index) => (

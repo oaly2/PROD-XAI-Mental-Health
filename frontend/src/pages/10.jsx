@@ -111,7 +111,7 @@ export default function A10Page() {
         
         <div className={styles.question}>
           <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
-           ... meinen mentalen Gesundheitszustand gut genug verstehen, um ihn {word}
+           ... meinen mentalen Gesundheitszustand gut genug verstehen, um ihn zu {word}
           </h2>
           <br />
           {['Ich stimme voll und ganz zu', 'Ich stimme zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (

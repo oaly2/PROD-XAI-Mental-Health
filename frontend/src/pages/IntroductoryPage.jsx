@@ -48,7 +48,7 @@ export default function IntroductoryPage() {
           Bei so genannten Smart-Sensing-Apps erfassen Smartphones und andere Geräte wie Smartwatches oder Fitness-Armbänder automatisch Sensordaten, u.a. zu Bewegung, Herzfrequenz, Schlaf, sozialen Kontakten, Kommunikationsverhalten oder Gemütslage. Eine Künstliche Intelligenz (KI) nutzt diese Daten, um den Usern Prognosen zu ihrer mentalen Gesundheit zu liefern. Ziel ist es, dass User ihre mentale Gesundheit erhalten und verbessern können. Wir stellen Ihnen in dieser Studie ein Beispiel für eine solche App vor.
           <br/><br/>
           <span className={styles.subTitle}>Was muss ich tun? <br/></span>
-          Sie werden gleich gebeten, sich in ein hypothetisches Szenario hineinzuversetzen. Sie lernen eine Person kennen, die eine Smart-Sensing-App benutzt, und sehen die Informationen, die die App für diese Person anzeigt. Schauen Sie sich bitte alles genau an. Danach stellen wir Ihnen einige Fragen
+          Sie werden gleich gebeten, sich in ein hypothetisches Szenario hineinzuversetzen. Sie lernen eine Person kennen, die eine Smart-Sensing-App benutzt, und sehen die Informationen, die die App für diese Person anzeigt. Schauen Sie sich bitte alles genau an. Danach stellen wir Ihnen einige Fragen.
           <br/><br/><br/>
           <span style={{fontSize: '12px'}}>
             <span className={styles.list} style={{fontWeight: 'bold'}}>Hinweis:</span> Im Laufe der Befragung werden Sie zu verschiedenen emotionalen Zuständen, einschließlich negativer Gefühle und Gedanken befragt. Falls Sie während der Beantwortung der Fragen eine Belastung empfinden, haben Sie jederzeit die Möglichkeit, Ihre Teilnahme an der Studie ohne Angabe von Gründen abzubrechen. Zusätzlich stehen Ihnen bei akuten psychischen Belastungen oder Suizidgedanken rund um die Uhr folgende Hilfsangebote zur Verfügung:
@@ -66,7 +66,7 @@ export default function IntroductoryPage() {
             onChange={(e) => setIsChecked(e.target.checked)}
             style={{ marginRight: '10px', boxShadow: 'none', outline: 'none'}}
           />
-          <span className={styles.list}>Ich habe die Informationen zur Studie sowie zum Datenschutz gelesen und stimme zu</span>
+          <span className={styles.list}>Ich habe die Informationen zur Studie sowie zum Datenschutz gelesen und stimme zu.</span>
           <br/><br/>
         </p>
         <br/>

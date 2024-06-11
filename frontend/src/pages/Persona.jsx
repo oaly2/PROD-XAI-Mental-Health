@@ -62,17 +62,12 @@ export default function PersonaPage({ showProceedButton = true }) {
         <br/>
 
 
-        Sie sind Alex. Alex nutzt eine Smart-Sensing-App für mentale Gesundheit – also eine App, die Sensordaten vom Smartphone und anderen Geräten verwendet, um Prognosen zur mentalen Gesundheit von Alex zu liefern. Alex erhält folgende Informationen zu der App.
+        Sie sind Alex. Alex nutzt eine Smart-Sensing-App für mentale Gesundheit – also eine App, die Sensordaten vom Smartphone und anderen Geräten verwendet, um Prognosen zur mentalen Gesundheit von Alex zu liefern.
 
         <br/>
         <br/>
 
         Alex öffnet die App und bekommt eine Nachricht angezeigt. Wenn Sie unten auf weiter klicken, sehen Sie gleich diese Nachricht. Schauen Sie sich diese dann bitte genau an.
-
-        <br/>
-        <br/>
-
-        Bitte sehen Sie sich die Informationen genau an.
   
         </h1>
         <br/>

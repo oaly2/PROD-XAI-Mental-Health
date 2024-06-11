@@ -117,7 +117,7 @@ export default function FeatureImportancePage() {
     return (
       <div style={{ textAlign: 'center' }}>
         <Text as="p" className="text-center text-base md:text-xl mx-2 my-4" style={{ fontSize: '1.25em', lineHeight: '1.5em' }}>
-          Zusätzlich, zeigt Dir die KI, was am meisten dazu beigetragen hat, dass Du die Prognose {oppositePrediction} erhalten hast:
+          Zusätzlich zeigt Dir die KI, was am meisten dazu beigetragen hat, dass Du die Prognose {oppositePrediction} erhalten hast:
         </Text>
         <ul className={styles.listCenter}>
           {features.map((f, index) => (
