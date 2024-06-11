@@ -125,9 +125,7 @@ export default function SurveyScreenDepressionCFPage() {
     return (
       <div style={{ textAlign: 'center' }}>
         <Text as="p" className="text-center text-base md:text-xl mx-2 my-4" style={{ fontSize: '1.25em', lineHeight: '1.5em' }}>
-          Damit Du Deine mentale Gesundheit {word} kannst,
-          zeigt Dir die KI, welche Veränderungen zu der
-          Prognose {oppositePrediction} führen würden.
+          Zusätzlich, zeigt Dir die KI, welche Veränderungen zu der Prognose {oppositePrediction} führen würden.
         </Text>
         <ul className={styles.listCenter}>
           {features.map((f, index) => (
@@ -151,15 +149,6 @@ export default function SurveyScreenDepressionCFPage() {
         <meta name="description" content="Web site created using create-react-app" />
       </Helmet>
       <div className={styles.container} style={{padding: '0.5vw', marginBottom: '0.5vw'}}>
-      <div className={styles.container} style={{padding: '0.5vw'}}>  
-        <h1 className={styles.subTitle} style={{color: 'black', fontWeight: 'normal', textAlign: 'center' }}>
-        Versetzen Sie sich weiterhin in die Lage von Alex. Alex öffnet die App und bekommt folgende Nachricht angezeigt. Bitte sehen Sie sich den Bildschirm genau an.  
-        </h1>
-      </div>
-
-      <hr style={{ border: '1px solid #000', width: '80%', margin: '20px 0' }} /> {/* Horizontal Line */}
-
-
       <div className={styles.container} style={{padding: '0.5vw'}}>
         <h1 className={styles.subTitle} style={{color: 'black', fontWeight: 'normal', textAlign: 'center'}}>
         Lieber Alex, die App will dir helfen, Deine mentale Gesundheit zu erhalten oder zu verbessern. Dafür hat sie folgende Prognose für Dich ermittelt.
@@ -176,9 +165,10 @@ export default function SurveyScreenDepressionCFPage() {
         </div>
         {formatCounterfactualText()}
         <Text as="p" className="text-blue_gray-400 text-sm md:text-base text-center mt-auto" style={{marginTop: '1vw'}}>
-          Alle angezeigten Ergebnisse sind lediglich Vorhersagen einer KI. Als solche können sie nur Hinweise auf
-          den Gesundheitszustand geben. Sie können keine medizinische Diagnose stellen und ersetzen keinesfalls
-          einen Arztbesuch. Wenn du dich depressiv fühlst, wende dich an einen Arzt.
+          Die Prognose der KI basiert insgesamt auf folgenden 
+          Informationen, die mithilfe von Sensordaten gemessen wurden: Anzahl sozialer 
+          Kontakte, Qualität sozialer Kontakte, Qualität der Ernährung, sportliche Aktivität, 
+          Zeit am Handy, Länge der Telefonate, Mobilität, Stresslevel, Schlafqualität
         </Text>
       </div>
 

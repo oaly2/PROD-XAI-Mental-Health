@@ -70,8 +70,9 @@ export default function IntroductoryPage() {
           <br/><br/>
         </p>
         <br/>
-        {showWarning && <p className={styles.list} style={{ color: 'red' }}>Bitte stimmen Sie zu</p>}
         {message && <p className={styles.list} style={{ color: 'red' }}>{message}</p>}
+        <br/>
+        {showWarning && <p className={styles.list} style={{ color: 'red' }}>Bitte stimmen Sie zu</p>}
         <br/>
         <Button
           variant="contained"
