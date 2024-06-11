@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from '../styles/PersonaPage.module.css'; // Ensure this path is correct for your project
 import Button from "@mui/material/Button";
 import { useNavigate } from 'react-router-dom';
-
 
 export default function A6Page() {
   const [answers, setAnswers] = useState({
@@ -14,13 +13,26 @@ export default function A6Page() {
 
   const likertScale = {
     'Ich stimme überhaupt nicht zu': 1,
-    'Ich stimme eher nicht zu': 2,
-    'Ich stimme weder zu noch lehne ich ab': 3,
-    'Ich stimme eher zu': 4,
-    'Ich stimme voll und ganz zu': 5
+    'Ich stimme nicht zu': 2,
+    'Ich stimme eher nicht zu': 3,
+    'Ich stimme weder zu noch lehne ich ab': 4,
+    'Ich stimme eher zu': 5,
+    'Ich stimme zu': 6,
+    'Ich stimme voll und ganz zu': 7
   };
 
   const [showWarning, setShowWarning] = useState(false);
+  const [timer, setTimer] = useState(5);
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    if (timer > 0) {
+      const interval = setInterval(() => {
+        setTimer(timer - 1);
+      }, 1000);
+      return () => clearInterval(interval);
+    }
+  }, [timer]);
 
   const delta = Math.abs(likertScale[answers.question2] - likertScale[answers.question3]);
 
@@ -40,7 +52,9 @@ export default function A6Page() {
   };
 
   const handleProceed = () => {
-    if(isEveryQuestionAnswered) {
+    if (timer > 0) {
+      setMessage("Bitte nehmen Sie sich ausreichend Zeit, alle Fragen gewissenhaft zu beantworten");
+    } else if (isEveryQuestionAnswered) {
       const userData = JSON.parse(sessionStorage.getItem('userData')) || {};
 
       userData.quality_check_intention_to_act = qualityCheckIntentionToAct;
@@ -56,16 +70,14 @@ export default function A6Page() {
 
       navigate('/attention_check_1');
       window.scrollTo(0, 0);
-    }
-    else {
+    } else {
       setShowWarning(true);
     }
   };
 
-
   return (
     <div className={styles.containerS}>
-      <h1 style={{fontSize: '18px', fontWeight:'bold'}}>Wenn Sie an der Stelle von Alex wären: Wie würden Sie auf das Ergebnis der KI-Auswertung reagieren?</h1>
+      <h1 style={{fontSize: '18px', fontWeight:'bold'}}>Denken Sie an die Informationen, die die App eben für Alex angezeigt hat. Bitte bewerten Sie auf Basis dessen folgende Aussagen.</h1>
       <br />
       <br />
       <form>
@@ -74,7 +86,7 @@ export default function A6Page() {
           Ich würde mich in Zukunft stärker um die Verbesserung meiner mentalen Gesundheit kümmern
           </h2>
           <br />
-          {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
+          {['Ich stimme voll und ganz zu', 'Ich stimme zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>
               <input
                 type="radio"
@@ -93,10 +105,10 @@ export default function A6Page() {
         
         <div className={styles.question}>
           <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
-          Ich würde versuchen, bestimmte Dinge in meinem Alltag so zu verändern, dass es meine mentale Gesundheit verbessert 
+          Ich würde konkrete Dinge in meinem Alltag so gestalten, dass es meine mentale Gesundheit verbessert 
           </h2>
           <br />
-          {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
+          {['Ich stimme voll und ganz zu', 'Ich stimme zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>
               <input
                 type="radio"
@@ -118,7 +130,7 @@ export default function A6Page() {
           Ich könnte mir vorstellen, Unterstützungsangebote für die Verbesserung meiner mentalen Gesundheit in Anspruch zu nehmen.
           </h2>
           <br />
-          {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
+          {['Ich stimme voll und ganz zu', 'Ich stimme zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>
               <input
                 type="radio"
@@ -138,10 +150,10 @@ export default function A6Page() {
 
         <div className={styles.question}>
           <h2 style={{fontSize: '16px', fontWeight:'bold', color: '#19b394'}} >
-          Ich würde bestimmte Verhaltensweisen so verändern, dass sie der Verbesserung meiner mentalen Gesundheit zuträglich sind
+          Ich würde bestimmte Verhaltensweisen so gestalten, dass sie der Verbesserung meiner mentalen Gesundheit zuträglich sind
           </h2>
           <br />
-          {['Ich stimme voll und ganz zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
+          {['Ich stimme voll und ganz zu', 'Ich stimme zu', 'Ich stimme eher zu', 'Ich stimme weder zu noch lehne ich ab', 'Ich stimme eher nicht zu', 'Ich stimme nicht zu', 'Ich stimme überhaupt nicht zu'].map(option => (
             <label key={option}>
               <input
                 type="radio"
@@ -162,6 +174,8 @@ export default function A6Page() {
         {showWarning && (
         <p style={{ color: 'red', fontSize: '16px' }}>Bitte beantworten Sie alle Fragen, bevor Sie fortfahren.</p> // Warning message
         )}
+        <br />
+        {message && <p className={styles.list} style={{ color: 'red' }}>{message}</p>}
         <br />
         
         <Button
