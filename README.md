@@ -5,7 +5,7 @@ XAI-Mental-Health is a pioneering project developed for the Institute of Busines
 
 The website was used in a study that was published as a conference paper in the Proceedings of the 58th Hawaii International Conference on System Sciences (HICSS) 2025.
 
-Link: https://lnkd.in/eh-EjBjA
+Link: https://scholarspace.manoa.hawaii.edu/server/api/core/bitstreams/6c7cb44c-a8c5-4da9-8540-f40a19ec44e3/content
 
 ## Frameworks and Technologies Used
 
